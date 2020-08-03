@@ -4,13 +4,13 @@
     {{>licenseInfo}}
 
     import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
-    import { Configuration } from '{{apiRelativeToRoot}}configuration';
+    import { Configuration } from '{{apiRelativeToRoot}}configuration.js';
     // Some imports not used depending on template conditions
     // @ts-ignore
-    import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '{{apiRelativeToRoot}}base';
+    import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '{{apiRelativeToRoot}}base.js';
     {{#imports}}
         // @ts-ignore
-        import { {{classname}} } from '{{apiRelativeToRoot}}{{tsModelPackage}}';
+        import { {{classname}} } from '{{apiRelativeToRoot}}{{tsModelPackage}}/index.js';
     {{/imports}}
 {{/withSeparateModelsAndApi}}
 {{^withSeparateModelsAndApi}}

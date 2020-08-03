@@ -1,0 +1,4 @@
+src/.openapi-generator
+tsconfig.commonjs.json
+ts-generator-config.json
+.idea/

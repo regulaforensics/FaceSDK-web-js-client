@@ -1,0 +1,38 @@
+{
+  "name": "@regulaforensics/face-recognition-webclient",
+  "version": "5.2.0-beta.0",
+  "description": "OpenAPI client for face api",
+  "author": "Regula Forensics, Inc.",
+  "keywords": [
+    "face-api-client",
+    "regulaforensics",
+    "regula"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/cjs-es5/index.js",
+  "module": "./dist/esm-es5/index.js",
+  "exports": {
+    "./esm": "./dist/esm-es5/index.js",
+    ".": "./dist/cjs-es5/index.js"
+  },
+  "typings": "./src/index.ts",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build-cjs": "tsc --project tsconfig.commonjs.json",
+    "build-esm": "tsc  --project tsconfig.esm.json",
+    "format": "eslint --fix ./src --ext .ts",
+    "build": "npm run clean && npm run format && npm run build-cjs && npm run build-esm && echo '{\"type\": \"commonjs\"}' > ./dist/cjs-es5/package.json"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.5",
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
+    "eslint": "^7.4.0",
+    "eslint-plugin-unused-imports": "^0.1.3",
+    "typescript": "^3.9.6"
+  }
+}

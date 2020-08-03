@@ -1,0 +1,7 @@
+{
+  "name": "@regulaforensics/face-api-client-example",
+  "type": "module",
+  "dependencies": {
+    "@regulaforensics/face-recognition-webclient": "file:.."
+  }
+}

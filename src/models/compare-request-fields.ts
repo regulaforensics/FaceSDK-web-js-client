@@ -14,6 +14,7 @@
 
 
 import { ImageSource } from './image-source';
+import { ImageData } from './image-data';
 
 /**
  * 
@@ -41,10 +42,10 @@ export interface CompareRequestFields {
     type?: ImageSource;
     /**
      * 
-     * @type {string}
+     * @type {ImageData}
      * @memberof CompareRequestFields
      */
-    data?: string;
+    data: ImageData;
 }
 
 

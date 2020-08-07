@@ -135,7 +135,7 @@
             * @throws {RequiredError}
             * @memberof MatchingApi
             */
-                public compare(compareRequest: CompareRequest, options?: any) {
+                protected compareGen(compareRequest: CompareRequest, options?: any) {
                 return MatchingApiFp(this.configuration).compare(compareRequest, options).then((request) => request(this.axios, this.basePath));
                 }
         }

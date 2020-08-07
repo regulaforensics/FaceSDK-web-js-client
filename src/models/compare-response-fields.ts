@@ -13,7 +13,6 @@
  */
 
 
-import { ImageSource } from './image-source';
 
 /**
  * 
@@ -33,18 +32,6 @@ export interface CompareResponseFields {
      * @memberof CompareResponseFields
      */
     secondIndex?: number;
-    /**
-     * 
-     * @type {ImageSource}
-     * @memberof CompareResponseFields
-     */
-    first?: ImageSource;
-    /**
-     * 
-     * @type {ImageSource}
-     * @memberof CompareResponseFields
-     */
-    second?: ImageSource;
     /**
      * 
      * @type {number}

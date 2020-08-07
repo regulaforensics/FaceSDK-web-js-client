@@ -1,6 +1,6 @@
 {
   "name": "@regulaforensics/face-recognition-webclient",
-  "version": "5.2.0-beta.0",
+  "version": "1.2.0-beta.0",
   "description": "OpenAPI client for face api",
   "author": "Regula Forensics, Inc.",
   "keywords": [
@@ -25,7 +25,8 @@
     "build": "npm run clean && npm run format && npm run build-cjs && npm run build-esm && echo '{\"type\": \"commonjs\"}' > ./dist/cjs-es5/package.json"
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "base64-arraybuffer": "^0.2.0"
   },
   "devDependencies": {
     "@types/node": "^12.11.5",

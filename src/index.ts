@@ -13,6 +13,6 @@
  */
 
 
-export * from './api/matching-api.js';
+export * from './ext/index.js';
 export * from "./configuration.js";
 export * from "./models/index.js";

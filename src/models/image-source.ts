@@ -15,7 +15,7 @@
 
 
 /**
- * todo add description here
+ * Face photo image source
  * @export
  * @enum {string}
  */

@@ -13,7 +13,7 @@
  */
 
 
-import { CompareRequestFields } from './compare-request-fields';
+import { CompareImage } from './compare-image';
 
 /**
  * 
@@ -23,10 +23,10 @@ import { CompareRequestFields } from './compare-request-fields';
 export interface CompareRequest {
     /**
      * 
-     * @type {Array<CompareRequestFields>}
+     * @type {Array<CompareImage>}
      * @memberof CompareRequest
      */
-    images?: Array<CompareRequestFields>;
+    images: Array<CompareImage>;
 }
 
 

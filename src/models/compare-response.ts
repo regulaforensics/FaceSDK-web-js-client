@@ -13,7 +13,7 @@
  */
 
 
-import { CompareResponseFields } from './compare-response-fields';
+import { CompareImageResult } from './compare-image-result';
 
 /**
  * 
@@ -23,10 +23,10 @@ import { CompareResponseFields } from './compare-response-fields';
 export interface CompareResponse {
     /**
      * 
-     * @type {Array<CompareResponseFields>}
+     * @type {Array<CompareImageResult>}
      * @memberof CompareResponse
      */
-    results?: Array<CompareResponseFields>;
+    results?: Array<CompareImageResult>;
 }
 
 

@@ -23,6 +23,10 @@
         // @ts-ignore
         import { CompareResponse } from '../models/index.js';
         // @ts-ignore
+        import { DetectRequest } from '../models/index.js';
+        // @ts-ignore
+        import { DetectResponse } from '../models/index.js';
+        // @ts-ignore
         import { OperationLog } from '../models/index.js';
     /**
     * MatchingApi - axios parameter creator
@@ -32,7 +36,7 @@
     return {
         /**
         * 
-            * @summary Compare given persons among themselves and return similarity score for each pair.
+            * @summary Compare provided face images in all combinations and return similarity score for each pair.
             * @param {CompareRequest} compareRequest 
         * @param {*} [options] Override http request option.
         * @throws {RequiredError}
@@ -75,6 +79,51 @@
             options: localVarRequestOptions,
             };
             },
+        /**
+        * 
+            * @summary Detect facial coordinates
+            * @param {DetectRequest} detectRequest 
+        * @param {*} [options] Override http request option.
+        * @throws {RequiredError}
+        */
+        detect: async (detectRequest: DetectRequest, options: any = {}): Promise<RequestArgs> => {
+                    // verify required parameter 'detectRequest' is not null or undefined
+                    if (detectRequest === null || detectRequest === undefined) {
+                    throw new RequiredError('detectRequest','Required parameter detectRequest was null or undefined when calling detect.');
+                    }
+            const localVarPath = `/detect`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
+            let baseOptions;
+            if (configuration) {
+            baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+        
+                    localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            const query = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+            query.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+            query.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(query)).toString();
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+                const needsSerialization = (typeof detectRequest !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+                localVarRequestOptions.data =  needsSerialization ? JSON.stringify(detectRequest !== undefined ? detectRequest : {}) : (detectRequest || "");
+
+            return {
+            url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
+            options: localVarRequestOptions,
+            };
+            },
         }
         };
 
@@ -86,13 +135,27 @@
         return {
             /**
             * 
-                * @summary Compare given persons among themselves and return similarity score for each pair.
+                * @summary Compare provided face images in all combinations and return similarity score for each pair.
                 * @param {CompareRequest} compareRequest 
             * @param {*} [options] Override http request option.
             * @throws {RequiredError}
             */
             async compare(compareRequest: CompareRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CompareResponse>> {
             const localVarAxiosArgs = await MatchingApiAxiosParamCreator(configuration).compare(compareRequest, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+            const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+            return axios.request(axiosRequestArgs);
+            };
+            },
+            /**
+            * 
+                * @summary Detect facial coordinates
+                * @param {DetectRequest} detectRequest 
+            * @param {*} [options] Override http request option.
+            * @throws {RequiredError}
+            */
+            async detect(detectRequest: DetectRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DetectResponse>> {
+            const localVarAxiosArgs = await MatchingApiAxiosParamCreator(configuration).detect(detectRequest, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
             const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
             return axios.request(axiosRequestArgs);
@@ -109,13 +172,23 @@
         return {
             /**
             * 
-                * @summary Compare given persons among themselves and return similarity score for each pair.
+                * @summary Compare provided face images in all combinations and return similarity score for each pair.
                 * @param {CompareRequest} compareRequest 
             * @param {*} [options] Override http request option.
             * @throws {RequiredError}
             */
         compare(compareRequest: CompareRequest, options?: any): AxiosPromise<CompareResponse> {
             return MatchingApiFp(configuration).compare(compareRequest, options).then((request) => request(axios, basePath));
+            },
+            /**
+            * 
+                * @summary Detect facial coordinates
+                * @param {DetectRequest} detectRequest 
+            * @param {*} [options] Override http request option.
+            * @throws {RequiredError}
+            */
+        detect(detectRequest: DetectRequest, options?: any): AxiosPromise<DetectResponse> {
+            return MatchingApiFp(configuration).detect(detectRequest, options).then((request) => request(axios, basePath));
             },
         };
         };
@@ -129,7 +202,7 @@
             export class MatchingApi extends BaseAPI {
             /**
             * 
-                * @summary Compare given persons among themselves and return similarity score for each pair.
+                * @summary Compare provided face images in all combinations and return similarity score for each pair.
                     * @param {CompareRequest} compareRequest 
             * @param {*} [options] Override http request option.
             * @throws {RequiredError}
@@ -137,5 +210,17 @@
             */
                 protected compareGen(compareRequest: CompareRequest, options?: any) {
                 return MatchingApiFp(this.configuration).compare(compareRequest, options).then((request) => request(this.axios, this.basePath));
+                }
+
+            /**
+            * 
+                * @summary Detect facial coordinates
+                    * @param {DetectRequest} detectRequest 
+            * @param {*} [options] Override http request option.
+            * @throws {RequiredError}
+            * @memberof MatchingApi
+            */
+                protected detectGen(detectRequest: DetectRequest, options?: any) {
+                return MatchingApiFp(this.configuration).detect(detectRequest, options).then((request) => request(this.axios, this.basePath));
                 }
         }

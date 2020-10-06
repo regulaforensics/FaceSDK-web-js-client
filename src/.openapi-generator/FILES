@@ -1,10 +1,13 @@
 api/matching-api.ts
 base.ts
 configuration.ts
-models/compare-request-fields.ts
+models/compare-image-result.ts
+models/compare-image.ts
 models/compare-request.ts
-models/compare-response-fields.ts
 models/compare-response.ts
+models/detect-request.ts
+models/detect-response.ts
+models/detection.ts
 models/image-source.ts
 models/index.ts
 models/operation-log.ts

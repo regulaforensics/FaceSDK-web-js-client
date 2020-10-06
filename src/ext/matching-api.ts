@@ -1,5 +1,5 @@
 import {MatchingApi as GenMatchingApi} from "../api/matching-api.js";
-import {CompareRequest, CompareResponse, ImageSource} from "../models/index.js";
+import {CompareRequest, CompareResponse, DetectRequest, DetectResponse, ImageSource} from "../models/index.js";
 
 // @ts-ignore
 import converter from "base64-arraybuffer";
@@ -16,5 +16,12 @@ export class MatchingApi extends GenMatchingApi {
       }
     }
     return super.compareGen(compareRequest, options).then(r => r.data);
+  }
+
+  detect(detectRequest: DetectRequest, options?: any): Promise<DetectResponse> {
+    if (typeof  detectRequest.image !== "string") {
+      detectRequest.image = converter.encode(detectRequest.image)
+    }
+    return super.detectGen(detectRequest, options).then(r => r.data)
   }
 }

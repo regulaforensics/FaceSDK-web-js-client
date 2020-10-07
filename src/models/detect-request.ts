@@ -13,19 +13,26 @@
  */
 
 
+import { ImageData } from './image-data';
 
 /**
- * Face photo image source
+ * 
  * @export
- * @enum {string}
+ * @interface DetectRequest
  */
-export enum ImageSource {
-    DOCUMENT_PRINTED = 1,
-    DOCUMENT_RFID = 2,
-    LIVE = 3,
-    DOCUMENT_WITH_LIVE = 4,
-    EXTERNAL = 5
+export interface DetectRequest {
+    /**
+     * 
+     * @type {ImageData}
+     * @memberof DetectRequest
+     */
+    image?: ImageData;
+    /**
+     * True - main face; false - all faces.
+     * @type {boolean}
+     * @memberof DetectRequest
+     */
+    only_central_face?: boolean;
 }
-
 
 

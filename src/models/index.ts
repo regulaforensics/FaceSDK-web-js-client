@@ -7,6 +7,7 @@ export * from './depth-liveness-item.js';
 export * from './detect-request.js';
 export * from './detect-response.js';
 export * from './detection.js';
+export * from './face-recognition-result-code.js';
 export * from './image-liveness.js';
 export * from './image-liveness-item.js';
 export * from './image-source.js';

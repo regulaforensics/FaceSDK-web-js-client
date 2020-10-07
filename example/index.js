@@ -9,7 +9,7 @@ import fs from "fs";
 
   const face1 = fs.readFileSync('face1.jpg').buffer
   const face2 = fs.readFileSync('face2.jpg').buffer
-  const realVideo = fs.readFileSync('real_video_1.mp4', {encoding: "binary"})
+  const realVideo = fs.readFileSync('real_video_1.mp4')
   const realFrame = fs.readFileSync('liveness_real_frame_1.jpg').buffer
   const realDepth = fs.readFileSync('liveness_real_depth_1.png').buffer
   const realImage = fs.readFileSync('liveness_real_image_1.png').buffer
@@ -42,8 +42,8 @@ import fs from "fs";
   console.log(`detectorType: ${detectResponse.detectorType}`)
   console.log(`landmarkType: ${detectResponse.landmarksType}`)
   for (const i of detectResponse.detections) {
-    console.log(`landmarks: ${i.landmarks}`)
-    console.log(`roi: ${i.roi}`)
+    console.log(`landmarks: ${JSON.stringify(i.landmarks)}`)
+    console.log(`roi: ${JSON.stringify(i.roi)}`)
   }
   console.log("-----------------------------------------------------------------")
 

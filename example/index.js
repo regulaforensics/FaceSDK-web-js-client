@@ -1,4 +1,3 @@
-import converter from "base64-arraybuffer";
 import {
   Sdk,
   ImageSource

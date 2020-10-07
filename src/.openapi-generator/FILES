@@ -1,3 +1,4 @@
+api/liveness-api.ts
 api/matching-api.ts
 base.ts
 configuration.ts
@@ -5,9 +6,15 @@ models/compare-image-result.ts
 models/compare-image.ts
 models/compare-request.ts
 models/compare-response.ts
+models/depth-liveness-item.ts
+models/depth-liveness.ts
 models/detect-request.ts
 models/detect-response.ts
 models/detection.ts
+models/image-liveness-item.ts
+models/image-liveness.ts
 models/image-source.ts
 models/index.ts
+models/liveness-result-item.ts
+models/liveness-status.ts
 models/operation-log.ts

@@ -1,3 +1,4 @@
+import converter from "base64-arraybuffer";
 import {
   Sdk,
   ImageSource
@@ -9,6 +10,10 @@ import fs from "fs";
 
   const face1 = fs.readFileSync('face1.jpg').buffer
   const face2 = fs.readFileSync('face2.jpg').buffer
+  const realVideo = fs.readFileSync('real_video_1.mp4', {encoding: "binary"})
+  const realFrame = fs.readFileSync('liveness_real_frame_1.jpg').buffer
+  const realDepth = fs.readFileSync('liveness_real_depth_1.png').buffer
+  const realImage = fs.readFileSync('liveness_real_image_1.png').buffer
 
   const sdk = new Sdk({basePath: apiBasePath})
 
@@ -40,6 +45,47 @@ import fs from "fs";
   for (const i of detectResponse.detections) {
     console.log(`landmarks: ${i.landmarks}`)
     console.log(`roi: ${i.roi}`)
+  }
+  console.log("-----------------------------------------------------------------")
+
+  const videoLivenessResult = await sdk.livenessApi.checkVideoLiveness(realVideo)
+
+  console.log("                   Check video liveness result                   ")
+  console.log("-----------------------------------------------------------------")
+  console.log(`liveness_status: ${videoLivenessResult.livenessStatus}`)
+  console.log("-----------------------------------------------------------------")
+
+  const depthLivenessResult = await sdk.livenessApi.checkDepthLiveness({
+    images: [
+      {
+        dataScene: realFrame, dataDepth: realDepth, depthScale: 0.001
+      }
+    ]
+  })
+
+  console.log("                   Check depth liveness result                   ")
+  console.log("-----------------------------------------------------------------")
+  for (const i of depthLivenessResult) {
+    console.log(`index: ${i.index}`)
+    console.log(`code: ${i.code}`)
+    console.log(`liveness_status: ${i.livenessStatus}`)
+  }
+  console.log("-----------------------------------------------------------------")
+
+  const imageLivenessResult = await sdk.livenessApi.checkImageLiveness({
+    images: [
+      {
+        data: realImage
+      }
+    ]
+  })
+
+  console.log("                   Check image liveness result                   ")
+  console.log("-----------------------------------------------------------------")
+  for (const i of imageLivenessResult) {
+    console.log(`index: ${i.index}`)
+    console.log(`code: ${i.code}`)
+    console.log(`liveness_status: ${i.livenessStatus}`)
   }
   console.log("-----------------------------------------------------------------")
 })();

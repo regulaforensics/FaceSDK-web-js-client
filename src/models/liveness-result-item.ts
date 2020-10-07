@@ -13,6 +13,7 @@
  */
 
 
+import { FaceRecognitionResultCode } from './face-recognition-result-code';
 import { LivenessStatus } from './liveness-status';
 import { ImageData } from './image-data';
 
@@ -36,10 +37,10 @@ export interface LivenessResultItem {
     livenessStatus: LivenessStatus;
     /**
      * 
-     * @type {number}
+     * @type {FaceRecognitionResultCode}
      * @memberof LivenessResultItem
      */
-    code?: number;
+    code?: FaceRecognitionResultCode;
     /**
      * 
      * @type {number}

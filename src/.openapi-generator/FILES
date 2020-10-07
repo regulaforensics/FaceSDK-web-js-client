@@ -11,6 +11,7 @@ models/depth-liveness.ts
 models/detect-request.ts
 models/detect-response.ts
 models/detection.ts
+models/face-recognition-result-code.ts
 models/image-liveness-item.ts
 models/image-liveness.ts
 models/image-source.ts

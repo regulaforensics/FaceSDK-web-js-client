@@ -160,6 +160,7 @@
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
                 const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
                 localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
             return {
             url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
             options: localVarRequestOptions,
@@ -295,7 +296,6 @@
             * @memberof LivenessApi
             */
                 protected checkVideoLivenessGen(body: any, options?: any) {
-                // return LivenessApiFp(this.configuration).checkVideoLiveness(body, options).then((request) => request(this.axios, this.basePath));
                 return LivenessApiFp(this.configuration).checkVideoLiveness(body, options).then((request) => request(this.axios, this.basePath));
                 }
         }

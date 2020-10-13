@@ -1,21 +1,21 @@
 # Regula Face Recognition js client for the browser and node.js based on axios
 
-[![npm version](https://img.shields.io/npm/v/@regulaforensics/document-reader-client?color=yellow&style=flat-square)](https://www.npmjs.org/package/@regulaforensics/document-reader-client)
+[![npm version](https://img.shields.io/npm/v/@regulaforensics/face-recognition-webclient?color=yellow&style=flat-square)](https://www.npmjs.com/package/@regulaforensics/face-recognition-webclient)
 ![npm type definitions](https://img.shields.io/npm/types/typescript?style=flat-square&collor=858df6)
 [![documentation](https://img.shields.io/badge/docs-en-f6858d?style=flat-square)](https://support.regulaforensics.com/hc/en-us/articles/115000916306-Documentation)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-defs-0a8c42?style=flat-square)](https://github.com/regulaforensics/FaceRecognition-web-openapi)
 
 
-Documents recognition as easy as reading two bytes.
+Face recognition as easy as reading two bytes.
 
 If you have any problems with or questions about this client, please contact us
 through a [GitHub issue](https://github.com/regulaforensics/FaceRecognition-web-js-client/issues).
-You are invited to contribute [new features, fixes, or updates](https://github.com/regulaforensics/FaceRecognition-web-js-client/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), large or small; We are always thrilled to receive pull requests, and do our best to process them as fast as we can.
+You are invited to contribute [new features, fixes, or updates](https://github.com/regulaforensics/FaceRecognition-web-js-client/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), large or small; We are always thrilled to receive pull requests, and do our best to process them as fast as we can. See [dev guide](./dev.md).
 
 ## Install package
 
 ```
-npm install @regulaforensics/face-api-client
+npm install @regulaforensics/face-recognition-webclient
 ```
 ## Example
 
@@ -37,7 +37,7 @@ const compareResponse = await sdk.matchingApi.compare({
   })
 ```
 
-You can find a more detailed example in ./example folder.
+You can find more detailed guide and run this sample in [example](./example/README.md) folder.
 
 ## Compatibility
 
@@ -53,19 +53,3 @@ Definitions
 
 ## Development
 
-Js client is written using typescript, mainly generated from [OpenAPI spec](https://github.com/regulaforensics/FaceRecognition-web-openapi). 
-Openapi-generator output used as implementation base(see packages `/src/api`, `/scr/models`). 
-All custom logic, on top of generated files, should be places in `/src/ext` folder.
-
-To regenerate models clone [latest OpenAPI definitions](https://github.com/regulaforensics/FaceRecognition-web-openapi)
-and set `FACER_DEFINITION_FOLDER` as path to cloned directory, for example:
-```bash
-FACER_DEFINITION_FOLDER="/home/user/projects/FaceRecognition-api-openapi"
-```
-Then use next command from the project root:
-```bash
-docker run --rm -v "${PWD}:/client" -v "${FACER_DEFINITION_FOLDER}:/definitions" \
-openapitools/openapi-generator-cli generate -g typescript-axios \
--i /definitions/index.yml -o /client/src -c /client/ts-generator-config.json \
--t /client/generator-templates
-```

@@ -26,7 +26,7 @@ export interface CompareResponse {
      * @type {Array<CompareImageResult>}
      * @memberof CompareResponse
      */
-    results?: Array<CompareImageResult>;
+    results: Array<CompareImageResult>;
 }
 
 

@@ -9,7 +9,7 @@ import fs from "fs";
 
   const face1 = fs.readFileSync('face1.jpg').buffer
   const face2 = fs.readFileSync('face2.jpg').buffer
-  const realVideo = fs.readFileSync('real_video_1.mp4')
+  const realVideo = fs.readFileSync('real_video_1.mp4').buffer
   const realFrame = fs.readFileSync('liveness_real_frame_1.jpg').buffer
   const realDepth = fs.readFileSync('liveness_real_depth_1.png').buffer
   const realImage = fs.readFileSync('liveness_real_image_1.png').buffer

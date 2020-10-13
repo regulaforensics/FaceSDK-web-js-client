@@ -5,8 +5,8 @@ import {DepthLiveness, ImageLiveness, LivenessResultItem} from "../models/index.
 import converter from "base64-arraybuffer";
 
 export class LivenessApi extends GenLivenessApi {
-    checkVideoLiveness(body: any, options?: any): Promise<LivenessResultItem> {
-        return super.checkVideoLivenessGen(body, options).then(r => r.data)
+    checkVideoLiveness(body: ArrayBuffer, options?: any): Promise<LivenessResultItem> {
+        return super.checkVideoLivenessGen(new Uint8Array(body), options).then(r => r.data)
     }
 
     checkDepthLiveness(depthLiveness: DepthLiveness, options?: any): Promise<Array<LivenessResultItem>> {

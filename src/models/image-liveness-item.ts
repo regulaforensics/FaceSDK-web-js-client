@@ -26,7 +26,7 @@ export interface ImageLivenessItem {
      * @type {ImageData}
      * @memberof ImageLivenessItem
      */
-    data?: ImageData;
+    data: ImageData;
 }
 
 

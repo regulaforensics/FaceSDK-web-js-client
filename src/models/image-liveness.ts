@@ -26,7 +26,7 @@ export interface ImageLiveness {
      * @type {Array<ImageLivenessItem>}
      * @memberof ImageLiveness
      */
-    images?: Array<ImageLivenessItem>;
+    images: Array<ImageLivenessItem>;
 }
 
 

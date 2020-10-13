@@ -69,7 +69,7 @@
             localVarUrlObj.search = (new URLSearchParams(query)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-                const needsSerialization = (typeof depthLiveness !== "string" && !Buffer.isBuffer(depthLiveness)) || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+                const needsSerialization = (typeof depthLiveness !== "string" && !(depthLiveness instanceof Uint8Array)) || localVarRequestOptions.headers['Content-Type'] === 'application/json';
                 localVarRequestOptions.data =  needsSerialization ? JSON.stringify(depthLiveness !== undefined ? depthLiveness : {}) : (depthLiveness || "");
 
             return {
@@ -113,7 +113,7 @@
             localVarUrlObj.search = (new URLSearchParams(query)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-                const needsSerialization = (typeof imageLiveness !== "string" && !Buffer.isBuffer(imageLiveness)) || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+                const needsSerialization = (typeof imageLiveness !== "string" && !(imageLiveness instanceof Uint8Array)) || localVarRequestOptions.headers['Content-Type'] === 'application/json';
                 localVarRequestOptions.data =  needsSerialization ? JSON.stringify(imageLiveness !== undefined ? imageLiveness : {}) : (imageLiveness || "");
 
             return {

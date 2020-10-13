@@ -26,7 +26,7 @@ export interface DetectResponse {
      * @type {Array<Detection>}
      * @memberof DetectResponse
      */
-    detections?: Array<Detection>;
+    detections: Array<Detection>;
     /**
      * Internal.
      * @type {number}

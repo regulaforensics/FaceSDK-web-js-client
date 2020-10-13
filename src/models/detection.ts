@@ -25,13 +25,13 @@ export interface Detection {
      * @type {Array<Array<number>>}
      * @memberof Detection
      */
-    landmarks?: Array<Array<number>>;
+    landmarks: Array<Array<number>>;
     /**
      * Rectangular area of the detected face. First element - X-axis coordinate. Second element - Y-axis coordinate. (X, Y) - left top point. Third element - rectangular width. Fourth element - rectangular height.
      * @type {Array<number>}
      * @memberof Detection
      */
-    roi?: Array<number>;
+    roi: Array<number>;
 }
 
 

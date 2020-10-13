@@ -26,19 +26,19 @@ export interface DepthLivenessItem {
      * @type {ImageData}
      * @memberof DepthLivenessItem
      */
-    dataScene?: ImageData;
+    dataScene: ImageData;
     /**
      * 
      * @type {ImageData}
      * @memberof DepthLivenessItem
      */
-    dataDepth?: ImageData;
+    dataDepth: ImageData;
     /**
      * Normalized factor for color depth.
      * @type {number}
      * @memberof DepthLivenessItem
      */
-    depthScale?: number;
+    depthScale: number;
 }
 
 

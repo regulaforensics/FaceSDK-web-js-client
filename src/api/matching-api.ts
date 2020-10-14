@@ -71,7 +71,7 @@
             localVarUrlObj.search = (new URLSearchParams(query)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-                const needsSerialization = (typeof compareRequest !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+                const needsSerialization = (typeof compareRequest !== "string" && !(compareRequest instanceof Uint8Array)) || localVarRequestOptions.headers['Content-Type'] === 'application/json';
                 localVarRequestOptions.data =  needsSerialization ? JSON.stringify(compareRequest !== undefined ? compareRequest : {}) : (compareRequest || "");
 
             return {
@@ -116,7 +116,7 @@
             localVarUrlObj.search = (new URLSearchParams(query)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-                const needsSerialization = (typeof detectRequest !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+                const needsSerialization = (typeof detectRequest !== "string" && !(detectRequest instanceof Uint8Array)) || localVarRequestOptions.headers['Content-Type'] === 'application/json';
                 localVarRequestOptions.data =  needsSerialization ? JSON.stringify(detectRequest !== undefined ? detectRequest : {}) : (detectRequest || "");
 
             return {

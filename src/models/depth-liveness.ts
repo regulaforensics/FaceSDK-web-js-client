@@ -26,7 +26,7 @@ export interface DepthLiveness {
      * @type {Array<DepthLivenessItem>}
      * @memberof DepthLiveness
      */
-    images?: Array<DepthLivenessItem>;
+    images: Array<DepthLivenessItem>;
 }
 
 

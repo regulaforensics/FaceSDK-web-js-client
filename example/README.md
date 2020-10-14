@@ -1,15 +1,15 @@
 # Regula Face Recognition web API Node 8.0+ client
 
 Requirements:
-- installed npm
-- installed node 8.0 or higher
+- installed npm 6 or higher
+- installed node 12 or higher
 
 Verify npm and node versions:
 ```bash
 npm --version
 > 6.4.16
 node --version     
-> v14.5.0
+> v12.18.3
 ```
 
 Cloning example:
@@ -22,26 +22,27 @@ Setup project and download dependencies:
 ```bash
 npm install
 npm run build
+cd example
+npm install
 ```
 
 ### Running with local Regula Face Recognition web API installation
 
 Assuming you have successfully launched instance, use next line command to run example:
 ```bash
-cd example
-npm install
+# from example folder
 node .
 
 # If Regula Face Recognition web API is running not on localhost, specify host via env variable:
-API_BASE_PATH="api_base_path" node .
+API_BASE_PATH="http://192.168.0.101:41101" node .
 ```
 
 ### Running using Regula Face Recognition web API test SaaS
 
 Execute example:
 ```bash
-cd example
-API_BASE_PATH="api_base_path" node .
+# from example folder
+API_BASE_PATH="https://faceapi.regulaforensics.com" node .
 ```
 
 ### Output

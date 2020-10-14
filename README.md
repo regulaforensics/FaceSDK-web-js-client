@@ -8,6 +8,10 @@
 
 Face recognition as easy as reading two bytes.
 
+ - Face Matching - Compare the person holding the ID to the person pictured in the ID document (1:1)
+ - Face Recognition - Find the person by his or her photo in databases / lists (1:N)
+ - Liveness Detection - Perform liveness check using a selfie taken with the user’s smartphone.
+
 If you have any problems with or questions about this client, please contact us
 through a [GitHub issue](https://github.com/regulaforensics/FaceRecognition-web-js-client/issues).
 You are invited to contribute [new features, fixes, or updates](https://github.com/regulaforensics/FaceRecognition-web-js-client/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), large or small; We are always thrilled to receive pull requests, and do our best to process them as fast as we can. See [dev guide](./dev.md).
@@ -17,24 +21,29 @@ You are invited to contribute [new features, fixes, or updates](https://github.c
 ```
 npm install @regulaforensics/face-recognition-webclient
 ```
-## Example
+## Example of Face Matching
 
 Performing request:
 
 ```js
-let apiBasePath = process.env.API_BASE_PATH || "http://localhost:41101/api"
 const face1 = fs.readFileSync('face1.jpg').buffer
 const face2 = fs.readFileSync('face2.jpg').buffer
 
-const sdk = new Sdk({basePath: apiBasePath})
+const sdk = new Sdk({basePath: "http://localhost:41101"})
 
 const compareResponse = await sdk.matchingApi.compare({
     images: [
         {type: ImageSource.LIVE, data: face1, index: 1},
-        {type: ImageSource.DOCUMENT_RFID, data: face1, index: 2},
-        {data: face2, index: 3}
+        {type: ImageSource.DOCUMENT_RFID, data: face2, index: 2}
     ]
   })
+```
+
+Parsing results:
+```js
+  for (const result of compareResponse.results) {
+  console.log(`pair(${result.firstIndex},${result.secondIndex})   similarity: ${result.similarity}`)
+}
 ```
 
 You can find more detailed guide and run this sample in [example](./example/README.md) folder.
@@ -50,6 +59,3 @@ Module system
 
 Definitions
 * TypeScript's definitions should be automatically resolved via `package.json`. ([Reference](http://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html))
-
-## Development
-

@@ -7,7 +7,7 @@ All custom logic, on top of generated files, should be places in `/src/ext` fold
 To regenerate models clone [latest OpenAPI definitions](https://github.com/regulaforensics/FaceRecognition-web-openapi)
 and set `FACER_DEFINITION_FOLDER` as path to cloned directory, for example:
 ```bash
-FACER_DEFINITION_FOLDER="/home/user/projects/FaceRecognition-api-openapi"
+FACER_DEFINITION_FOLDER="/home/user/projects/FaceRecognition-web-openapi"
 ```
 Then use next command from the project root:
 ```bash

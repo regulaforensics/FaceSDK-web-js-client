@@ -37,14 +37,6 @@ node .
 API_BASE_PATH="http://192.168.0.101:41101" node .
 ```
 
-### Running using Regula Face Recognition web API test SaaS
-
-Execute example:
-```bash
-# from example folder
-API_BASE_PATH="https://faceapi.regulaforensics.com" node .
-```
-
 ### Output
 
 This sample generates next text output:

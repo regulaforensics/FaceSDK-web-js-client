@@ -13,32 +13,16 @@
  */
 
 
-import { Detection } from './detection';
+import { DetectResponseAllOf } from './detect-response-all-of';
+import { DetectResult } from './detect-result';
+import { FaceRecognitionResult } from './face-recognition-result';
+import { FaceRecognitionResultCode } from './face-recognition-result-code';
 
 /**
- * 
+ * @type DetectResponse
  * @export
- * @interface DetectResponse
  */
-export interface DetectResponse {
-    /**
-     * 
-     * @type {Array<Detection>}
-     * @memberof DetectResponse
-     */
-    detections: Array<Detection>;
-    /**
-     * Internal.
-     * @type {number}
-     * @memberof DetectResponse
-     */
-    detectorType?: number;
-    /**
-     * Internal.
-     * @type {number}
-     * @memberof DetectResponse
-     */
-    landmarksType?: number;
-}
+export type DetectResponse = DetectResponseAllOf & FaceRecognitionResult;
+
 
 

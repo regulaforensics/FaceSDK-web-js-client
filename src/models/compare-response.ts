@@ -14,19 +14,15 @@
 
 
 import { CompareImageResult } from './compare-image-result';
+import { CompareResponseAllOf } from './compare-response-all-of';
+import { FaceRecognitionResult } from './face-recognition-result';
+import { FaceRecognitionResultCode } from './face-recognition-result-code';
 
 /**
- * 
+ * @type CompareResponse
  * @export
- * @interface CompareResponse
  */
-export interface CompareResponse {
-    /**
-     * 
-     * @type {Array<CompareImageResult>}
-     * @memberof CompareResponse
-     */
-    results: Array<CompareImageResult>;
-}
+export type CompareResponse = CompareResponseAllOf & FaceRecognitionResult;
+
 
 

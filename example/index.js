@@ -1,5 +1,5 @@
 import {
-  Sdk,
+  FaceSdk,
   ImageSource
 } from '@regulaforensics/face-recognition-webclient/esm';
 import fs from "fs";
@@ -10,7 +10,7 @@ import fs from "fs";
   const face1 = fs.readFileSync('face1.jpg').buffer
   const face2 = fs.readFileSync('face2.jpg').buffer
 
-  const sdk = new Sdk({basePath: apiBasePath})
+  const sdk = new FaceSdk({basePath: apiBasePath})
 
   const compareResponse = await sdk.matchingApi.compare({
     images: [

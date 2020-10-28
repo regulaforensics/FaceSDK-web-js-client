@@ -13,20 +13,20 @@
  */
 
 
-import { ImageData } from './image-data';
+import { FaceRecognitionResultCode } from './face-recognition-result-code';
 
 /**
  * 
  * @export
- * @interface ImageLivenessItem
+ * @interface FaceRecognitionResult
  */
-export interface ImageLivenessItem {
+export interface FaceRecognitionResult {
     /**
      * 
-     * @type {ImageData}
-     * @memberof ImageLivenessItem
+     * @type {FaceRecognitionResultCode}
+     * @memberof FaceRecognitionResult
      */
-    data: ImageData;
+    code: FaceRecognitionResultCode;
 }
 
 

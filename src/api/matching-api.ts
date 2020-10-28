@@ -46,7 +46,7 @@
                     if (compareRequest === null || compareRequest === undefined) {
                     throw new RequiredError('compareRequest','Required parameter compareRequest was null or undefined when calling compare.');
                     }
-            const localVarPath = `/compare`;
+            const localVarPath = `/api/compare`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
@@ -91,7 +91,7 @@
                     if (detectRequest === null || detectRequest === undefined) {
                     throw new RequiredError('detectRequest','Required parameter detectRequest was null or undefined when calling detect.');
                     }
-            const localVarPath = `/detect`;
+            const localVarPath = `/api/detect`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;

@@ -13,32 +13,32 @@
  */
 
 
-import { ImageData } from './image-data';
+import { Detection } from './detection';
 
 /**
  * 
  * @export
- * @interface DepthLivenessItem
+ * @interface DetectResult
  */
-export interface DepthLivenessItem {
+export interface DetectResult {
     /**
      * 
-     * @type {ImageData}
-     * @memberof DepthLivenessItem
+     * @type {Array<Detection>}
+     * @memberof DetectResult
      */
-    dataScene: ImageData;
+    detections: Array<Detection>;
     /**
-     * 
-     * @type {ImageData}
-     * @memberof DepthLivenessItem
-     */
-    dataDepth: ImageData;
-    /**
-     * Normalized factor for color depth.
+     * Internal.
      * @type {number}
-     * @memberof DepthLivenessItem
+     * @memberof DetectResult
      */
-    depthScale: number;
+    detectorType?: number;
+    /**
+     * Internal.
+     * @type {number}
+     * @memberof DetectResult
+     */
+    landmarksType?: number;
 }
 
 

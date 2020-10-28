@@ -29,7 +29,7 @@ Performing request:
 const face1 = fs.readFileSync('face1.jpg').buffer
 const face2 = fs.readFileSync('face2.jpg').buffer
 
-const sdk = new Sdk({basePath: "http://localhost:41101"})
+const sdk = new FaceSdk({basePath: "http://localhost:41101"})
 
 const compareResponse = await sdk.matchingApi.compare({
     images: [

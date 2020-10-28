@@ -13,16 +13,20 @@
  */
 
 
+import { DetectResult } from './detect-result';
 
 /**
  * 
  * @export
- * @enum {string}
+ * @interface DetectResponseAllOf
  */
-export enum LivenessStatus {
-    POSITIVE = 0,
-    UNDETERMINED = 1
+export interface DetectResponseAllOf {
+    /**
+     * 
+     * @type {DetectResult}
+     * @memberof DetectResponseAllOf
+     */
+    results: DetectResult;
 }
-
 
 

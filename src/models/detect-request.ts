@@ -32,7 +32,7 @@ export interface DetectRequest {
      * @type {boolean}
      * @memberof DetectRequest
      */
-    only_central_face?: boolean;
+    onlyCentralFace?: boolean;
 }
 
 

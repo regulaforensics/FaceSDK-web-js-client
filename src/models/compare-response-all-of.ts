@@ -13,20 +13,20 @@
  */
 
 
-import { ImageLivenessItem } from './image-liveness-item';
+import { CompareImageResult } from './compare-image-result';
 
 /**
  * 
  * @export
- * @interface ImageLiveness
+ * @interface CompareResponseAllOf
  */
-export interface ImageLiveness {
+export interface CompareResponseAllOf {
     /**
      * 
-     * @type {Array<ImageLivenessItem>}
-     * @memberof ImageLiveness
+     * @type {Array<CompareImageResult>}
+     * @memberof CompareResponseAllOf
      */
-    images: Array<ImageLivenessItem>;
+    results: Array<CompareImageResult>;
 }
 
 

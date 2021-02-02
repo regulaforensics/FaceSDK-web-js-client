@@ -32,6 +32,12 @@ export interface Detection {
      * @memberof Detection
      */
     roi: Array<number>;
+    /**
+     * Formatted base64 face detection image.
+     * @type {string}
+     * @memberof Detection
+     */
+    thumbnail?: string;
 }
 
 

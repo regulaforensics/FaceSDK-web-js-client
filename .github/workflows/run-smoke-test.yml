@@ -24,5 +24,4 @@ jobs:
       - run: node --unhandled-rejections=strict index.js
         working-directory: ./example
         env:
-          # todo fix url, when online service will be available
-          API_BASE_PATH: "http://test-api.regulaforensics.com"
+          API_BASE_PATH: "https://faceapi.regulaforensics.com"

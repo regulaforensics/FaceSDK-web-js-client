@@ -1,5 +1,6 @@
 api/matching-api.ts
 base.ts
+common.ts
 configuration.ts
 models/compare-image-result.ts
 models/compare-image.ts

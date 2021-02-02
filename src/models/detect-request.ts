@@ -28,6 +28,12 @@ export interface DetectRequest {
      */
     image?: ImageData;
     /**
+     * Enable formatted detections\' thumbnails in the response
+     * @type {boolean}
+     * @memberof DetectRequest
+     */
+    thumbnails?: boolean;
+    /**
      * True - main face; false - all faces.
      * @type {boolean}
      * @memberof DetectRequest

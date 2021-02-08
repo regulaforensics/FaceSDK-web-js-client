@@ -1,6 +1,7 @@
 api/matching-api.ts
 base.ts
 configuration.ts
+models/compare-image-detection.ts
 models/compare-image-result.ts
 models/compare-image.ts
 models/compare-request.ts
@@ -10,6 +11,7 @@ models/detect-request.ts
 models/detect-response-all-of.ts
 models/detect-response.ts
 models/detect-result.ts
+models/detection-face.ts
 models/detection.ts
 models/face-recognition-result-code.ts
 models/face-recognition-result.ts

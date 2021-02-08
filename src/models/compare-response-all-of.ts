@@ -13,6 +13,7 @@
  */
 
 
+import { CompareImageDetection } from './compare-image-detection';
 import { CompareImageResult } from './compare-image-result';
 
 /**
@@ -27,6 +28,12 @@ export interface CompareResponseAllOf {
      * @memberof CompareResponseAllOf
      */
     results: Array<CompareImageResult>;
+    /**
+     * 
+     * @type {Array<CompareImageDetection>}
+     * @memberof CompareResponseAllOf
+     */
+    detections: Array<CompareImageDetection>;
 }
 
 

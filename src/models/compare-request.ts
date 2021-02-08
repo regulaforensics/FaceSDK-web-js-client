@@ -23,6 +23,12 @@ import { CompareImage } from './compare-image';
 export interface CompareRequest {
     /**
      * 
+     * @type {boolean}
+     * @memberof CompareRequest
+     */
+    thumbnails?: boolean;
+    /**
+     * 
      * @type {Array<CompareImage>}
      * @memberof CompareRequest
      */

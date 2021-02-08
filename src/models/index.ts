@@ -1,4 +1,5 @@
 export * from './compare-image.js';
+export * from './compare-image-detection.js';
 export * from './compare-image-result.js';
 export * from './compare-request.js';
 export * from './compare-response.js';
@@ -8,6 +9,7 @@ export * from './detect-response.js';
 export * from './detect-response-all-of.js';
 export * from './detect-result.js';
 export * from './detection.js';
+export * from './detection-face.js';
 export * from './face-recognition-result.js';
 export * from './face-recognition-result-code.js';
 export * from './image-source.js';

@@ -13,6 +13,7 @@
  */
 
 
+import { CompareImageDetection } from './compare-image-detection';
 import { CompareImageResult } from './compare-image-result';
 import { CompareResponseAllOf } from './compare-response-all-of';
 import { FaceRecognitionResult } from './face-recognition-result';

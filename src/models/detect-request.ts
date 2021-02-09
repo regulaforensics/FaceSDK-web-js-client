@@ -34,6 +34,12 @@ export interface DetectRequest {
      */
     thumbnails?: boolean;
     /**
+     * Enable face attributions detection, such as age or emotion and etc.
+     * @type {boolean}
+     * @memberof DetectRequest
+     */
+    attributes?: boolean;
+    /**
      * True - main face; false - all faces.
      * @type {boolean}
      * @memberof DetectRequest

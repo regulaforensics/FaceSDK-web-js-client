@@ -14,10 +14,11 @@ import fs from "fs";
 
   const compareResponse = await sdk.matchingApi.compare({
     images: [
-      {type: ImageSource.LIVE, data: face1, index: 1},
-      {type: ImageSource.DOCUMENT_RFID, data: face1, index: 2},
-      {data: face2, index: 3},
-    ]
+      {type: ImageSource.LIVE, data: face1},
+      {type: ImageSource.DOCUMENT_RFID, data: face1},
+      {data: face2},
+    ],
+    thumbnails: true
   })
 
   console.log("-----------------------------------------------------------------")
@@ -29,8 +30,8 @@ import fs from "fs";
   console.log("-----------------------------------------------------------------")
 
   const detectResponse = await sdk.matchingApi.detect({
-    image: face1,
-    only_central_face: false
+    image: face1, onlyCentralFace: false,
+    thumbnails: true, attributes: true
   })
   const detectResults = detectResponse.results
 
@@ -41,6 +42,7 @@ import fs from "fs";
   for (const i of detectResults.detections) {
     console.log(`landmarks: ${JSON.stringify(i.landmarks)}`)
     console.log(`roi: ${JSON.stringify(i.roi)}`)
+    console.log(`attributes: ${JSON.stringify(i.attributes)}`)
   }
   console.log("-----------------------------------------------------------------")
 })();

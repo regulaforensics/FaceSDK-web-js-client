@@ -21,6 +21,12 @@
  */
 export interface Detection {
     /**
+     * 
+     * @type {{ [key: string]: object; }}
+     * @memberof Detection
+     */
+    attributes?: { [key: string]: object; };
+    /**
      * Main coordinates of the detected face (eyes, nose, lips, ears and etc.).
      * @type {Array<Array<number>>}
      * @memberof Detection

@@ -1,9 +1,9 @@
-# Regula Face Recognition js client for the browser and node.js based on axios
+# Regula Face SDK js client for the browser and node.js based on axios
 
 [![npm version](https://img.shields.io/npm/v/@regulaforensics/face-recognition-webclient?color=yellow&style=flat-square)](https://www.npmjs.com/package/@regulaforensics/face-recognition-webclient)
 ![npm type definitions](https://img.shields.io/npm/types/typescript?style=flat-square&collor=858df6)
 [![documentation](https://img.shields.io/badge/docs-en-f6858d?style=flat-square)](https://support.regulaforensics.com/hc/en-us/articles/115000916306-Documentation)
-[![OpenAPI](https://img.shields.io/badge/OpenAPI-defs-0a8c42?style=flat-square)](https://github.com/regulaforensics/FaceRecognition-web-openapi)
+[![OpenAPI](https://img.shields.io/badge/OpenAPI-defs-0a8c42?style=flat-square)](https://github.com/regulaforensics/FaceSDK-web-openapi)
 
 
 Face recognition as easy as reading two bytes.
@@ -13,8 +13,8 @@ Face recognition as easy as reading two bytes.
  - Liveness Detection - Perform liveness check using a selfie taken with the user’s smartphone.
 
 If you have any problems with or questions about this client, please contact us
-through a [GitHub issue](https://github.com/regulaforensics/FaceRecognition-web-js-client/issues).
-You are invited to contribute [new features, fixes, or updates](https://github.com/regulaforensics/FaceRecognition-web-js-client/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), large or small; We are always thrilled to receive pull requests, and do our best to process them as fast as we can. See [dev guide](./dev.md).
+through a [GitHub issue](https://github.com/regulaforensics/FaceSDK-web-js-client/issues).
+You are invited to contribute [new features, fixes, or updates](https://github.com/regulaforensics/FaceSDK-web-js-client/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), large or small; We are always thrilled to receive pull requests, and do our best to process them as fast as we can. See [dev guide](./dev.md).
 
 ## Install package
 

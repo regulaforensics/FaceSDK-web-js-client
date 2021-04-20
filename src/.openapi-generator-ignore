@@ -7,4 +7,3 @@ git_push.sh
 
 # fix es6 imports https://github.com/Microsoft/TypeScript/issues/13422
 index.ts
-api.ts

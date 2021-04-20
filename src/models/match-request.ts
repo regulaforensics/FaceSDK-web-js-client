@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Regula Face Recognition Web API
- * Regula Face Recognition Web API
+ * Regula FaceSDK Web API
+ * Regula FaceSDK Web API
  *
  * The version of the OpenAPI document: 0.1.0
  * 
@@ -13,26 +13,26 @@
  */
 
 
-import { CompareImage } from './compare-image';
+import { MatchImage } from './match-image';
 
 /**
  * 
  * @export
- * @interface CompareRequest
+ * @interface MatchRequest
  */
-export interface CompareRequest {
+export interface MatchRequest {
     /**
      * 
      * @type {boolean}
-     * @memberof CompareRequest
+     * @memberof MatchRequest
      */
     thumbnails?: boolean;
     /**
      * 
-     * @type {Array<CompareImage>}
-     * @memberof CompareRequest
+     * @type {Array<MatchImage>}
+     * @memberof MatchRequest
      */
-    images: Array<CompareImage>;
+    images: Array<MatchImage>;
 }
 
 

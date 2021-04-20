@@ -1,6 +1,6 @@
-# Regula Face SDK js client for the browser and node.js based on axios
+# Regula FaceSDK js client for the browser and node.js based on axios
 
-[![npm version](https://img.shields.io/npm/v/@regulaforensics/face-recognition-webclient?color=yellow&style=flat-square)](https://www.npmjs.com/package/@regulaforensics/face-recognition-webclient)
+[![npm version](https://img.shields.io/npm/v/@regulaforensics/facesdk-webclient?color=yellow&style=flat-square)](https://www.npmjs.com/package/@regulaforensics/facesdk-webclient)
 ![npm type definitions](https://img.shields.io/npm/types/typescript?style=flat-square&collor=858df6)
 [![documentation](https://img.shields.io/badge/docs-en-f6858d?style=flat-square)](https://support.regulaforensics.com/hc/en-us/articles/115000916306-Documentation)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-defs-0a8c42?style=flat-square)](https://github.com/regulaforensics/FaceSDK-web-openapi)
@@ -19,7 +19,7 @@ You are invited to contribute [new features, fixes, or updates](https://github.c
 ## Install package
 
 ```
-npm install @regulaforensics/face-recognition-webclient
+npm install @regulaforensics/facesdk-webclient
 ```
 ## Example of Face Matching
 
@@ -31,7 +31,7 @@ const face2 = fs.readFileSync('face2.jpg').buffer
 
 const sdk = new FaceSdk({basePath: "http://localhost:41101"})
 
-const compareResponse = await sdk.matchingApi.compare({
+const response = await sdk.matchingApi.match({
     images: [
         {type: ImageSource.LIVE, data: face1, index: 1},
         {type: ImageSource.DOCUMENT_RFID, data: face2, index: 2}
@@ -41,7 +41,7 @@ const compareResponse = await sdk.matchingApi.compare({
 
 Parsing results:
 ```js
-  for (const result of compareResponse.results) {
+  for (const result of response.results) {
   console.log(`pair(${result.firstIndex},${result.secondIndex})   similarity: ${result.similarity}`)
 }
 ```

@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Regula Face Recognition Web API
- * Regula Face Recognition Web API
+ * Regula FaceSDK Web API
+ * Regula FaceSDK Web API
  *
  * The version of the OpenAPI document: 0.1.0
  * 
@@ -19,25 +19,25 @@ import { ImageData } from './image-data';
 /**
  * 
  * @export
- * @interface CompareImage
+ * @interface MatchImage
  */
-export interface CompareImage {
+export interface MatchImage {
     /**
-     * 
+     * Image index used to identify input photos between themselves. If not specified, than input list index is used
      * @type {number}
-     * @memberof CompareImage
+     * @memberof MatchImage
      */
     index?: number;
     /**
      * 
      * @type {ImageSource}
-     * @memberof CompareImage
+     * @memberof MatchImage
      */
     type?: ImageSource;
     /**
      * 
      * @type {ImageData}
-     * @memberof CompareImage
+     * @memberof MatchImage
      */
     data: ImageData;
 }

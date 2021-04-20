@@ -1,4 +1,4 @@
-# Regula Face Recognition web API Node 8.0+ client
+# Regula FaceSDK web API Node 8.0+ client
 
 Requirements:
 - installed npm 6 or higher
@@ -14,8 +14,8 @@ node --version
 
 Cloning example:
 ```bash
-git clone git@github.com:regulaforensics/FaceRecognition-web-js-client.git
-cd FaceRecognition-web-js-client
+git clone git@github.com:regulaforensics/FaceSDK-web-js-client.git
+cd FaceSDK-web-js-client
 ```
 
 Setup project and download dependencies:
@@ -26,14 +26,14 @@ cd example
 npm install
 ```
 
-### Running with local Regula Face Recognition web API installation
+### Running with local Regula FaceSDK web API installation
 
 Assuming you have successfully launched instance, use next line command to run example:
 ```bash
 # from example folder
 node .
 
-# If Regula Face Recognition web API is running not on localhost, specify host via env variable:
+# If Regula FaceSDK web API is running not on localhost, specify host via env variable:
 API_BASE_PATH="http://192.168.0.101:41101" node .
 ```
 

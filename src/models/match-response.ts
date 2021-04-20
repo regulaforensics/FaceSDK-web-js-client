@@ -13,16 +13,17 @@
  */
 
 
-import { DetectResponseAllOf } from './detect-response-all-of';
-import { DetectResult } from './detect-result';
 import { FaceSDKResult } from './face-sdkresult';
 import { FaceSDKResultCode } from './face-sdkresult-code';
+import { MatchImageDetection } from './match-image-detection';
+import { MatchImageResult } from './match-image-result';
+import { MatchResponseAllOf } from './match-response-all-of';
 
 /**
- * @type DetectResponse
+ * @type MatchResponse
  * @export
  */
-export type DetectResponse = DetectResponseAllOf & FaceSDKResult;
+export type MatchResponse = FaceSDKResult & MatchResponseAllOf;
 
 
 

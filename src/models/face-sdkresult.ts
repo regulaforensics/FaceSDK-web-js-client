@@ -13,16 +13,20 @@
  */
 
 
-import { DetectResponseAllOf } from './detect-response-all-of';
-import { DetectResult } from './detect-result';
-import { FaceSDKResult } from './face-sdkresult';
 import { FaceSDKResultCode } from './face-sdkresult-code';
 
 /**
- * @type DetectResponse
+ * 
  * @export
+ * @interface FaceSDKResult
  */
-export type DetectResponse = DetectResponseAllOf & FaceSDKResult;
-
+export interface FaceSDKResult {
+    /**
+     * 
+     * @type {FaceSDKResultCode}
+     * @memberof FaceSDKResult
+     */
+    code: FaceSDKResultCode;
+}
 
 

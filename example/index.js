@@ -1,7 +1,7 @@
 import {
   FaceSdk,
   ImageSource
-} from '@regulaforensics/face-recognition-webclient/esm';
+} from '@regulaforensics/facesdk-webclient/esm';
 import fs from "fs";
 
 (async () => {
@@ -12,7 +12,7 @@ import fs from "fs";
 
   const sdk = new FaceSdk({basePath: apiBasePath})
 
-  const compareResponse = await sdk.matchingApi.compare({
+  const matchingResponse = await sdk.matchingApi.match({
     images: [
       {type: ImageSource.LIVE, data: face1},
       {type: ImageSource.DOCUMENT_RFID, data: face1},
@@ -24,7 +24,7 @@ import fs from "fs";
   console.log("-----------------------------------------------------------------")
   console.log("                         Compare Results                         ")
   console.log("-----------------------------------------------------------------")
-  for (const result of compareResponse.results) {
+  for (const result of matchingResponse.results) {
     console.log(`pair(${result.firstIndex},${result.secondIndex})   similarity: ${result.similarity}`)
   }
   console.log("-----------------------------------------------------------------")

@@ -1,10 +1,11 @@
 {
-  "name": "@regulaforensics/face-recognition-webclient",
+  "name": "@regulaforensics/facesdk-webclient",
   "version": "1.2.0-beta.0",
-  "description": "OpenAPI client for face api",
+  "description": "JS client for facesdk web service",
   "author": "Regula Forensics, Inc.",
   "keywords": [
-    "face-api-client",
+    "face recognition",
+    "facesdk",
     "regulaforensics",
     "regula"
   ],

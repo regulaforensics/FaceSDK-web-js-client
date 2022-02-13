@@ -1,0 +1,7 @@
+{
+  "name": "@regulaforensics/facesdk-webclient-example",
+  "type": "module",
+  "dependencies": {
+    "@regulaforensics/facesdk-webclient": "file:../.."
+  }
+}

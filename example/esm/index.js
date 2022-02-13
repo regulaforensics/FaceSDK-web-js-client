@@ -7,8 +7,8 @@ import fs from "fs";
 (async () => {
   let apiBasePath = process.env.API_BASE_PATH || "https://faceapi.regulaforensics.com"
 
-  const face1 = fs.readFileSync('face1.jpg').buffer
-  const face2 = fs.readFileSync('face2.jpg').buffer
+  const face1 = fs.readFileSync('../face1.jpg').buffer
+  const face2 = fs.readFileSync('../face2.jpg').buffer
 
   const sdk = new FaceSdk({basePath: apiBasePath})
 

@@ -22,7 +22,13 @@ Setup project and download dependencies:
 ```bash
 npm install
 npm run build
-cd example
+
+# cjs
+cd example/cjs
+npm install
+
+# esm
+cd example/esm
 npm install
 ```
 

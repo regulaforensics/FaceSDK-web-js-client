@@ -5,7 +5,7 @@ import {
 import fs from "fs";
 
 (async () => {
-  let apiBasePath = process.env.API_BASE_PATH || "http://localhost:41101"
+  let apiBasePath = process.env.API_BASE_PATH || "https://faceapi.regulaforensics.com"
 
   const face1 = fs.readFileSync('face1.jpg').buffer
   const face2 = fs.readFileSync('face2.jpg').buffer
@@ -13,6 +13,7 @@ import fs from "fs";
   const sdk = new FaceSdk({basePath: apiBasePath})
 
   const matchingResponse = await sdk.matchingApi.match({
+    tag: "1",
     images: [
       {type: ImageSource.LIVE, data: face1},
       {type: ImageSource.DOCUMENT_RFID, data: face1},
@@ -30,6 +31,7 @@ import fs from "fs";
   console.log("-----------------------------------------------------------------")
 
   const detectResponse = await sdk.matchingApi.detect({
+    tag: "1",
     image: face1, onlyCentralFace: false,
     thumbnails: true, attributes: true
   })

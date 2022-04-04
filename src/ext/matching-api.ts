@@ -24,7 +24,7 @@ export class MatchingApi extends GenMatchingApi {
   }
 
   detect(detectRequest: DetectRequest, options?: any): Promise<DetectResponse> {
-    if (typeof detectRequest.image !== "string") {
+    if (detectRequest.image && typeof detectRequest.image !== "string") {
       detectRequest.image = converter.encode(detectRequest.image)
     }
     return super.detectGen(detectRequest, options).then(r => r.data)

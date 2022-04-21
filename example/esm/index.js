@@ -34,8 +34,19 @@ import fs from "fs";
 
     const detectRequest = {
         tag: 1,
-        image: face1, onlyCentralFace: false,
-        thumbnails: true, quality: {align: {type: 1, pad: [128, 128, 128]}, background: [128, 128, 128], config: config}
+        image: face1,
+        onlyCentralFace: false,
+        thumbnails: true,
+        quality:
+            {
+                align:
+                    {
+                        type: 1,
+                        pad: [128, 128, 128]
+                    },
+                background: [128, 128, 128],
+                config: config
+            }
     }
     const detectResponse = await sdk.matchingApi.detect(detectRequest)
     const detectResults = detectResponse.results

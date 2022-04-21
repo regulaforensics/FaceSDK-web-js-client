@@ -30,4 +30,4 @@ jobs:
       - run: node --unhandled-rejections=strict index.js
         working-directory: ./example/cjs
         env:
-          API_BASE_PATH: "https://test-faceapi.regulaforensics.com"
+          API_BASE_PATH: "https://faceapi.regulaforensics.com"

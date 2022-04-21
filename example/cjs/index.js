@@ -32,11 +32,14 @@ const fs = require("fs");
     const config = JSON.parse(fs.readFileSync('../quality-config.json', 'utf-8').toString())
 
     const detectRequest = {
+        tag: 1,
         image: face1, onlyCentralFace: false,
         thumbnails: true, quality: {align: {type: 1, pad: [128, 128, 128]}, background: [128, 128, 128], config: config}
     }
     const detectResponse = await sdk.matchingApi.detect(detectRequest)
     const detectResults = detectResponse.results
+
+
 
     console.log("                         Detect Results                          ")
     console.log("-----------------------------------------------------------------")
@@ -45,7 +48,8 @@ const fs = require("fs");
     for (const i of detectResults.detections) {
         console.log(`landmarks: ${JSON.stringify(i.landmarks)}`)
         console.log(`roi: ${JSON.stringify(i.roi)}`)
-        console.log(`attributes: ${JSON.stringify(i.attributes)}`)
+        console.log(`quality details: ${JSON.stringify(i.quality.details)}`)
+        fs.writeFileSync("../croppedFace.png", i.crop, 'base64')
     }
     console.log("-----------------------------------------------------------------")
 })();

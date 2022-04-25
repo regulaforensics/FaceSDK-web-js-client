@@ -13,7 +13,9 @@
  */
 
 
+import { FaceQualityConfigName } from './face-quality-config-name';
 import { FaceQualityStatus } from './face-quality-status';
+import { FaceQualityUnit } from './face-quality-unit';
 
 /**
  * 
@@ -23,10 +25,10 @@ import { FaceQualityStatus } from './face-quality-status';
 export interface QualityDetail {
     /**
      * 
-     * @type {string}
+     * @type {FaceQualityConfigName}
      * @memberof QualityDetail
      */
-    name?: string;
+    name?: FaceQualityConfigName;
     /**
      * 
      * @type {Array<number>}
@@ -41,10 +43,10 @@ export interface QualityDetail {
     status?: FaceQualityStatus;
     /**
      * 
-     * @type {string}
+     * @type {FaceQualityUnit}
      * @memberof QualityDetail
      */
-    unit?: string;
+    unit?: FaceQualityUnit;
     /**
      * 
      * @type {number}

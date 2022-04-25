@@ -13,6 +13,8 @@
  */
 
 
+import { FaceQualityConfigName } from './face-quality-config-name';
+import { FaceQualityUnit } from './face-quality-unit';
 
 /**
  * 
@@ -22,10 +24,10 @@
 export interface QualityConfig {
     /**
      * 
-     * @type {string}
+     * @type {FaceQualityConfigName}
      * @memberof QualityConfig
      */
-    name?: string;
+    name?: FaceQualityConfigName;
     /**
      * 
      * @type {Array<number>}
@@ -34,10 +36,10 @@ export interface QualityConfig {
     range?: Array<number>;
     /**
      * 
-     * @type {string}
+     * @type {FaceQualityUnit}
      * @memberof QualityConfig
      */
-    unit?: string;
+    unit?: FaceQualityUnit;
 }
 
 

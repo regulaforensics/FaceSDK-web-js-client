@@ -13,6 +13,7 @@
  */
 
 
+import { QualityRequest } from './quality-request';
 import { ImageData } from './image-data';
 
 /**
@@ -27,6 +28,12 @@ export interface DetectRequest {
      * @memberof DetectRequest
      */
     tag?: string;
+    /**
+     * 
+     * @type {QualityRequest}
+     * @memberof DetectRequest
+     */
+    quality?: QualityRequest;
     /**
      * 
      * @type {ImageData}

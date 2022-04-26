@@ -2,12 +2,19 @@ api.ts
 api/matching-api.ts
 base.ts
 configuration.ts
+models/align.ts
 models/detect-request.ts
 models/detect-response-all-of.ts
 models/detect-response.ts
 models/detect-result.ts
 models/detection-face.ts
+models/detection-quality.ts
 models/detection.ts
+models/face-align-type-quality.ts
+models/face-quality-config-name.ts
+models/face-quality-details-groups.ts
+models/face-quality-status.ts
+models/face-quality-unit.ts
 models/face-sdkresult-code.ts
 models/face-sdkresult.ts
 models/image-source.ts
@@ -18,3 +25,7 @@ models/match-image.ts
 models/match-request.ts
 models/match-response-all-of.ts
 models/match-response.ts
+models/quality-config.ts
+models/quality-detail.ts
+models/quality-details-groups.ts
+models/quality-request.ts

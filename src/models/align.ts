@@ -16,7 +16,7 @@
 import { FaceAlignTypeQuality } from './face-align-type-quality';
 
 /**
- * 
+ * Face image alignment and cutting, includes type, pad, cropSize.
  * @export
  * @interface Align
  */
@@ -28,13 +28,13 @@ export interface Align {
      */
     type?: FaceAlignTypeQuality;
     /**
-     * Array of RGB color
+     * 
      * @type {Array<number>}
      * @memberof Align
      */
     pad?: Array<number>;
     /**
-     * 
+     * The resize value in case type matches this value. It it doesn\'t match, no resize is done.
      * @type {Array<number>}
      * @memberof Align
      */

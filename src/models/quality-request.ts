@@ -17,7 +17,7 @@ import { Align } from './align';
 import { QualityConfig } from './quality-config';
 
 /**
- * 
+ * If set, the portrait quality check is performed.
  * @export
  * @interface QualityRequest
  */
@@ -29,7 +29,7 @@ export interface QualityRequest {
      */
     align?: Align;
     /**
-     * Array of RGB color
+     * 
      * @type {Array<number>}
      * @memberof QualityRequest
      */

@@ -17,7 +17,7 @@ import { FaceQualityConfigName } from './face-quality-config-name';
 import { FaceQualityUnit } from './face-quality-unit';
 
 /**
- * 
+ * The configuration that defines the list of returned quality check characteristics. For every characteristic, includes name, range, unit.
  * @export
  * @interface QualityConfig
  */
@@ -29,7 +29,7 @@ export interface QualityConfig {
      */
     name?: FaceQualityConfigName;
     /**
-     * 
+     * The range of applicable values for this characteristic. If the returned in the Response value fits this range, the value is identified as compliant with the requirements.
      * @type {Array<number>}
      * @memberof QualityConfig
      */

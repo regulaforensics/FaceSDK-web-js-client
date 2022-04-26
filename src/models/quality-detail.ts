@@ -14,6 +14,7 @@
 
 
 import { FaceQualityConfigName } from './face-quality-config-name';
+import { FaceQualityDetailsGroups } from './face-quality-details-groups';
 import { FaceQualityStatus } from './face-quality-status';
 import { FaceQualityUnit } from './face-quality-unit';
 
@@ -25,12 +26,18 @@ import { FaceQualityUnit } from './face-quality-unit';
 export interface QualityDetail {
     /**
      * 
+     * @type {FaceQualityDetailsGroups}
+     * @memberof QualityDetail
+     */
+    groupId?: FaceQualityDetailsGroups;
+    /**
+     * 
      * @type {FaceQualityConfigName}
      * @memberof QualityDetail
      */
     name?: FaceQualityConfigName;
     /**
-     * 
+     * The range of set values for this characteristic.
      * @type {Array<number>}
      * @memberof QualityDetail
      */
@@ -48,7 +55,7 @@ export interface QualityDetail {
      */
     unit?: FaceQualityUnit;
     /**
-     * 
+     * The assessed value for the characteristic, returned in the set units.
      * @type {number}
      * @memberof QualityDetail
      */

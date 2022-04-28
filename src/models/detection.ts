@@ -13,6 +13,8 @@
  */
 
 
+import { DetectionQuality } from './detection-quality';
+import { ImageData } from './image-data';
 
 /**
  * 
@@ -20,6 +22,12 @@
  * @interface Detection
  */
 export interface Detection {
+    /**
+     * 
+     * @type {ImageData}
+     * @memberof Detection
+     */
+    crop?: ImageData;
     /**
      * 
      * @type {{ [key: string]: object; }}
@@ -32,6 +40,12 @@ export interface Detection {
      * @memberof Detection
      */
     landmarks: Array<Array<number>>;
+    /**
+     * 
+     * @type {DetectionQuality}
+     * @memberof Detection
+     */
+    quality?: DetectionQuality;
     /**
      * Rectangular area of the detected face. First element - X-axis coordinate. Second element - Y-axis coordinate. (X, Y) - left top point. Third element - rectangular width. Fourth element - rectangular height.
      * @type {Array<number>}

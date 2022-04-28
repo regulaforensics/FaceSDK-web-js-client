@@ -13,7 +13,7 @@
  */
 
 
-import { FaceQualityDetailsGroups } from './face-quality-details-groups';
+import { FaceImageQualityGroups } from './face-image-quality-groups';
 
 /**
  * 
@@ -23,28 +23,28 @@ import { FaceQualityDetailsGroups } from './face-quality-details-groups';
 export interface QualityDetailsGroups {
     /**
      * 
-     * @type {FaceQualityDetailsGroups}
+     * @type {FaceImageQualityGroups}
      * @memberof QualityDetailsGroups
      */
-    groupId?: FaceQualityDetailsGroups;
+    groupId?: FaceImageQualityGroups;
     /**
-     * 
+     * The name of the characteristics group.
      * @type {string}
      * @memberof QualityDetailsGroups
      */
     name?: string;
     /**
-     * 
+     * The total number of characteristics in the group.
      * @type {number}
      * @memberof QualityDetailsGroups
      */
-    total?: number;
+    totalCount?: number;
     /**
-     * 
+     * The number of compliant characteristics in the group.
      * @type {number}
      * @memberof QualityDetailsGroups
      */
-    compliant?: number;
+    compliantCount?: number;
 }
 
 

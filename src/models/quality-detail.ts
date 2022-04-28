@@ -13,8 +13,8 @@
  */
 
 
+import { FaceImageQualityGroups } from './face-image-quality-groups';
 import { FaceQualityConfigName } from './face-quality-config-name';
-import { FaceQualityDetailsGroups } from './face-quality-details-groups';
 import { FaceQualityStatus } from './face-quality-status';
 import { FaceQualityUnit } from './face-quality-unit';
 
@@ -26,10 +26,10 @@ import { FaceQualityUnit } from './face-quality-unit';
 export interface QualityDetail {
     /**
      * 
-     * @type {FaceQualityDetailsGroups}
+     * @type {FaceImageQualityGroups}
      * @memberof QualityDetail
      */
-    groupId?: FaceQualityDetailsGroups;
+    groupId?: FaceImageQualityGroups;
     /**
      * 
      * @type {FaceQualityConfigName}

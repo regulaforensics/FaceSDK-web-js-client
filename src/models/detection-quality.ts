@@ -36,13 +36,13 @@ export interface DetectionQuality {
      */
     compliant?: boolean;
     /**
-     * 
+     * The array of all the non-compliant assessment characteristics.
      * @type {Array<FaceQualityConfigName>}
      * @memberof DetectionQuality
      */
     nonCompliant?: Array<FaceQualityConfigName>;
     /**
-     * 
+     * The array of the assessment results for each group of characteristics. Includes groupId, name, total, compliantCount.
      * @type {Array<QualityDetailsGroups>}
      * @memberof DetectionQuality
      */

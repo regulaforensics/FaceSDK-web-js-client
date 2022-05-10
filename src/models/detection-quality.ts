@@ -18,7 +18,7 @@ import { QualityDetail } from './quality-detail';
 import { QualityDetailsGroups } from './quality-details-groups';
 
 /**
- * Returned if the quality assessment was performed.
+ * Field for checking the portrait quality. If it is not mentioned, no quality check is performed.
  * @export
  * @interface DetectionQuality
  */
@@ -48,7 +48,7 @@ export interface DetectionQuality {
      */
     detailsGroups?: Array<QualityDetailsGroups>;
     /**
-     * 
+     * The array of the assessment characteristics that were set in the request. Includes name, range, status, unit, value.
      * @type {Array<QualityDetail>}
      * @memberof DetectionQuality
      */

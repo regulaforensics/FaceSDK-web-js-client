@@ -13,6 +13,7 @@
  */
 
 
+import { ProcessParam } from './process-param';
 import { ImageData } from './image-data';
 
 /**
@@ -27,6 +28,12 @@ export interface DetectRequest {
      * @memberof DetectRequest
      */
     tag?: string;
+    /**
+     * 
+     * @type {ProcessParam}
+     * @memberof DetectRequest
+     */
+    processParam?: ProcessParam;
     /**
      * 
      * @type {ImageData}

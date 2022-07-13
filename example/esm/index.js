@@ -1,6 +1,7 @@
 import {
     FaceSdk,
-    ImageSource
+    ImageSource,
+    FaceQualityScenarios
 } from '@regulaforensics/facesdk-webclient/esm';
 import fs from "fs";
 
@@ -33,7 +34,7 @@ import fs from "fs";
 
     const detectRequest = {
         processParam: {
-            scenario: "QualityFull",
+            scenario: FaceQualityScenarios.QUALITY_FULL,
             onlyCentralFace: false,
             outputImageParams: {
                 backgroundColor: [128, 128, 128],
@@ -53,11 +54,12 @@ import fs from "fs";
     const detectResponse = await sdk.matchingApi.detect(detectRequest)
     const detectResults = detectResponse.results
 
-
     console.log("                         Detect Results                          ")
     console.log("-----------------------------------------------------------------")
     console.log(`detectorType: ${detectResults.detectorType}`)
     console.log(`landmarkType: ${detectResults.landmarksType}`)
+    console.log(`Scenario: ${detectResults.scenario}`)
+
     for (const i of detectResults.detections) {
         console.log(`landmarks: ${JSON.stringify(i.landmarks)}`)
         console.log(`roi: ${JSON.stringify(i.roi)}`)

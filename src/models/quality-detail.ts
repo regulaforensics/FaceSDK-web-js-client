@@ -16,7 +16,6 @@
 import { FaceImageQualityGroups } from './face-image-quality-groups';
 import { FaceQualityConfigName } from './face-quality-config-name';
 import { FaceQualityStatus } from './face-quality-status';
-import { FaceQualityUnit } from './face-quality-unit';
 
 /**
  * 
@@ -48,12 +47,6 @@ export interface QualityDetail {
      * @memberof QualityDetail
      */
     status?: FaceQualityStatus;
-    /**
-     * 
-     * @type {FaceQualityUnit}
-     * @memberof QualityDetail
-     */
-    unit?: FaceQualityUnit;
     /**
      * The assessed value for the characteristic, returned in the set units.
      * @type {number}

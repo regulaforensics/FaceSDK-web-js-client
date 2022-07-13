@@ -19,12 +19,14 @@
  * @export
  * @enum {string}
  */
-export enum FaceAlignTypeQuality {
-    ALIGN_3x4 = 0,
-    ALIGN_4x5 = 1,
-    ALIGN_2x3 = 2,
-    ALIGN_1x1 = 3,
-    ALIGN_7x9 = 4
+export enum FaceQualityScenarios {
+    QUALITY_FULL = 'QualityFull',
+    QUALITY_ICAO = 'QualityICAO',
+    QUALITY_VISA_SCHENGEN = 'QualityVisaSchengen',
+    QUALITY_VISA_USA = 'QualityVisaUSA',
+    CROP_CENTRAL_FACE = 'CropCentralFace',
+    CROP_ALL_FACES = 'CropAllFaces',
+    THUMBNAIL = 'Thumbnail'
 }
 
 

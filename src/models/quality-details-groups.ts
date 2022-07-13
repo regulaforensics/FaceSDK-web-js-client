@@ -14,6 +14,7 @@
 
 
 import { FaceImageQualityGroups } from './face-image-quality-groups';
+import { FaceQualityConfigName } from './face-quality-config-name';
 
 /**
  * 
@@ -28,11 +29,11 @@ export interface QualityDetailsGroups {
      */
     groupId?: FaceImageQualityGroups;
     /**
-     * The name of the characteristics group.
-     * @type {string}
+     * 
+     * @type {FaceQualityConfigName}
      * @memberof QualityDetailsGroups
      */
-    name?: string;
+    name?: FaceQualityConfigName;
     /**
      * The total number of characteristics in the group.
      * @type {number}

@@ -61,9 +61,7 @@ export enum FaceQualityConfigName {
     MOUTH_OPEN = 'MouthOpen',
     CONTACT_LENSES = 'ContactLenses',
     FOREHEAD_COVERING = 'ForeheadCovering',
-    STRONG_MAKEUP = 'StrongMakeup',
-    SMILE = 'Smile',
-    PADDING_RATIO = 'PaddingRatio'
+    SMILE = 'Smile'
 }
 
 

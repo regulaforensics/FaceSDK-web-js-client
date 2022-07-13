@@ -24,18 +24,6 @@ import { QualityDetailsGroups } from './quality-details-groups';
  */
 export interface DetectionQuality {
     /**
-     * Returns true if alignment was done. Otherwise, false.
-     * @type {boolean}
-     * @memberof DetectionQuality
-     */
-    aligned?: boolean;
-    /**
-     * Returns the portrait quality assessment result. True if all the checked characteristics returned values that fit into the range. Otherwise, false.
-     * @type {boolean}
-     * @memberof DetectionQuality
-     */
-    compliant?: boolean;
-    /**
      * The array of all the non-compliant assessment characteristics.
      * @type {Array<FaceQualityConfigName>}
      * @memberof DetectionQuality
@@ -54,17 +42,17 @@ export interface DetectionQuality {
      */
     details?: Array<QualityDetail>;
     /**
-     * Returns true if the image was resized according to the set dimensions. Otherwise, false.
-     * @type {boolean}
-     * @memberof DetectionQuality
-     */
-    resized?: boolean;
-    /**
      * Returns the estimated portrait quality assessment result, a number from 0 to 1, where 1 is for absolute compliance.
      * @type {number}
      * @memberof DetectionQuality
      */
     score?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof DetectionQuality
+     */
+    timer?: number;
 }
 
 

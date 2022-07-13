@@ -13,7 +13,7 @@
  */
 
 
-import { QualityRequest } from './quality-request';
+import { ProcessParam } from './process-param';
 import { ImageData } from './image-data';
 
 /**
@@ -30,10 +30,10 @@ export interface DetectRequest {
     tag?: string;
     /**
      * 
-     * @type {QualityRequest}
+     * @type {ProcessParam}
      * @memberof DetectRequest
      */
-    quality?: QualityRequest;
+    processParam?: ProcessParam;
     /**
      * 
      * @type {ImageData}

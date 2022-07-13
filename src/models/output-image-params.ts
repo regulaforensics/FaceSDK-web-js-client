@@ -13,26 +13,26 @@
  */
 
 
-import { QualityConfig } from './quality-config';
+import { Crop } from './crop';
 
 /**
- * If set, the portrait quality check is performed.
+ * 
  * @export
- * @interface QualityRequest
+ * @interface OutputImageParams
  */
-export interface QualityRequest {
+export interface OutputImageParams {
     /**
      * 
      * @type {Array<number>}
-     * @memberof QualityRequest
+     * @memberof OutputImageParams
      */
-    backgroundMatchColor?: Array<number>;
+    backgroundColor?: Array<number>;
     /**
      * 
-     * @type {Array<QualityConfig>}
-     * @memberof QualityRequest
+     * @type {Crop}
+     * @memberof OutputImageParams
      */
-    config?: Array<QualityConfig>;
+    crop?: Crop;
 }
 
 

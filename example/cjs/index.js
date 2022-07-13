@@ -32,24 +32,26 @@ const fs = require("fs");
     const config = JSON.parse(fs.readFileSync('../quality-config.json', 'utf-8').toString())
 
     const detectRequest = {
+        processParam: {
+            scenario: "QualityFull",
+            onlyCentralFace: false,
+            outputImageParams: {
+                backgroundColor: [128, 128, 128],
+                crop: {type: 0, padColor: [128, 128, 128], size: [300, 400]}
+            },
+            quality:
+                {
+                    backgroundMatchColor: [128, 128, 128],
+                    config: config
+                }
+        },
         tag: 1,
         image: face1,
         onlyCentralFace: false,
         thumbnails: true,
-        quality:
-            {
-                align:
-                    {
-                        type: 1,
-                        pad: [128, 128, 128]
-                    },
-                background: [128, 128, 128],
-                config: config
-            }
     }
     const detectResponse = await sdk.matchingApi.detect(detectRequest)
     const detectResults = detectResponse.results
-
 
 
     console.log("                         Detect Results                          ")
@@ -59,7 +61,10 @@ const fs = require("fs");
     for (const i of detectResults.detections) {
         console.log(`landmarks: ${JSON.stringify(i.landmarks)}`)
         console.log(`roi: ${JSON.stringify(i.roi)}`)
-        console.log(`quality details: ${JSON.stringify(i.quality.details)}`)
+        console.log('--------------------Quality Details--------------------------')
+        for (const qualityDetail of i.quality.details) {
+            console.log(`${qualityDetail.name}  ${qualityDetail.value}`)
+        }
         fs.writeFileSync("../croppedFace.png", i.crop, 'base64')
     }
     console.log("-----------------------------------------------------------------")

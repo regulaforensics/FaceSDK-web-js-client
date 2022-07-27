@@ -14,8 +14,18 @@
 
 
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * 
+ * @export
+ * @interface RecognizeImageAllOf
+ */
+export interface RecognizeImageAllOf {
+    /**
+     * 
+     * @type {number}
+     * @memberof RecognizeImageAllOf
+     */
+    similarity?: number;
+}
+
 

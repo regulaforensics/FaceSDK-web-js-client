@@ -13,9 +13,14 @@
  */
 
 
+import { PersonAllOf } from './person-all-of';
+import { PersonFields } from './person-fields';
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * @type Person
+ * @export
+ */
+export type Person = PersonAllOf & PersonFields;
+
+
 

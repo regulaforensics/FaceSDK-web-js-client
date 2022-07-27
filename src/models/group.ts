@@ -13,9 +13,14 @@
  */
 
 
+import { GroupAllOf } from './group-all-of';
+import { GroupToCreate } from './group-to-create';
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * @type Group
+ * @export
+ */
+export type Group = GroupAllOf & GroupToCreate;
+
+
 

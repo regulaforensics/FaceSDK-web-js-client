@@ -13,9 +13,20 @@
  */
 
 
+import { ImageFields } from './image-fields';
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * 
+ * @export
+ * @interface InlineObject
+ */
+export interface InlineObject {
+    /**
+     * 
+     * @type {ImageFields}
+     * @memberof InlineObject
+     */
+    image?: ImageFields;
+}
+
 

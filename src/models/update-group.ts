@@ -14,8 +14,24 @@
 
 
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * 
+ * @export
+ * @interface UpdateGroup
+ */
+export interface UpdateGroup {
+    /**
+     * 
+     * @type {Array<number>}
+     * @memberof UpdateGroup
+     */
+    addItems?: Array<number>;
+    /**
+     * 
+     * @type {Array<number>}
+     * @memberof UpdateGroup
+     */
+    removeItems?: Array<number>;
+}
+
 

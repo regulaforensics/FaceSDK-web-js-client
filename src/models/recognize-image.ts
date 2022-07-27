@@ -13,9 +13,14 @@
  */
 
 
+import { Image } from './image';
+import { RecognizeImageAllOf } from './recognize-image-all-of';
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * @type RecognizeImage
+ * @export
+ */
+export type RecognizeImage = Image & RecognizeImageAllOf;
+
+
 

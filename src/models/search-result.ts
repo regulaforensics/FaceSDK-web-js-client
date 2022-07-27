@@ -13,9 +13,15 @@
  */
 
 
+import { RecognizeImage } from './recognize-image';
+import { SearchPerson } from './search-person';
+import { SearchResultAllOf } from './search-result-all-of';
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * @type SearchResult
+ * @export
+ */
+export type SearchResult = SearchPerson & SearchResultAllOf;
+
+
 

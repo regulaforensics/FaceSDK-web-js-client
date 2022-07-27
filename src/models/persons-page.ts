@@ -13,9 +13,15 @@
  */
 
 
+import { Page } from './page';
+import { Person } from './person';
+import { PersonsPageAllOf } from './persons-page-all-of';
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * @type PersonsPage
+ * @export
+ */
+export type PersonsPage = Page & PersonsPageAllOf;
+
+
 

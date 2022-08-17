@@ -14,8 +14,24 @@
 
 
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * 
+ * @export
+ * @interface GroupAllOf
+ */
+export interface GroupAllOf {
+    /**
+     * 
+     * @type {number}
+     * @memberof GroupAllOf
+     */
+    id?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GroupAllOf
+     */
+    created_at?: string;
+}
+
 

@@ -13,9 +13,20 @@
  */
 
 
+import { RecognizeImage } from './recognize-image';
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * 
+ * @export
+ * @interface SearchPersonAllOf
+ */
+export interface SearchPersonAllOf {
+    /**
+     * 
+     * @type {Array<RecognizeImage>}
+     * @memberof SearchPersonAllOf
+     */
+    images?: Array<RecognizeImage>;
+}
+
 

@@ -13,31 +13,42 @@
  */
 
 
-import { MatchImage } from './match-image';
 
 /**
  * 
  * @export
- * @interface MatchRequest
+ * @interface Image
  */
-export interface MatchRequest {
+export interface Image {
+    /**
+     * 
+     * @type {number}
+     * @memberof Image
+     */
+    'id'?: number;
     /**
      * 
      * @type {string}
-     * @memberof MatchRequest
+     * @memberof Image
      */
-    'tag'?: string;
+    'content_type'?: string;
     /**
      * 
-     * @type {boolean}
-     * @memberof MatchRequest
+     * @type {string}
+     * @memberof Image
      */
-    'thumbnails'?: boolean;
+    'created_at'?: string;
     /**
      * 
-     * @type {Array<MatchImage>}
-     * @memberof MatchRequest
+     * @type {string}
+     * @memberof Image
      */
-    'images': Array<MatchImage>;
+    'path'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Image
+     */
+    'url'?: string;
 }
 

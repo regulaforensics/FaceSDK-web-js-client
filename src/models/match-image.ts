@@ -27,19 +27,18 @@ export interface MatchImage {
      * @type {number}
      * @memberof MatchImage
      */
-    index?: number;
+    'index'?: number;
     /**
      * 
      * @type {ImageSource}
      * @memberof MatchImage
      */
-    type?: ImageSource;
+    'type'?: ImageSource;
     /**
      * 
      * @type {ImageData}
      * @memberof MatchImage
      */
-    data: ImageData;
+    'data': ImageData;
 }
-
 

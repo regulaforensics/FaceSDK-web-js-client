@@ -26,19 +26,18 @@ export interface DetectResult {
      * @type {Array<Detection>}
      * @memberof DetectResult
      */
-    detections: Array<Detection>;
+    'detections': Array<Detection>;
     /**
      * Internal.
      * @type {number}
      * @memberof DetectResult
      */
-    detectorType?: number;
+    'detectorType'?: number;
     /**
      * Internal.
      * @type {number}
      * @memberof DetectResult
      */
-    landmarksType?: number;
+    'landmarksType'?: number;
 }
-
 

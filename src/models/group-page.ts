@@ -13,9 +13,14 @@
  */
 
 
+import { Group } from './group';
+import { GroupPageAllOf } from './group-page-all-of';
+import { Page } from './page';
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * @type GroupPage
+ * @export
+ */
+export type GroupPage = GroupPageAllOf & Page;
+
 

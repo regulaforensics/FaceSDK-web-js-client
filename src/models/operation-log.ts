@@ -13,31 +13,30 @@
  */
 
 
-import { MatchImage } from './match-image';
 
 /**
  * 
  * @export
- * @interface MatchRequest
+ * @interface OperationLog
  */
-export interface MatchRequest {
+export interface OperationLog {
+    /**
+     * 
+     * @type {number}
+     * @memberof OperationLog
+     */
+    'status_code'?: number;
     /**
      * 
      * @type {string}
-     * @memberof MatchRequest
+     * @memberof OperationLog
      */
-    'tag'?: string;
+    'type'?: string;
     /**
      * 
-     * @type {boolean}
-     * @memberof MatchRequest
+     * @type {string}
+     * @memberof OperationLog
      */
-    'thumbnails'?: boolean;
-    /**
-     * 
-     * @type {Array<MatchImage>}
-     * @memberof MatchRequest
-     */
-    'images': Array<MatchImage>;
+    'msg'?: string;
 }
 

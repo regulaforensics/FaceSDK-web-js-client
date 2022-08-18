@@ -25,25 +25,24 @@ export interface DetectionFace {
      * @type {number}
      * @memberof DetectionFace
      */
-    faceIndex?: number;
+    'faceIndex'?: number;
     /**
      * Main coordinates of the detected face (eyes, nose, lips, ears and etc.).
      * @type {Array<Array<number>>}
      * @memberof DetectionFace
      */
-    landmarks?: Array<Array<number>>;
+    'landmarks'?: Array<Array<number>>;
     /**
      * Rectangular area of the detected face. First element - X-axis coordinate. Second element - Y-axis coordinate. (X, Y) - left top point. Third element - rectangular width. Fourth element - rectangular height.
      * @type {Array<number>}
      * @memberof DetectionFace
      */
-    roi?: Array<number>;
+    'roi'?: Array<number>;
     /**
      * Formatted base64 face detection image.
      * @type {string}
      * @memberof DetectionFace
      */
-    thumbnail?: string;
+    'thumbnail'?: string;
 }
-
 

@@ -14,8 +14,17 @@
 
 
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * 
+ * @export
+ * @interface SearchResultAllOf
+ */
+export interface SearchResultAllOf {
+    /**
+     * 
+     * @type {number}
+     * @memberof SearchResultAllOf
+     */
+    'code'?: number;
+}
 

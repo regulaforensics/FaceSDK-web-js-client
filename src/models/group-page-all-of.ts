@@ -13,9 +13,19 @@
  */
 
 
+import { Group } from './group';
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * 
+ * @export
+ * @interface GroupPageAllOf
+ */
+export interface GroupPageAllOf {
+    /**
+     * 
+     * @type {Array<Group>}
+     * @memberof GroupPageAllOf
+     */
+    'items'?: Array<Group>;
+}
 

@@ -26,7 +26,6 @@ export interface DetectResponseAllOf {
      * @type {DetectResult}
      * @memberof DetectResponseAllOf
      */
-    results?: DetectResult;
+    'results'?: DetectResult;
 }
-
 

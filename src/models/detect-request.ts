@@ -26,31 +26,30 @@ export interface DetectRequest {
      * @type {string}
      * @memberof DetectRequest
      */
-    tag?: string;
+    'tag'?: string;
     /**
      * 
      * @type {ImageData}
      * @memberof DetectRequest
      */
-    image?: ImageData;
+    'image'?: ImageData;
     /**
      * Enable formatted detections\' thumbnails in the response
      * @type {boolean}
      * @memberof DetectRequest
      */
-    thumbnails?: boolean;
+    'thumbnails'?: boolean;
     /**
      * Enable face attributions detection, such as age or emotion and etc.
      * @type {boolean}
      * @memberof DetectRequest
      */
-    attributes?: boolean;
+    'attributes'?: boolean;
     /**
      * True - main face; false - all faces.
      * @type {boolean}
      * @memberof DetectRequest
      */
-    onlyCentralFace?: boolean;
+    'onlyCentralFace'?: boolean;
 }
-
 

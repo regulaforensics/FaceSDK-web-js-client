@@ -1,6 +1,6 @@
-    /* tslint:disable */
-    /* eslint-disable */
-    /**
+/* tslint:disable */
+/* eslint-disable */
+/**
  * Regula FaceSDK Web API
  * Regula FaceSDK Web API
  *
@@ -13,212 +13,192 @@
  */
 
 
-    import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
-    import { Configuration } from '../configuration.js';
-    // Some imports not used depending on template conditions
-    // @ts-ignore
-    import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base.js';
-        // @ts-ignore
-        import { DetectRequest } from '../models/index.js';
-        // @ts-ignore
-        import { DetectResponse } from '../models/index.js';
-        // @ts-ignore
-        import { MatchRequest } from '../models/index.js';
-        // @ts-ignore
-        import { MatchResponse } from '../models/index.js';
-    /**
-    * MatchingApi - axios parameter creator
-    * @export
-    */
-    export const MatchingApiAxiosParamCreator = function (configuration?: Configuration) {
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import { Configuration } from '../configuration';
+// Some imports not used depending on template conditions
+// @ts-ignore
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
+// @ts-ignore
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+// @ts-ignore
+import { DetectRequest } from '../models';
+// @ts-ignore
+import { DetectResponse } from '../models';
+// @ts-ignore
+import { MatchRequest } from '../models';
+// @ts-ignore
+import { MatchResponse } from '../models';
+/**
+ * MatchingApi - axios parameter creator
+ * @export
+ */
+export const MatchingApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-        * 
-            * @summary Detect facial coordinates
-            * @param {DetectRequest} detectRequest 
-        * @param {*} [options] Override http request option.
-        * @throws {RequiredError}
-        */
-        detect: async (detectRequest: DetectRequest, options: any = {}): Promise<RequestArgs> => {
-                    // verify required parameter 'detectRequest' is not null or undefined
-                    if (detectRequest === null || detectRequest === undefined) {
-                    throw new RequiredError('detectRequest','Required parameter detectRequest was null or undefined when calling detect.');
-                    }
+         * 
+         * @summary Detect facial coordinates
+         * @param {DetectRequest} detectRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        detect: async (detectRequest: DetectRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'detectRequest' is not null or undefined
+            assertParamExists('detect', 'detectRequest', detectRequest)
             const localVarPath = `/api/detect`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
             if (configuration) {
-            baseOptions = configuration.baseOptions;
+                baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
 
-        
-                    localVarHeaderParameter['Content-Type'] = 'application/json';
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            const query = new URLSearchParams(localVarUrlObj.search);
-            for (const key in localVarQueryParameter) {
-            query.set(key, localVarQueryParameter[key]);
-            }
-            for (const key in options.query) {
-            query.set(key, options.query[key]);
-            }
-            localVarUrlObj.search = (new URLSearchParams(query)).toString();
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-                const needsSerialization = (typeof detectRequest !== "string" && !(detectRequest instanceof Uint8Array)) || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-                localVarRequestOptions.data =  needsSerialization ? JSON.stringify(detectRequest !== undefined ? detectRequest : {}) : (detectRequest || "");
+            localVarRequestOptions.data = serializeDataIfNeeded(detectRequest, localVarRequestOptions, configuration)
 
             return {
-            url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
-            options: localVarRequestOptions,
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
             };
-            },
+        },
         /**
-        * 
-            * @summary Compare provided face images in all combinations and return similarity score for each pair.
-            * @param {MatchRequest} matchRequest 
-        * @param {*} [options] Override http request option.
-        * @throws {RequiredError}
-        */
-        match: async (matchRequest: MatchRequest, options: any = {}): Promise<RequestArgs> => {
-                    // verify required parameter 'matchRequest' is not null or undefined
-                    if (matchRequest === null || matchRequest === undefined) {
-                    throw new RequiredError('matchRequest','Required parameter matchRequest was null or undefined when calling match.');
-                    }
+         * 
+         * @summary Compare provided face images in all combinations and return similarity score for each pair.
+         * @param {MatchRequest} matchRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        match: async (matchRequest: MatchRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'matchRequest' is not null or undefined
+            assertParamExists('match', 'matchRequest', matchRequest)
             const localVarPath = `/api/match`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
             if (configuration) {
-            baseOptions = configuration.baseOptions;
+                baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
 
-        
-                    localVarHeaderParameter['Content-Type'] = 'application/json';
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            const query = new URLSearchParams(localVarUrlObj.search);
-            for (const key in localVarQueryParameter) {
-            query.set(key, localVarQueryParameter[key]);
-            }
-            for (const key in options.query) {
-            query.set(key, options.query[key]);
-            }
-            localVarUrlObj.search = (new URLSearchParams(query)).toString();
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-                const needsSerialization = (typeof matchRequest !== "string" && !(matchRequest instanceof Uint8Array)) || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-                localVarRequestOptions.data =  needsSerialization ? JSON.stringify(matchRequest !== undefined ? matchRequest : {}) : (matchRequest || "");
+            localVarRequestOptions.data = serializeDataIfNeeded(matchRequest, localVarRequestOptions, configuration)
 
             return {
-            url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
-            options: localVarRequestOptions,
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
             };
-            },
-        }
-        };
+        },
+    }
+};
 
+/**
+ * MatchingApi - functional programming interface
+ * @export
+ */
+export const MatchingApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = MatchingApiAxiosParamCreator(configuration)
+    return {
         /**
-        * MatchingApi - functional programming interface
-        * @export
-        */
-        export const MatchingApiFp = function(configuration?: Configuration) {
-        return {
-            /**
-            * 
-                * @summary Detect facial coordinates
-                * @param {DetectRequest} detectRequest 
-            * @param {*} [options] Override http request option.
-            * @throws {RequiredError}
-            */
-            async detect(detectRequest: DetectRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DetectResponse>> {
-            const localVarAxiosArgs = await MatchingApiAxiosParamCreator(configuration).detect(detectRequest, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-            const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-            return axios.request(axiosRequestArgs);
-            };
-            },
-            /**
-            * 
-                * @summary Compare provided face images in all combinations and return similarity score for each pair.
-                * @param {MatchRequest} matchRequest 
-            * @param {*} [options] Override http request option.
-            * @throws {RequiredError}
-            */
-            async match(matchRequest: MatchRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MatchResponse>> {
-            const localVarAxiosArgs = await MatchingApiAxiosParamCreator(configuration).match(matchRequest, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-            const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-            return axios.request(axiosRequestArgs);
-            };
-            },
-        }
-        };
+         * 
+         * @summary Detect facial coordinates
+         * @param {DetectRequest} detectRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async detect(detectRequest: DetectRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DetectResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.detect(detectRequest, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Compare provided face images in all combinations and return similarity score for each pair.
+         * @param {MatchRequest} matchRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async match(matchRequest: MatchRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MatchResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.match(matchRequest, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
 
+/**
+ * MatchingApi - factory interface
+ * @export
+ */
+export const MatchingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = MatchingApiFp(configuration)
+    return {
         /**
-        * MatchingApi - factory interface
-        * @export
-        */
-        export const MatchingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-        return {
-            /**
-            * 
-                * @summary Detect facial coordinates
-                * @param {DetectRequest} detectRequest 
-            * @param {*} [options] Override http request option.
-            * @throws {RequiredError}
-            */
+         * 
+         * @summary Detect facial coordinates
+         * @param {DetectRequest} detectRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
         detect(detectRequest: DetectRequest, options?: any): AxiosPromise<DetectResponse> {
-            return MatchingApiFp(configuration).detect(detectRequest, options).then((request) => request(axios, basePath));
-            },
-            /**
-            * 
-                * @summary Compare provided face images in all combinations and return similarity score for each pair.
-                * @param {MatchRequest} matchRequest 
-            * @param {*} [options] Override http request option.
-            * @throws {RequiredError}
-            */
-        match(matchRequest: MatchRequest, options?: any): AxiosPromise<MatchResponse> {
-            return MatchingApiFp(configuration).match(matchRequest, options).then((request) => request(axios, basePath));
-            },
-        };
-        };
-
+            return localVarFp.detect(detectRequest, options).then((request) => request(axios, basePath));
+        },
         /**
-        * MatchingApi - object-oriented interface
-        * @export
-        * @class MatchingApi
-        * @extends {BaseAPI}
-        */
-            export class MatchingApi extends BaseAPI {
-            /**
-            * 
-                * @summary Detect facial coordinates
-                    * @param {DetectRequest} detectRequest 
-            * @param {*} [options] Override http request option.
-            * @throws {RequiredError}
-            * @memberof MatchingApi
-            */
-                protected detectGen(detectRequest: DetectRequest, options?: any) {
-                return MatchingApiFp(this.configuration).detect(detectRequest, options).then((request) => request(this.axios, this.basePath));
-                }
+         * 
+         * @summary Compare provided face images in all combinations and return similarity score for each pair.
+         * @param {MatchRequest} matchRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        match(matchRequest: MatchRequest, options?: any): AxiosPromise<MatchResponse> {
+            return localVarFp.match(matchRequest, options).then((request) => request(axios, basePath));
+        },
+    };
+};
 
-            /**
-            * 
-                * @summary Compare provided face images in all combinations and return similarity score for each pair.
-                    * @param {MatchRequest} matchRequest 
-            * @param {*} [options] Override http request option.
-            * @throws {RequiredError}
-            * @memberof MatchingApi
-            */
-                protected matchGen(matchRequest: MatchRequest, options?: any) {
-                return MatchingApiFp(this.configuration).match(matchRequest, options).then((request) => request(this.axios, this.basePath));
-                }
-        }
+/**
+ * MatchingApi - object-oriented interface
+ * @export
+ * @class MatchingApi
+ * @extends {BaseAPI}
+ */
+export class MatchingApi extends BaseAPI {
+    /**
+     * 
+     * @summary Detect facial coordinates
+     * @param {DetectRequest} detectRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MatchingApi
+     */
+    public detect(detectRequest: DetectRequest, options?: AxiosRequestConfig) {
+        return MatchingApiFp(this.configuration).detect(detectRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Compare provided face images in all combinations and return similarity score for each pair.
+     * @param {MatchRequest} matchRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MatchingApi
+     */
+    public match(matchRequest: MatchRequest, options?: AxiosRequestConfig) {
+        return MatchingApiFp(this.configuration).match(matchRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+}

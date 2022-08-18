@@ -13,31 +13,30 @@
  */
 
 
-import { MatchImage } from './match-image';
 
 /**
  * 
  * @export
- * @interface MatchRequest
+ * @interface PersonAllOf
  */
-export interface MatchRequest {
+export interface PersonAllOf {
+    /**
+     * 
+     * @type {number}
+     * @memberof PersonAllOf
+     */
+    'id'?: number;
     /**
      * 
      * @type {string}
-     * @memberof MatchRequest
+     * @memberof PersonAllOf
      */
-    'tag'?: string;
+    'created_at'?: string;
     /**
      * 
-     * @type {boolean}
-     * @memberof MatchRequest
+     * @type {string}
+     * @memberof PersonAllOf
      */
-    'thumbnails'?: boolean;
-    /**
-     * 
-     * @type {Array<MatchImage>}
-     * @memberof MatchRequest
-     */
-    'images': Array<MatchImage>;
+    'updated_at'?: string;
 }
 

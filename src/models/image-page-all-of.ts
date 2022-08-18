@@ -13,9 +13,19 @@
  */
 
 
+import { Image } from './image';
 
-export * from './api/group-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * 
+ * @export
+ * @interface ImagePageAllOf
+ */
+export interface ImagePageAllOf {
+    /**
+     * 
+     * @type {Array<Image>}
+     * @memberof ImagePageAllOf
+     */
+    'items'?: Array<Image>;
+}
 

@@ -15,20 +15,22 @@
 
 
 /**
- * Face photo image source
+ * 
  * @export
- * @enum {string}
+ * @interface GroupToCreate
  */
-
-export const ImageSource = {
-    DOCUMENT_PRINTED: 1,
-    DOCUMENT_RFID: 2,
-    LIVE: 3,
-    DOCUMENT_WITH_LIVE: 4,
-    EXTERNAL: 5
-} as const;
-
-export type ImageSource = typeof ImageSource[keyof typeof ImageSource];
-
-
+export interface GroupToCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof GroupToCreate
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {{ [key: string]: object; }}
+     * @memberof GroupToCreate
+     */
+    'metadata'?: { [key: string]: object; };
+}
 

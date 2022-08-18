@@ -25,4 +25,3 @@ import { FaceSDKResultCode } from './face-sdkresult-code';
 export type DetectResponse = DetectResponseAllOf & FaceSDKResult;
 
 
-

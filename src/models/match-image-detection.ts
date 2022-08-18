@@ -27,19 +27,18 @@ export interface MatchImageDetection {
      * @type {Array<DetectionFace>}
      * @memberof MatchImageDetection
      */
-    faces?: Array<DetectionFace>;
+    'faces'?: Array<DetectionFace>;
     /**
      * Image index used to identify input photos between themselves. If not specified, than input list index is used
      * @type {number}
      * @memberof MatchImageDetection
      */
-    imageIndex: number;
+    'imageIndex': number;
     /**
      * 
      * @type {FaceSDKResultCode}
      * @memberof MatchImageDetection
      */
-    status: FaceSDKResultCode;
+    'status': FaceSDKResultCode;
 }
-
 

@@ -16,4 +16,3 @@
 export * from './ext/index.js';
 export * from "./configuration.js";
 export * from "./models/index.js";
-export * from "./models/face-recognition-result-code.js"

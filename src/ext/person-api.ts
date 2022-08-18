@@ -1,7 +1,7 @@
 import {PersonApi as GenPersonApi} from "../api/person-api";
 // @ts-ignore
 import * as converter from "base64-arraybuffer";
-import {InlineObject, PersonFields} from "../models";
+import {InlineObject, Person, PersonFields} from "../models";
 
 
 export class PersonApi extends GenPersonApi {
@@ -10,7 +10,7 @@ export class PersonApi extends GenPersonApi {
         super.addImageToPersonGen(personId, inlineObject).then(r => r.data);
     }
 
-    createPerson(personFields: PersonFields){
+    public createPerson(personFields: PersonFields): Promise<Person>{
         super.createPersonGen(personFields).then(r => r.data);
     }
 

@@ -12,8 +12,8 @@ const fs = require("fs");
 
     const sdk = new FaceSdk({basePath: apiBasePath})
 
-    const person1 = await sdk.personApi.createPersonGen({name: "person1", metadata: {}})
-    const person2 = await sdk.personApi.createPersonGen({name: "person2", metadata: {}})
+    const person1 = await sdk.personApi.createPerson({name: "person1", metadata: {}})
+    const person2 = await sdk.personApi.createPerson({name: "person2", metadata: {}})
 
     await sdk.personApi.addImageToPerson(person1.id, {image: {content_type: "", content: face1}})
 })();

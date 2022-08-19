@@ -19,6 +19,7 @@ models/group-page-all-of.ts
 models/group-page.ts
 models/group-to-create.ts
 models/group.ts
+models/image-fields-image.ts
 models/image-fields.ts
 models/image-page-all-of.ts
 models/image-page.ts
@@ -42,6 +43,7 @@ models/recognize-image-all-of.ts
 models/recognize-image.ts
 models/search-person-all-of.ts
 models/search-person.ts
+models/search-request-all-of.ts
 models/search-request.ts
 models/search-result-all-of.ts
 models/search-result.ts

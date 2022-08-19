@@ -13,19 +13,25 @@
  */
 
 
-import { ImageFieldsImage } from './image-fields-image';
+import { ImageData } from './image-data';
 
 /**
  * 
  * @export
- * @interface ImageFields
+ * @interface ImageFieldsImage
  */
-export interface ImageFields {
+export interface ImageFieldsImage {
     /**
      * 
-     * @type {ImageFieldsImage}
-     * @memberof ImageFields
+     * @type {string}
+     * @memberof ImageFieldsImage
      */
-    'image'?: ImageFieldsImage;
+    'content_type'?: string;
+    /**
+     * 
+     * @type {ImageData}
+     * @memberof ImageFieldsImage
+     */
+    'content'?: ImageData;
 }
 

@@ -14,36 +14,13 @@
 
 
 import { ImageFields } from './image-fields';
+import { ImageFieldsImage } from './image-fields-image';
+import { SearchRequestAllOf } from './search-request-all-of';
 
 /**
- * 
+ * @type SearchRequest
  * @export
- * @interface SearchRequest
  */
-export interface SearchRequest {
-    /**
-     * 
-     * @type {number}
-     * @memberof SearchRequest
-     */
-    'limit'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof SearchRequest
-     */
-    'threshold'?: number;
-    /**
-     * 
-     * @type {Array<number>}
-     * @memberof SearchRequest
-     */
-    'group_ids'?: Array<number>;
-    /**
-     * 
-     * @type {ImageFields}
-     * @memberof SearchRequest
-     */
-    'image'?: ImageFields;
-}
+export type SearchRequest = ImageFields & SearchRequestAllOf;
+
 

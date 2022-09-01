@@ -25,7 +25,13 @@ import fs from "fs";
 
     await sdk.groupApi.updatePersonsInGroup(group.id, {addItems: [person1Id, person2Id]})
 
-    const searchResult = await sdk.searchApi.search({group_ids: [group.id], image: {content: face1}})
+    const searchResult = await sdk.searchApi.search(
+        {
+            group_ids: [],
+            image: {content: face1},
+            limit: 10,
+            threshold: 0.8
+        })
 
     console.log(`Person #1 ${person1.id} ${person1.name}`)
     console.log(`Person #2 ${person2.id} ${person2.name}`)

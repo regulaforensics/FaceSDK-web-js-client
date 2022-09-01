@@ -14,5 +14,8 @@
 
 
 
+export * from './api/group-api';
 export * from './api/matching-api';
+export * from './api/person-api';
+export * from './api/search-api';
 

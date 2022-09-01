@@ -23,23 +23,22 @@ import { ImageData } from './image-data';
  */
 export interface MatchImage {
     /**
-     * Image index used to identify input photos between themselves. If not specified, than input list index is used
+     * Image index used to identify input photos between themselves. If not specified, than input list index is used.
      * @type {number}
      * @memberof MatchImage
      */
-    index?: number;
+    'index'?: number;
     /**
      * 
      * @type {ImageSource}
      * @memberof MatchImage
      */
-    type?: ImageSource;
+    'type'?: ImageSource;
     /**
      * 
      * @type {ImageData}
      * @memberof MatchImage
      */
-    data: ImageData;
+    'data': ImageData;
 }
-
 

@@ -22,53 +22,52 @@ import { FaceSDKResultCode } from './face-sdkresult-code';
  */
 export interface MatchImageResult {
     /**
-     * Image index used to identify input photos between themselves. If not specified, than input list index is used
+     * Image index used to identify input photos between themselves. If not specified, than input list index is used.
      * @type {number}
      * @memberof MatchImageResult
      */
-    firstIndex: number;
+    'firstIndex': number;
     /**
      * Faces index used to identify faces in scope of one photo.
      * @type {number}
      * @memberof MatchImageResult
      */
-    firstFaceIndex?: number;
+    'firstFaceIndex'?: number;
     /**
-     * Image index used to identify input photos between themselves. If not specified, than input list index is used
+     * Image index used to identify input photos between themselves. If not specified, than input list index is used.
      * @type {number}
      * @memberof MatchImageResult
      */
-    secondIndex: number;
+    'secondIndex': number;
     /**
      * Faces index used to identify faces in scope of one photo.
      * @type {number}
      * @memberof MatchImageResult
      */
-    secondFaceIndex?: number;
+    'secondFaceIndex'?: number;
     /**
      * 
      * @type {number}
      * @memberof MatchImageResult
      */
-    score?: number;
+    'score'?: number;
     /**
      * 
      * @type {number}
      * @memberof MatchImageResult
      */
-    similarity?: number;
+    'similarity'?: number;
     /**
      * 
      * @type {FaceSDKResultCode}
      * @memberof MatchImageResult
      */
-    errorCode?: FaceSDKResultCode;
+    'errorCode'?: FaceSDKResultCode;
     /**
      * 
      * @type {string}
      * @memberof MatchImageResult
      */
-    errorMsg?: string;
+    'errorMsg'?: string;
 }
-
 

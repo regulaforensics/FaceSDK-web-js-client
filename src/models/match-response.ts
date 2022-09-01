@@ -26,4 +26,3 @@ import { MatchResponseAllOf } from './match-response-all-of';
 export type MatchResponse = FaceSDKResult & MatchResponseAllOf;
 
 
-

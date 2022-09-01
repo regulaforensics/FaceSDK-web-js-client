@@ -11,7 +11,3 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-
-import {FaceSDKResultCode} from './face-sdkresult-code.js';
-export import FaceRecognitionResultCode = FaceSDKResultCode;

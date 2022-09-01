@@ -27,13 +27,12 @@ export interface MatchResponseAllOf {
      * @type {Array<MatchImageResult>}
      * @memberof MatchResponseAllOf
      */
-    results?: Array<MatchImageResult>;
+    'results'?: Array<MatchImageResult>;
     /**
      * 
      * @type {Array<MatchImageDetection>}
      * @memberof MatchResponseAllOf
      */
-    detections?: Array<MatchImageDetection>;
+    'detections'?: Array<MatchImageDetection>;
 }
-
 

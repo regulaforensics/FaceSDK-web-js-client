@@ -15,17 +15,20 @@
 
 
 /**
- * Face photo image source
+ * Face photo image source.
  * @export
  * @enum {string}
  */
-export enum ImageSource {
-    DOCUMENT_PRINTED = 1,
-    DOCUMENT_RFID = 2,
-    LIVE = 3,
-    DOCUMENT_WITH_LIVE = 4,
-    EXTERNAL = 5
-}
+
+export const ImageSource = {
+    DOCUMENT_PRINTED: 1,
+    DOCUMENT_RFID: 2,
+    LIVE: 3,
+    DOCUMENT_WITH_LIVE: 4,
+    EXTERNAL: 5
+} as const;
+
+export type ImageSource = typeof ImageSource[keyof typeof ImageSource];
 
 
 

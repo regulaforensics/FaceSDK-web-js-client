@@ -1,7 +1,7 @@
 import {
     FaceSdk,
     ImageSource
-} from '@regulaforensics/facesdk-webclient/esm';
+} from '@regulaforensics/facesdk-webclient';
 import fs from "fs";
 
 (async () => {

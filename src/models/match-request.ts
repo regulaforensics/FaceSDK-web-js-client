@@ -26,19 +26,18 @@ export interface MatchRequest {
      * @type {string}
      * @memberof MatchRequest
      */
-    tag?: string;
+    'tag'?: string;
     /**
      * 
      * @type {boolean}
      * @memberof MatchRequest
      */
-    thumbnails?: boolean;
+    'thumbnails'?: boolean;
     /**
      * 
      * @type {Array<MatchImage>}
      * @memberof MatchRequest
      */
-    images: Array<MatchImage>;
+    'images': Array<MatchImage>;
 }
-
 

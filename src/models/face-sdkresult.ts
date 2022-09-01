@@ -26,7 +26,6 @@ export interface FaceSDKResult {
      * @type {FaceSDKResultCode}
      * @memberof FaceSDKResult
      */
-    code: FaceSDKResultCode;
+    'code': FaceSDKResultCode;
 }
-
 

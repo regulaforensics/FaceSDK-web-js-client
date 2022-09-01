@@ -13,6 +13,8 @@
  */
 
 
+import { DetectionQuality } from './detection-quality';
+import { ImageData } from './image-data';
 
 /**
  * 
@@ -22,28 +24,39 @@
 export interface Detection {
     /**
      * 
+     * @type {ImageData}
+     * @memberof Detection
+     */
+    'crop'?: ImageData;
+    /**
+     * 
      * @type {{ [key: string]: object; }}
      * @memberof Detection
      */
-    attributes?: { [key: string]: object; };
+    'attributes'?: { [key: string]: object; };
     /**
-     * Main coordinates of the detected face (eyes, nose, lips, ears and etc.).
+     * Absolute coordinates (x,y) of five points of each detected face: left eye, right eye, nose, left point of lips, right point of lips.
      * @type {Array<Array<number>>}
      * @memberof Detection
      */
-    landmarks: Array<Array<number>>;
+    'landmarks': Array<Array<number>>;
+    /**
+     * 
+     * @type {DetectionQuality}
+     * @memberof Detection
+     */
+    'quality'?: DetectionQuality;
     /**
      * Rectangular area of the detected face. First element - X-axis coordinate. Second element - Y-axis coordinate. (X, Y) - left top point. Third element - rectangular width. Fourth element - rectangular height.
      * @type {Array<number>}
      * @memberof Detection
      */
-    roi: Array<number>;
+    'roi': Array<number>;
     /**
-     * Formatted base64 face detection image.
+     * Base64 of the cropped portrait.
      * @type {string}
      * @memberof Detection
      */
-    thumbnail?: string;
+    'thumbnail'?: string;
 }
-
 

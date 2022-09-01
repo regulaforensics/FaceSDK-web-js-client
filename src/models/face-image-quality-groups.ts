@@ -15,20 +15,22 @@
 
 
 /**
- * Face photo image source.
+ * 
  * @export
  * @enum {string}
  */
 
-export const ImageSource = {
-    DOCUMENT_PRINTED: 1,
-    DOCUMENT_RFID: 2,
-    LIVE: 3,
-    DOCUMENT_WITH_LIVE: 4,
-    EXTERNAL: 5
+export const FaceImageQualityGroups = {
+    IMAGE_CHARACTERISTICS: 1,
+    HEAD_SIZE_AND_POSITIONS: 2,
+    FACE_QUALITY: 3,
+    EYES_CHARACTERISTICS: 4,
+    SHADOWS_AND_LIGHTNING: 5,
+    POSE_AND_EXPRESSION: 6,
+    HEAD_OCCLUSION: 8
 } as const;
 
-export type ImageSource = typeof ImageSource[keyof typeof ImageSource];
+export type FaceImageQualityGroups = typeof FaceImageQualityGroups[keyof typeof FaceImageQualityGroups];
 
 
 

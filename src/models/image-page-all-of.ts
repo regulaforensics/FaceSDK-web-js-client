@@ -16,7 +16,7 @@
 import { Image } from './image';
 
 /**
- * 
+ * Image page.
  * @export
  * @interface ImagePageAllOf
  */

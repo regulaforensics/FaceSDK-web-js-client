@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Information about current page number and total pages count
  * @export
  * @interface Page
  */

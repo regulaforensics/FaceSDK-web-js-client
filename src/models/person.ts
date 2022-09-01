@@ -18,6 +18,7 @@ import { PersonFields } from './person-fields';
 
 /**
  * @type Person
+ * Person response body: person ID, creation date, update date if any.
  * @export
  */
 export type Person = PersonAllOf & PersonFields;

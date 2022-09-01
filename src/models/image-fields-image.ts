@@ -16,13 +16,13 @@
 import { ImageData } from './image-data';
 
 /**
- * 
+ * The uploaded image.
  * @export
  * @interface ImageFieldsImage
  */
 export interface ImageFieldsImage {
     /**
-     * 
+     * The original media type of the uploaded image.
      * @type {string}
      * @memberof ImageFieldsImage
      */

@@ -15,19 +15,19 @@
 
 
 /**
- * 
+ * Request body of the group to create data, includes name and metadata.
  * @export
  * @interface GroupToCreate
  */
 export interface GroupToCreate {
     /**
-     * 
+     * Group to create name.
      * @type {string}
      * @memberof GroupToCreate
      */
     'name'?: string;
     /**
-     * 
+     * A free-form object containing group\'s extended attributes.
      * @type {{ [key: string]: object; }}
      * @memberof GroupToCreate
      */

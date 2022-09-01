@@ -11,8 +11,8 @@ export class GroupApi extends GenGroupApi {
         return super.deleteGroup(groupId, options).then(r => r.data);
     }
 
-    getAllGroups(page: number, size: number, name?: string, options?: AxiosRequestConfig): any {
-        return super.getAllGroups(page, size, name, options).then(r => r.data);
+    getAllGroups(page: number, size: number, options?: AxiosRequestConfig): any {
+        return super.getAllGroups(page, size, options).then(r => r.data);
     }
 
     getAllPersonsByGroupId(page: number, size: number, groupId: number, options?: AxiosRequestConfig): any {

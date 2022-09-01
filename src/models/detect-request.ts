@@ -13,6 +13,7 @@
  */
 
 
+import { ProcessParam } from './process-param';
 import { ImageData } from './image-data';
 
 /**
@@ -29,24 +30,30 @@ export interface DetectRequest {
     'tag'?: string;
     /**
      * 
+     * @type {ProcessParam}
+     * @memberof DetectRequest
+     */
+    'processParam'?: ProcessParam;
+    /**
+     * 
      * @type {ImageData}
      * @memberof DetectRequest
      */
     'image'?: ImageData;
     /**
-     * Enable formatted detections\' thumbnails in the response
+     * Whether to return the cropped portrains with the detected faces.
      * @type {boolean}
      * @memberof DetectRequest
      */
     'thumbnails'?: boolean;
     /**
-     * Enable face attributions detection, such as age or emotion and etc.
+     * Whether to evaluate attributes, such as age and emotions.
      * @type {boolean}
      * @memberof DetectRequest
      */
     'attributes'?: boolean;
     /**
-     * True - main face; false - all faces.
+     * Whether to detect the only central face (true) or all the faces (false).
      * @type {boolean}
      * @memberof DetectRequest
      */

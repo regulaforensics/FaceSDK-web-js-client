@@ -45,8 +45,8 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Add person image
-         * @param {number} personId Person id
-         * @param {ImageFields} imageFields Image to add
+         * @param {number} personId Person ID.
+         * @param {ImageFields} imageFields Image to add.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -85,7 +85,7 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Create person
-         * @param {PersonFields} personFields Future person
+         * @param {PersonFields} personFields 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -121,8 +121,8 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Delete image of person
-         * @param {number} imageId Image id
-         * @param {number} personId Person id
+         * @param {number} imageId Image ID.
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -159,7 +159,7 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Delete person
-         * @param {number} personId Person id
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -193,9 +193,9 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Get person groups
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {number} personId Person id
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -241,9 +241,9 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Get person images
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {number} personId Person id
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -289,13 +289,12 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Get persons
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {string} [name] Person name keywords
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllPersons: async (page: number, size: number, name?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAllPersons: async (page: number, size: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'page' is not null or undefined
             assertParamExists('getAllPersons', 'page', page)
             // verify required parameter 'size' is not null or undefined
@@ -320,10 +319,6 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
                 localVarQueryParameter['size'] = size;
             }
 
-            if (name !== undefined) {
-                localVarQueryParameter['name'] = name;
-            }
-
 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -338,8 +333,8 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Get person image by id
-         * @param {number} imageId Image id
-         * @param {number} personId Person id
+         * @param {number} imageId Image ID.
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -376,7 +371,7 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Get person
-         * @param {number} personId Person id
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -410,8 +405,8 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Update person
-         * @param {number} personId Person id
-         * @param {PersonFields} personFields Metadata
+         * @param {number} personId Person ID.
+         * @param {PersonFields} personFields Request body for the Person to update.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -460,8 +455,8 @@ export const PersonApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Add person image
-         * @param {number} personId Person id
-         * @param {ImageFields} imageFields Image to add
+         * @param {number} personId Person ID.
+         * @param {ImageFields} imageFields Image to add.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -472,7 +467,7 @@ export const PersonApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Create person
-         * @param {PersonFields} personFields Future person
+         * @param {PersonFields} personFields 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -483,8 +478,8 @@ export const PersonApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Delete image of person
-         * @param {number} imageId Image id
-         * @param {number} personId Person id
+         * @param {number} imageId Image ID.
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -495,7 +490,7 @@ export const PersonApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Delete person
-         * @param {number} personId Person id
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -506,9 +501,9 @@ export const PersonApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get person groups
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {number} personId Person id
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -519,9 +514,9 @@ export const PersonApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get person images
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {number} personId Person id
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -532,21 +527,20 @@ export const PersonApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get persons
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {string} [name] Person name keywords
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllPersons(page: number, size: number, name?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PersonsPage>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllPersons(page, size, name, options);
+        async getAllPersons(page: number, size: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PersonsPage>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllPersons(page, size, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get person image by id
-         * @param {number} imageId Image id
-         * @param {number} personId Person id
+         * @param {number} imageId Image ID.
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -557,7 +551,7 @@ export const PersonApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get person
-         * @param {number} personId Person id
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -568,8 +562,8 @@ export const PersonApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Update person
-         * @param {number} personId Person id
-         * @param {PersonFields} personFields Metadata
+         * @param {number} personId Person ID.
+         * @param {PersonFields} personFields Request body for the Person to update.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -590,8 +584,8 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Add person image
-         * @param {number} personId Person id
-         * @param {ImageFields} imageFields Image to add
+         * @param {number} personId Person ID.
+         * @param {ImageFields} imageFields Image to add.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -601,7 +595,7 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Create person
-         * @param {PersonFields} personFields Future person
+         * @param {PersonFields} personFields 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -611,8 +605,8 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Delete image of person
-         * @param {number} imageId Image id
-         * @param {number} personId Person id
+         * @param {number} imageId Image ID.
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -622,7 +616,7 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Delete person
-         * @param {number} personId Person id
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -632,9 +626,9 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Get person groups
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {number} personId Person id
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -644,9 +638,9 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Get person images
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {number} personId Person id
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -656,20 +650,19 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Get persons
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {string} [name] Person name keywords
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllPersons(page: number, size: number, name?: string, options?: any): AxiosPromise<PersonsPage> {
-            return localVarFp.getAllPersons(page, size, name, options).then((request) => request(axios, basePath));
+        getAllPersons(page: number, size: number, options?: any): AxiosPromise<PersonsPage> {
+            return localVarFp.getAllPersons(page, size, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get person image by id
-         * @param {number} imageId Image id
-         * @param {number} personId Person id
+         * @param {number} imageId Image ID.
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -679,7 +672,7 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Get person
-         * @param {number} personId Person id
+         * @param {number} personId Person ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -689,8 +682,8 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Update person
-         * @param {number} personId Person id
-         * @param {PersonFields} personFields Metadata
+         * @param {number} personId Person ID.
+         * @param {PersonFields} personFields Request body for the Person to update.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -710,8 +703,8 @@ export class PersonApi extends BaseAPI {
     /**
      * 
      * @summary Add person image
-     * @param {number} personId Person id
-     * @param {ImageFields} imageFields Image to add
+     * @param {number} personId Person ID.
+     * @param {ImageFields} imageFields Image to add.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
@@ -723,7 +716,7 @@ export class PersonApi extends BaseAPI {
     /**
      * 
      * @summary Create person
-     * @param {PersonFields} personFields Future person
+     * @param {PersonFields} personFields 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
@@ -735,8 +728,8 @@ export class PersonApi extends BaseAPI {
     /**
      * 
      * @summary Delete image of person
-     * @param {number} imageId Image id
-     * @param {number} personId Person id
+     * @param {number} imageId Image ID.
+     * @param {number} personId Person ID.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
@@ -748,7 +741,7 @@ export class PersonApi extends BaseAPI {
     /**
      * 
      * @summary Delete person
-     * @param {number} personId Person id
+     * @param {number} personId Person ID.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
@@ -760,9 +753,9 @@ export class PersonApi extends BaseAPI {
     /**
      * 
      * @summary Get person groups
-     * @param {number} page Current page
-     * @param {number} size Page size
-     * @param {number} personId Person id
+     * @param {number} page The page number to get a list of persons or groups.
+     * @param {number} size The page size with a list of persons or groups, items.
+     * @param {number} personId Person ID.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
@@ -774,9 +767,9 @@ export class PersonApi extends BaseAPI {
     /**
      * 
      * @summary Get person images
-     * @param {number} page Current page
-     * @param {number} size Page size
-     * @param {number} personId Person id
+     * @param {number} page The page number to get a list of persons or groups.
+     * @param {number} size The page size with a list of persons or groups, items.
+     * @param {number} personId Person ID.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
@@ -788,22 +781,21 @@ export class PersonApi extends BaseAPI {
     /**
      * 
      * @summary Get persons
-     * @param {number} page Current page
-     * @param {number} size Page size
-     * @param {string} [name] Person name keywords
+     * @param {number} page The page number to get a list of persons or groups.
+     * @param {number} size The page size with a list of persons or groups, items.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
      */
-    public getAllPersons(page: number, size: number, name?: string, options?: AxiosRequestConfig) {
-        return PersonApiFp(this.configuration).getAllPersons(page, size, name, options).then((request) => request(this.axios, this.basePath));
+    public getAllPersons(page: number, size: number, options?: AxiosRequestConfig) {
+        return PersonApiFp(this.configuration).getAllPersons(page, size, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get person image by id
-     * @param {number} imageId Image id
-     * @param {number} personId Person id
+     * @param {number} imageId Image ID.
+     * @param {number} personId Person ID.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
@@ -815,7 +807,7 @@ export class PersonApi extends BaseAPI {
     /**
      * 
      * @summary Get person
-     * @param {number} personId Person id
+     * @param {number} personId Person ID.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
@@ -827,8 +819,8 @@ export class PersonApi extends BaseAPI {
     /**
      * 
      * @summary Update person
-     * @param {number} personId Person id
-     * @param {PersonFields} personFields Metadata
+     * @param {number} personId Person ID.
+     * @param {PersonFields} personFields Request body for the Person to update.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi

@@ -29,7 +29,7 @@ export interface MatchImageDetection {
      */
     'faces'?: Array<DetectionFace>;
     /**
-     * Image index used to identify input photos between themselves. If not specified, than input list index is used
+     * Image index used to identify input photos between themselves. If not specified, than input list index is used.
      * @type {number}
      * @memberof MatchImageDetection
      */

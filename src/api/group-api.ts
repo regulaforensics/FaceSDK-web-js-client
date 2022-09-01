@@ -41,7 +41,7 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
         /**
          * 
          * @summary Create group
-         * @param {GroupToCreate} groupToCreate Group to create
+         * @param {GroupToCreate} groupToCreate Request body for the group to create.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -77,7 +77,7 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
         /**
          * 
          * @summary Delete group
-         * @param {number} groupId Group id
+         * @param {number} groupId Group ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -111,13 +111,12 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
         /**
          * 
          * @summary Get groups
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {string} [name] Group name keywords
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllGroups: async (page: number, size: number, name?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAllGroups: async (page: number, size: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'page' is not null or undefined
             assertParamExists('getAllGroups', 'page', page)
             // verify required parameter 'size' is not null or undefined
@@ -142,10 +141,6 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
                 localVarQueryParameter['size'] = size;
             }
 
-            if (name !== undefined) {
-                localVarQueryParameter['name'] = name;
-            }
-
 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -160,9 +155,9 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
         /**
          * 
          * @summary Get group persons
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {number} groupId Group id
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
+         * @param {number} groupId Group ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -208,7 +203,7 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
         /**
          * 
          * @summary Get group
-         * @param {number} groupId Group id
+         * @param {number} groupId Group ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -242,8 +237,8 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
         /**
          * 
          * @summary Update group
-         * @param {number} groupId Group id
-         * @param {GroupToCreate} groupToCreate Update group
+         * @param {number} groupId Group ID.
+         * @param {GroupToCreate} groupToCreate Request body for the group to update.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -282,8 +277,8 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
         /**
          * 
          * @summary Add/remove persons to group
-         * @param {number} groupId Group id
-         * @param {UpdateGroup} updateGroup Person ids to add or remove
+         * @param {number} groupId Group ID.
+         * @param {UpdateGroup} updateGroup Request body for person IDs to add or remove.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -332,7 +327,7 @@ export const GroupApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Create group
-         * @param {GroupToCreate} groupToCreate Group to create
+         * @param {GroupToCreate} groupToCreate Request body for the group to create.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -343,7 +338,7 @@ export const GroupApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Delete group
-         * @param {number} groupId Group id
+         * @param {number} groupId Group ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -354,22 +349,21 @@ export const GroupApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get groups
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {string} [name] Group name keywords
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllGroups(page: number, size: number, name?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GroupPage>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllGroups(page, size, name, options);
+        async getAllGroups(page: number, size: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GroupPage>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllGroups(page, size, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get group persons
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {number} groupId Group id
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
+         * @param {number} groupId Group ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -380,7 +374,7 @@ export const GroupApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get group
-         * @param {number} groupId Group id
+         * @param {number} groupId Group ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -391,8 +385,8 @@ export const GroupApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Update group
-         * @param {number} groupId Group id
-         * @param {GroupToCreate} groupToCreate Update group
+         * @param {number} groupId Group ID.
+         * @param {GroupToCreate} groupToCreate Request body for the group to update.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -403,8 +397,8 @@ export const GroupApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Add/remove persons to group
-         * @param {number} groupId Group id
-         * @param {UpdateGroup} updateGroup Person ids to add or remove
+         * @param {number} groupId Group ID.
+         * @param {UpdateGroup} updateGroup Request body for person IDs to add or remove.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -425,7 +419,7 @@ export const GroupApiFactory = function (configuration?: Configuration, basePath
         /**
          * 
          * @summary Create group
-         * @param {GroupToCreate} groupToCreate Group to create
+         * @param {GroupToCreate} groupToCreate Request body for the group to create.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -435,7 +429,7 @@ export const GroupApiFactory = function (configuration?: Configuration, basePath
         /**
          * 
          * @summary Delete group
-         * @param {number} groupId Group id
+         * @param {number} groupId Group ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -445,21 +439,20 @@ export const GroupApiFactory = function (configuration?: Configuration, basePath
         /**
          * 
          * @summary Get groups
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {string} [name] Group name keywords
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllGroups(page: number, size: number, name?: string, options?: any): AxiosPromise<GroupPage> {
-            return localVarFp.getAllGroups(page, size, name, options).then((request) => request(axios, basePath));
+        getAllGroups(page: number, size: number, options?: any): AxiosPromise<GroupPage> {
+            return localVarFp.getAllGroups(page, size, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get group persons
-         * @param {number} page Current page
-         * @param {number} size Page size
-         * @param {number} groupId Group id
+         * @param {number} page The page number to get a list of persons or groups.
+         * @param {number} size The page size with a list of persons or groups, items.
+         * @param {number} groupId Group ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -469,7 +462,7 @@ export const GroupApiFactory = function (configuration?: Configuration, basePath
         /**
          * 
          * @summary Get group
-         * @param {number} groupId Group id
+         * @param {number} groupId Group ID.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -479,8 +472,8 @@ export const GroupApiFactory = function (configuration?: Configuration, basePath
         /**
          * 
          * @summary Update group
-         * @param {number} groupId Group id
-         * @param {GroupToCreate} groupToCreate Update group
+         * @param {number} groupId Group ID.
+         * @param {GroupToCreate} groupToCreate Request body for the group to update.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -490,8 +483,8 @@ export const GroupApiFactory = function (configuration?: Configuration, basePath
         /**
          * 
          * @summary Add/remove persons to group
-         * @param {number} groupId Group id
-         * @param {UpdateGroup} updateGroup Person ids to add or remove
+         * @param {number} groupId Group ID.
+         * @param {UpdateGroup} updateGroup Request body for person IDs to add or remove.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -511,7 +504,7 @@ export class GroupApi extends BaseAPI {
     /**
      * 
      * @summary Create group
-     * @param {GroupToCreate} groupToCreate Group to create
+     * @param {GroupToCreate} groupToCreate Request body for the group to create.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
@@ -523,7 +516,7 @@ export class GroupApi extends BaseAPI {
     /**
      * 
      * @summary Delete group
-     * @param {number} groupId Group id
+     * @param {number} groupId Group ID.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
@@ -535,23 +528,22 @@ export class GroupApi extends BaseAPI {
     /**
      * 
      * @summary Get groups
-     * @param {number} page Current page
-     * @param {number} size Page size
-     * @param {string} [name] Group name keywords
+     * @param {number} page The page number to get a list of persons or groups.
+     * @param {number} size The page size with a list of persons or groups, items.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
      */
-    public getAllGroups(page: number, size: number, name?: string, options?: AxiosRequestConfig) {
-        return GroupApiFp(this.configuration).getAllGroups(page, size, name, options).then((request) => request(this.axios, this.basePath));
+    public getAllGroups(page: number, size: number, options?: AxiosRequestConfig) {
+        return GroupApiFp(this.configuration).getAllGroups(page, size, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get group persons
-     * @param {number} page Current page
-     * @param {number} size Page size
-     * @param {number} groupId Group id
+     * @param {number} page The page number to get a list of persons or groups.
+     * @param {number} size The page size with a list of persons or groups, items.
+     * @param {number} groupId Group ID.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
@@ -563,7 +555,7 @@ export class GroupApi extends BaseAPI {
     /**
      * 
      * @summary Get group
-     * @param {number} groupId Group id
+     * @param {number} groupId Group ID.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
@@ -575,8 +567,8 @@ export class GroupApi extends BaseAPI {
     /**
      * 
      * @summary Update group
-     * @param {number} groupId Group id
-     * @param {GroupToCreate} groupToCreate Update group
+     * @param {number} groupId Group ID.
+     * @param {GroupToCreate} groupToCreate Request body for the group to update.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
@@ -588,8 +580,8 @@ export class GroupApi extends BaseAPI {
     /**
      * 
      * @summary Add/remove persons to group
-     * @param {number} groupId Group id
-     * @param {UpdateGroup} updateGroup Person ids to add or remove
+     * @param {number} groupId Group ID.
+     * @param {UpdateGroup} updateGroup Request body for person IDs to add or remove.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi

@@ -13,19 +13,20 @@
  */
 
 
-import { ImageFieldsImage } from './image-fields-image';
 
 /**
- * Image in the request data, includes image and content_type.
+ * 
  * @export
- * @interface ImageFields
+ * @enum {string}
  */
-export interface ImageFields {
-    /**
-     * 
-     * @type {ImageFieldsImage}
-     * @memberof ImageFields
-     */
-    'image'?: ImageFieldsImage;
-}
+
+export const FaceQualityStatus = {
+    QUALITY_STATUS_FALSE: 0,
+    QUALITY_STATUS_TRUE: 1,
+    QUALITY_STATUS_UNDETERMINED: 2
+} as const;
+
+export type FaceQualityStatus = typeof FaceQualityStatus[keyof typeof FaceQualityStatus];
+
+
 

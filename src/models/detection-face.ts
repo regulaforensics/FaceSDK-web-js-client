@@ -27,7 +27,7 @@ export interface DetectionFace {
      */
     'faceIndex'?: number;
     /**
-     * Main coordinates of the detected face (eyes, nose, lips, ears and etc.).
+     * Absolute coordinates (x,y) of five points of each detected face: left eye, right eye, nose, left point of lips, right point of lips.
      * @type {Array<Array<number>>}
      * @memberof DetectionFace
      */
@@ -39,7 +39,7 @@ export interface DetectionFace {
      */
     'roi'?: Array<number>;
     /**
-     * Formatted base64 face detection image.
+     * Base64 of the cropped portrait.
      * @type {string}
      * @memberof DetectionFace
      */

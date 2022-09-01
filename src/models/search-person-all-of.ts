@@ -16,7 +16,7 @@
 import { RecognizeImage } from './recognize-image';
 
 /**
- * 
+ * The array of Person images.
  * @export
  * @interface SearchPersonAllOf
  */

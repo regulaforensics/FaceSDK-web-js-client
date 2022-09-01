@@ -13,19 +13,22 @@
  */
 
 
-import { ImageFieldsImage } from './image-fields-image';
 
 /**
- * Image in the request data, includes image and content_type.
+ * The aspect ratio according to which alignment is performed.
  * @export
- * @interface ImageFields
+ * @enum {string}
  */
-export interface ImageFields {
-    /**
-     * 
-     * @type {ImageFieldsImage}
-     * @memberof ImageFields
-     */
-    'image'?: ImageFieldsImage;
-}
+
+export const FaceAlignTypeQuality = {
+    ALIGN_3x4: 0,
+    ALIGN_4x5: 1,
+    ALIGN_2x3: 2,
+    ALIGN_1x1: 3,
+    ALIGN_7x9: 4
+} as const;
+
+export type FaceAlignTypeQuality = typeof FaceAlignTypeQuality[keyof typeof FaceAlignTypeQuality];
+
+
 

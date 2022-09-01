@@ -22,7 +22,7 @@ import { FaceSDKResultCode } from './face-sdkresult-code';
  */
 export interface MatchImageResult {
     /**
-     * Image index used to identify input photos between themselves. If not specified, than input list index is used
+     * Image index used to identify input photos between themselves. If not specified, than input list index is used.
      * @type {number}
      * @memberof MatchImageResult
      */
@@ -34,7 +34,7 @@ export interface MatchImageResult {
      */
     'firstFaceIndex'?: number;
     /**
-     * Image index used to identify input photos between themselves. If not specified, than input list index is used
+     * Image index used to identify input photos between themselves. If not specified, than input list index is used.
      * @type {number}
      * @memberof MatchImageResult
      */

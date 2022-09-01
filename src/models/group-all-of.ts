@@ -15,19 +15,19 @@
 
 
 /**
- * 
+ * Additional group data in the response, includes id and created_at.
  * @export
  * @interface GroupAllOf
  */
 export interface GroupAllOf {
     /**
-     * 
+     * Group ID.
      * @type {number}
      * @memberof GroupAllOf
      */
     'id'?: number;
     /**
-     * 
+     * Group creation date.
      * @type {string}
      * @memberof GroupAllOf
      */

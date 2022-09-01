@@ -21,19 +21,19 @@
  */
 export interface PersonAllOf {
     /**
-     * 
+     * Person ID.
      * @type {number}
      * @memberof PersonAllOf
      */
     'id'?: number;
     /**
-     * 
+     * Person creation date.
      * @type {string}
      * @memberof PersonAllOf
      */
     'created_at'?: string;
     /**
-     * 
+     * Person update date.
      * @type {string}
      * @memberof PersonAllOf
      */

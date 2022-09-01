@@ -15,25 +15,25 @@
 
 
 /**
- * 
+ * Request search data.
  * @export
  * @interface SearchRequestAllOf
  */
 export interface SearchRequestAllOf {
     /**
-     * 
+     * The number of returned Persons limit.
      * @type {number}
      * @memberof SearchRequestAllOf
      */
     'limit'?: number;
     /**
-     * 
+     * Similarity threshold.
      * @type {number}
      * @memberof SearchRequestAllOf
      */
     'threshold'?: number;
     /**
-     * 
+     * The IDs of the groups in which the search is performed.
      * @type {Array<number>}
      * @memberof SearchRequestAllOf
      */

@@ -15,19 +15,19 @@
 
 
 /**
- * 
+ * Person Request body: name and metadata.
  * @export
  * @interface PersonFields
  */
 export interface PersonFields {
     /**
-     * 
+     * Person name.
      * @type {string}
      * @memberof PersonFields
      */
     'name'?: string;
     /**
-     * 
+     * A free-form object containing person\'s extended attributes.
      * @type {{ [key: string]: object; }}
      * @memberof PersonFields
      */

@@ -21,7 +21,7 @@
  */
 export interface RecognizeImageAllOf {
     /**
-     * 
+     * The similarity score.
      * @type {number}
      * @memberof RecognizeImageAllOf
      */

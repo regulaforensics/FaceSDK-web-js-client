@@ -33,8 +33,8 @@ export class PersonApi extends GenPersonApi {
         return super.getAllImagesByPersonId(page, size, personId, options).then(r => r.data);
     }
 
-    getAllPersons(page: number, size: number, name?: string, options?: AxiosRequestConfig): any {
-        return super.getAllPersons(page, size, name, options).then(r => r.data);
+    getAllPersons(page: number, size: number, options?: AxiosRequestConfig): any {
+        return super.getAllPersons(page, size, options).then(r => r.data);
     }
 
     getImageOfPerson(imageId: number, personId: number, options?: AxiosRequestConfig): any {

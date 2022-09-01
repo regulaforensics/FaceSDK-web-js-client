@@ -21,7 +21,7 @@
  */
 export interface SearchResultAllOf {
     /**
-     * 
+     * The search result code.
      * @type {number}
      * @memberof SearchResultAllOf
      */

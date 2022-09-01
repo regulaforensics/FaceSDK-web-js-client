@@ -15,37 +15,37 @@
 
 
 /**
- * 
+ * Image in the response.
  * @export
  * @interface Image
  */
 export interface Image {
     /**
-     * 
+     * Response image ID.
      * @type {number}
      * @memberof Image
      */
     'id'?: number;
     /**
-     * 
+     * The original media type of the returned image.
      * @type {string}
      * @memberof Image
      */
     'content_type'?: string;
     /**
-     * 
+     * The returned image creation date.
      * @type {string}
      * @memberof Image
      */
     'created_at'?: string;
     /**
-     * 
+     * The returned image S3 path.
      * @type {string}
      * @memberof Image
      */
     'path'?: string;
     /**
-     * 
+     * The returned image URL.
      * @type {string}
      * @memberof Image
      */

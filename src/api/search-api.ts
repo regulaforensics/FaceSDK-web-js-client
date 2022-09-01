@@ -34,8 +34,8 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
     return {
         /**
          * 
-         * @summary Find person by image in groups scope
-         * @param {SearchRequest} searchRequest Search argument
+         * @summary Find person by image in groups.
+         * @param {SearchRequest} searchRequest 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -80,8 +80,8 @@ export const SearchApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
-         * @summary Find person by image in groups scope
-         * @param {SearchRequest} searchRequest Search argument
+         * @summary Find person by image in groups.
+         * @param {SearchRequest} searchRequest 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -101,8 +101,8 @@ export const SearchApiFactory = function (configuration?: Configuration, basePat
     return {
         /**
          * 
-         * @summary Find person by image in groups scope
-         * @param {SearchRequest} searchRequest Search argument
+         * @summary Find person by image in groups.
+         * @param {SearchRequest} searchRequest 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -121,8 +121,8 @@ export const SearchApiFactory = function (configuration?: Configuration, basePat
 export class SearchApi extends BaseAPI {
     /**
      * 
-     * @summary Find person by image in groups scope
-     * @param {SearchRequest} searchRequest Search argument
+     * @summary Find person by image in groups.
+     * @param {SearchRequest} searchRequest 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SearchApi

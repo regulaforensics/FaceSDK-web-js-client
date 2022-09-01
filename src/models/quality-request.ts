@@ -13,24 +13,25 @@
  */
 
 
+import { QualityConfig } from './quality-config';
 
 /**
- * Update group.
+ * Whether to perform the portrait quality check.
  * @export
- * @interface UpdateGroup
+ * @interface QualityRequest
  */
-export interface UpdateGroup {
+export interface QualityRequest {
     /**
-     * Add items.
+     * 
      * @type {Array<number>}
-     * @memberof UpdateGroup
+     * @memberof QualityRequest
      */
-    'addItems'?: Array<number>;
+    'backgroundMatchColor'?: Array<number>;
     /**
-     * Remove items.
-     * @type {Array<number>}
-     * @memberof UpdateGroup
+     * 
+     * @type {Array<QualityConfig>}
+     * @memberof QualityRequest
      */
-    'removeItems'?: Array<number>;
+    'config'?: Array<QualityConfig>;
 }
 

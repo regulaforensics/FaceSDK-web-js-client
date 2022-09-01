@@ -14,6 +14,7 @@
 
 
 import { Detection } from './detection';
+import { FaceQualityScenarios } from './face-quality-scenarios';
 
 /**
  * 
@@ -39,5 +40,17 @@ export interface DetectResult {
      * @memberof DetectResult
      */
     'landmarksType'?: number;
+    /**
+     * 
+     * @type {FaceQualityScenarios}
+     * @memberof DetectResult
+     */
+    'scenario'?: FaceQualityScenarios;
+    /**
+     * 
+     * @type {number}
+     * @memberof DetectResult
+     */
+    'timer'?: number;
 }
 

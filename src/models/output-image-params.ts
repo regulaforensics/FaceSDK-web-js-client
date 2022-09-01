@@ -13,24 +13,25 @@
  */
 
 
+import { Crop } from './crop';
 
 /**
- * Update group.
+ * Whether to process the uploaded image according to the indicated settings.
  * @export
- * @interface UpdateGroup
+ * @interface OutputImageParams
  */
-export interface UpdateGroup {
+export interface OutputImageParams {
     /**
-     * Add items.
+     * 
      * @type {Array<number>}
-     * @memberof UpdateGroup
+     * @memberof OutputImageParams
      */
-    'addItems'?: Array<number>;
+    'backgroundColor'?: Array<number>;
     /**
-     * Remove items.
-     * @type {Array<number>}
-     * @memberof UpdateGroup
+     * 
+     * @type {Crop}
+     * @memberof OutputImageParams
      */
-    'removeItems'?: Array<number>;
+    'crop'?: Crop;
 }
 

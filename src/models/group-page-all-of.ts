@@ -22,7 +22,7 @@ import { Group } from './group';
  */
 export interface GroupPageAllOf {
     /**
-     * 
+     * The array of Groups that are found during the search.
      * @type {Array<Group>}
      * @memberof GroupPageAllOf
      */

@@ -50,5 +50,4 @@ export * from './search-person-all-of';
 export * from './search-request';
 export * from './search-request-all-of';
 export * from './search-result';
-export * from './search-result-all-of';
 export * from './update-group';

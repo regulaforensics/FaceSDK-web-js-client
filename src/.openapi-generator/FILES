@@ -58,6 +58,5 @@ models/search-person-all-of.ts
 models/search-person.ts
 models/search-request-all-of.ts
 models/search-request.ts
-models/search-result-all-of.ts
 models/search-result.ts
 models/update-group.ts

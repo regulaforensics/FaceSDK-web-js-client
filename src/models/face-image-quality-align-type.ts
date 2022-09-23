@@ -13,13 +13,22 @@
  */
 
 
-import { Image } from './image';
-import { RecognizeImageAllOf } from './recognize-image-all-of';
 
 /**
- * @type RecognizeImage
+ * The aspect ratio according to which face alignment is performed during face detection.
  * @export
+ * @enum {string}
  */
-export type RecognizeImage = Image & RecognizeImageAllOf;
+
+export const FaceImageQualityAlignType = {
+    ALIGN_3x4: 0,
+    ALIGN_4x5: 1,
+    ALIGN_2x3: 2,
+    ALIGN_1x1: 3,
+    ALIGN_7x9: 4
+} as const;
+
+export type FaceImageQualityAlignType = typeof FaceImageQualityAlignType[keyof typeof FaceImageQualityAlignType];
+
 
 

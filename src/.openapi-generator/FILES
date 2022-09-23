@@ -14,11 +14,11 @@ models/detect-result.ts
 models/detection-face.ts
 models/detection-quality.ts
 models/detection.ts
-models/face-align-type-quality.ts
+models/face-image-quality-align-type.ts
 models/face-image-quality-groups.ts
+models/face-image-quality-status.ts
 models/face-quality-config-name.ts
 models/face-quality-scenarios.ts
-models/face-quality-status.ts
 models/face-sdkresult-code.ts
 models/face-sdkresult.ts
 models/group-all-of.ts

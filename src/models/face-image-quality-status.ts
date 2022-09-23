@@ -13,13 +13,20 @@
  */
 
 
-import { Image } from './image';
-import { RecognizeImageAllOf } from './recognize-image-all-of';
 
 /**
- * @type RecognizeImage
+ * The processing status returned for each assessed quality characteristic.
  * @export
+ * @enum {string}
  */
-export type RecognizeImage = Image & RecognizeImageAllOf;
+
+export const FaceImageQualityStatus = {
+    QUALITY_STATUS_FALSE: 0,
+    QUALITY_STATUS_TRUE: 1,
+    QUALITY_STATUS_UNDETERMINED: 2
+} as const;
+
+export type FaceImageQualityStatus = typeof FaceImageQualityStatus[keyof typeof FaceImageQualityStatus];
+
 
 

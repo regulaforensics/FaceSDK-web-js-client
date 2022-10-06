@@ -36,10 +36,11 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @summary Find person by image in groups.
          * @param {SearchRequest} searchRequest 
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        search: async (searchRequest: SearchRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        search: async (searchRequest: SearchRequest, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'searchRequest' is not null or undefined
             assertParamExists('search', 'searchRequest', searchRequest)
             const localVarPath = `/api/search`;
@@ -53,6 +54,10 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (xRequestID !== undefined && xRequestID !== null) {
+                localVarHeaderParameter['X-RequestID'] = String(xRequestID);
+            }
 
 
     
@@ -82,11 +87,12 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * 
          * @summary Find person by image in groups.
          * @param {SearchRequest} searchRequest 
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async search(searchRequest: SearchRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchResult>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.search(searchRequest, options);
+        async search(searchRequest: SearchRequest, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.search(searchRequest, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -103,11 +109,12 @@ export const SearchApiFactory = function (configuration?: Configuration, basePat
          * 
          * @summary Find person by image in groups.
          * @param {SearchRequest} searchRequest 
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        search(searchRequest: SearchRequest, options?: any): AxiosPromise<SearchResult> {
-            return localVarFp.search(searchRequest, options).then((request) => request(axios, basePath));
+        search(searchRequest: SearchRequest, xRequestID?: string, options?: any): AxiosPromise<SearchResult> {
+            return localVarFp.search(searchRequest, xRequestID, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -123,11 +130,12 @@ export class SearchApi extends BaseAPI {
      * 
      * @summary Find person by image in groups.
      * @param {SearchRequest} searchRequest 
+     * @param {string} [xRequestID] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    public search(searchRequest: SearchRequest, options?: AxiosRequestConfig) {
-        return SearchApiFp(this.configuration).search(searchRequest, options).then((request) => request(this.axios, this.basePath));
+    public search(searchRequest: SearchRequest, xRequestID?: string, options?: AxiosRequestConfig) {
+        return SearchApiFp(this.configuration).search(searchRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 }

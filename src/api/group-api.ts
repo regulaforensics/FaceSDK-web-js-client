@@ -42,10 +42,11 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Create group
          * @param {GroupToCreate} groupToCreate Request body for the group to create.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createGroup: async (groupToCreate: GroupToCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createGroup: async (groupToCreate: GroupToCreate, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'groupToCreate' is not null or undefined
             assertParamExists('createGroup', 'groupToCreate', groupToCreate)
             const localVarPath = `/api/groups`;
@@ -59,6 +60,10 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (xRequestID !== undefined && xRequestID !== null) {
+                localVarHeaderParameter['X-RequestID'] = String(xRequestID);
+            }
 
 
     
@@ -78,10 +83,11 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Delete group
          * @param {number} groupId Group ID.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteGroup: async (groupId: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteGroup: async (groupId: number, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'groupId' is not null or undefined
             assertParamExists('deleteGroup', 'groupId', groupId)
             const localVarPath = `/api/groups/{group_id}`
@@ -96,6 +102,10 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
             const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (xRequestID !== undefined && xRequestID !== null) {
+                localVarHeaderParameter['X-RequestID'] = String(xRequestID);
+            }
 
 
     
@@ -113,10 +123,11 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Get groups
          * @param {number} page The page number to get a list of persons or groups.
          * @param {number} size The page size with a list of persons or groups, items.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllGroups: async (page: number, size: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAllGroups: async (page: number, size: number, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'page' is not null or undefined
             assertParamExists('getAllGroups', 'page', page)
             // verify required parameter 'size' is not null or undefined
@@ -141,6 +152,10 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
                 localVarQueryParameter['size'] = size;
             }
 
+            if (xRequestID !== undefined && xRequestID !== null) {
+                localVarHeaderParameter['X-RequestID'] = String(xRequestID);
+            }
+
 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -158,10 +173,11 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
          * @param {number} page The page number to get a list of persons or groups.
          * @param {number} size The page size with a list of persons or groups, items.
          * @param {number} groupId Group ID.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllPersonsByGroupId: async (page: number, size: number, groupId: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAllPersonsByGroupId: async (page: number, size: number, groupId: number, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'page' is not null or undefined
             assertParamExists('getAllPersonsByGroupId', 'page', page)
             // verify required parameter 'size' is not null or undefined
@@ -189,6 +205,10 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
                 localVarQueryParameter['size'] = size;
             }
 
+            if (xRequestID !== undefined && xRequestID !== null) {
+                localVarHeaderParameter['X-RequestID'] = String(xRequestID);
+            }
+
 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -204,10 +224,11 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Get group
          * @param {number} groupId Group ID.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGroup: async (groupId: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getGroup: async (groupId: number, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'groupId' is not null or undefined
             assertParamExists('getGroup', 'groupId', groupId)
             const localVarPath = `/api/groups/{group_id}`
@@ -222,6 +243,10 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (xRequestID !== undefined && xRequestID !== null) {
+                localVarHeaderParameter['X-RequestID'] = String(xRequestID);
+            }
 
 
     
@@ -239,10 +264,11 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Update group
          * @param {number} groupId Group ID.
          * @param {GroupToCreate} groupToCreate Request body for the group to update.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateGroup: async (groupId: number, groupToCreate: GroupToCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateGroup: async (groupId: number, groupToCreate: GroupToCreate, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'groupId' is not null or undefined
             assertParamExists('updateGroup', 'groupId', groupId)
             // verify required parameter 'groupToCreate' is not null or undefined
@@ -259,6 +285,10 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (xRequestID !== undefined && xRequestID !== null) {
+                localVarHeaderParameter['X-RequestID'] = String(xRequestID);
+            }
 
 
     
@@ -279,10 +309,11 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Add/remove persons to group
          * @param {number} groupId Group ID.
          * @param {UpdateGroup} updateGroup Request body for person IDs to add or remove.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updatePersonsInGroup: async (groupId: number, updateGroup: UpdateGroup, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updatePersonsInGroup: async (groupId: number, updateGroup: UpdateGroup, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'groupId' is not null or undefined
             assertParamExists('updatePersonsInGroup', 'groupId', groupId)
             // verify required parameter 'updateGroup' is not null or undefined
@@ -299,6 +330,10 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (xRequestID !== undefined && xRequestID !== null) {
+                localVarHeaderParameter['X-RequestID'] = String(xRequestID);
+            }
 
 
     
@@ -328,22 +363,24 @@ export const GroupApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create group
          * @param {GroupToCreate} groupToCreate Request body for the group to create.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createGroup(groupToCreate: GroupToCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Group>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createGroup(groupToCreate, options);
+        async createGroup(groupToCreate: GroupToCreate, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Group>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createGroup(groupToCreate, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Delete group
          * @param {number} groupId Group ID.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteGroup(groupId: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteGroup(groupId, options);
+        async deleteGroup(groupId: number, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteGroup(groupId, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -351,11 +388,12 @@ export const GroupApiFp = function(configuration?: Configuration) {
          * @summary Get groups
          * @param {number} page The page number to get a list of persons or groups.
          * @param {number} size The page size with a list of persons or groups, items.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllGroups(page: number, size: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GroupPage>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllGroups(page, size, options);
+        async getAllGroups(page: number, size: number, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GroupPage>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllGroups(page, size, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -364,22 +402,24 @@ export const GroupApiFp = function(configuration?: Configuration) {
          * @param {number} page The page number to get a list of persons or groups.
          * @param {number} size The page size with a list of persons or groups, items.
          * @param {number} groupId Group ID.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllPersonsByGroupId(page: number, size: number, groupId: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PersonsPage>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllPersonsByGroupId(page, size, groupId, options);
+        async getAllPersonsByGroupId(page: number, size: number, groupId: number, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PersonsPage>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllPersonsByGroupId(page, size, groupId, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get group
          * @param {number} groupId Group ID.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getGroup(groupId: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Group>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getGroup(groupId, options);
+        async getGroup(groupId: number, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Group>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getGroup(groupId, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -387,11 +427,12 @@ export const GroupApiFp = function(configuration?: Configuration) {
          * @summary Update group
          * @param {number} groupId Group ID.
          * @param {GroupToCreate} groupToCreate Request body for the group to update.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateGroup(groupId: number, groupToCreate: GroupToCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.updateGroup(groupId, groupToCreate, options);
+        async updateGroup(groupId: number, groupToCreate: GroupToCreate, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateGroup(groupId, groupToCreate, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -399,11 +440,12 @@ export const GroupApiFp = function(configuration?: Configuration) {
          * @summary Add/remove persons to group
          * @param {number} groupId Group ID.
          * @param {UpdateGroup} updateGroup Request body for person IDs to add or remove.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updatePersonsInGroup(groupId: number, updateGroup: UpdateGroup, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.updatePersonsInGroup(groupId, updateGroup, options);
+        async updatePersonsInGroup(groupId: number, updateGroup: UpdateGroup, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updatePersonsInGroup(groupId, updateGroup, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -420,32 +462,35 @@ export const GroupApiFactory = function (configuration?: Configuration, basePath
          * 
          * @summary Create group
          * @param {GroupToCreate} groupToCreate Request body for the group to create.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createGroup(groupToCreate: GroupToCreate, options?: any): AxiosPromise<Group> {
-            return localVarFp.createGroup(groupToCreate, options).then((request) => request(axios, basePath));
+        createGroup(groupToCreate: GroupToCreate, xRequestID?: string, options?: any): AxiosPromise<Group> {
+            return localVarFp.createGroup(groupToCreate, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete group
          * @param {number} groupId Group ID.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteGroup(groupId: number, options?: any): AxiosPromise<void> {
-            return localVarFp.deleteGroup(groupId, options).then((request) => request(axios, basePath));
+        deleteGroup(groupId: number, xRequestID?: string, options?: any): AxiosPromise<void> {
+            return localVarFp.deleteGroup(groupId, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get groups
          * @param {number} page The page number to get a list of persons or groups.
          * @param {number} size The page size with a list of persons or groups, items.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllGroups(page: number, size: number, options?: any): AxiosPromise<GroupPage> {
-            return localVarFp.getAllGroups(page, size, options).then((request) => request(axios, basePath));
+        getAllGroups(page: number, size: number, xRequestID?: string, options?: any): AxiosPromise<GroupPage> {
+            return localVarFp.getAllGroups(page, size, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -453,43 +498,47 @@ export const GroupApiFactory = function (configuration?: Configuration, basePath
          * @param {number} page The page number to get a list of persons or groups.
          * @param {number} size The page size with a list of persons or groups, items.
          * @param {number} groupId Group ID.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllPersonsByGroupId(page: number, size: number, groupId: number, options?: any): AxiosPromise<PersonsPage> {
-            return localVarFp.getAllPersonsByGroupId(page, size, groupId, options).then((request) => request(axios, basePath));
+        getAllPersonsByGroupId(page: number, size: number, groupId: number, xRequestID?: string, options?: any): AxiosPromise<PersonsPage> {
+            return localVarFp.getAllPersonsByGroupId(page, size, groupId, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get group
          * @param {number} groupId Group ID.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGroup(groupId: number, options?: any): AxiosPromise<Group> {
-            return localVarFp.getGroup(groupId, options).then((request) => request(axios, basePath));
+        getGroup(groupId: number, xRequestID?: string, options?: any): AxiosPromise<Group> {
+            return localVarFp.getGroup(groupId, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update group
          * @param {number} groupId Group ID.
          * @param {GroupToCreate} groupToCreate Request body for the group to update.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateGroup(groupId: number, groupToCreate: GroupToCreate, options?: any): AxiosPromise<void> {
-            return localVarFp.updateGroup(groupId, groupToCreate, options).then((request) => request(axios, basePath));
+        updateGroup(groupId: number, groupToCreate: GroupToCreate, xRequestID?: string, options?: any): AxiosPromise<void> {
+            return localVarFp.updateGroup(groupId, groupToCreate, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Add/remove persons to group
          * @param {number} groupId Group ID.
          * @param {UpdateGroup} updateGroup Request body for person IDs to add or remove.
+         * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updatePersonsInGroup(groupId: number, updateGroup: UpdateGroup, options?: any): AxiosPromise<void> {
-            return localVarFp.updatePersonsInGroup(groupId, updateGroup, options).then((request) => request(axios, basePath));
+        updatePersonsInGroup(groupId: number, updateGroup: UpdateGroup, xRequestID?: string, options?: any): AxiosPromise<void> {
+            return localVarFp.updatePersonsInGroup(groupId, updateGroup, xRequestID, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -505,24 +554,26 @@ export class GroupApi extends BaseAPI {
      * 
      * @summary Create group
      * @param {GroupToCreate} groupToCreate Request body for the group to create.
+     * @param {string} [xRequestID] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
      */
-    public createGroup(groupToCreate: GroupToCreate, options?: AxiosRequestConfig) {
-        return GroupApiFp(this.configuration).createGroup(groupToCreate, options).then((request) => request(this.axios, this.basePath));
+    public createGroup(groupToCreate: GroupToCreate, xRequestID?: string, options?: AxiosRequestConfig) {
+        return GroupApiFp(this.configuration).createGroup(groupToCreate, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete group
      * @param {number} groupId Group ID.
+     * @param {string} [xRequestID] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
      */
-    public deleteGroup(groupId: number, options?: AxiosRequestConfig) {
-        return GroupApiFp(this.configuration).deleteGroup(groupId, options).then((request) => request(this.axios, this.basePath));
+    public deleteGroup(groupId: number, xRequestID?: string, options?: AxiosRequestConfig) {
+        return GroupApiFp(this.configuration).deleteGroup(groupId, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -530,12 +581,13 @@ export class GroupApi extends BaseAPI {
      * @summary Get groups
      * @param {number} page The page number to get a list of persons or groups.
      * @param {number} size The page size with a list of persons or groups, items.
+     * @param {string} [xRequestID] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
      */
-    public getAllGroups(page: number, size: number, options?: AxiosRequestConfig) {
-        return GroupApiFp(this.configuration).getAllGroups(page, size, options).then((request) => request(this.axios, this.basePath));
+    public getAllGroups(page: number, size: number, xRequestID?: string, options?: AxiosRequestConfig) {
+        return GroupApiFp(this.configuration).getAllGroups(page, size, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -544,24 +596,26 @@ export class GroupApi extends BaseAPI {
      * @param {number} page The page number to get a list of persons or groups.
      * @param {number} size The page size with a list of persons or groups, items.
      * @param {number} groupId Group ID.
+     * @param {string} [xRequestID] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
      */
-    public getAllPersonsByGroupId(page: number, size: number, groupId: number, options?: AxiosRequestConfig) {
-        return GroupApiFp(this.configuration).getAllPersonsByGroupId(page, size, groupId, options).then((request) => request(this.axios, this.basePath));
+    public getAllPersonsByGroupId(page: number, size: number, groupId: number, xRequestID?: string, options?: AxiosRequestConfig) {
+        return GroupApiFp(this.configuration).getAllPersonsByGroupId(page, size, groupId, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get group
      * @param {number} groupId Group ID.
+     * @param {string} [xRequestID] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
      */
-    public getGroup(groupId: number, options?: AxiosRequestConfig) {
-        return GroupApiFp(this.configuration).getGroup(groupId, options).then((request) => request(this.axios, this.basePath));
+    public getGroup(groupId: number, xRequestID?: string, options?: AxiosRequestConfig) {
+        return GroupApiFp(this.configuration).getGroup(groupId, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -569,12 +623,13 @@ export class GroupApi extends BaseAPI {
      * @summary Update group
      * @param {number} groupId Group ID.
      * @param {GroupToCreate} groupToCreate Request body for the group to update.
+     * @param {string} [xRequestID] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
      */
-    public updateGroup(groupId: number, groupToCreate: GroupToCreate, options?: AxiosRequestConfig) {
-        return GroupApiFp(this.configuration).updateGroup(groupId, groupToCreate, options).then((request) => request(this.axios, this.basePath));
+    public updateGroup(groupId: number, groupToCreate: GroupToCreate, xRequestID?: string, options?: AxiosRequestConfig) {
+        return GroupApiFp(this.configuration).updateGroup(groupId, groupToCreate, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -582,11 +637,12 @@ export class GroupApi extends BaseAPI {
      * @summary Add/remove persons to group
      * @param {number} groupId Group ID.
      * @param {UpdateGroup} updateGroup Request body for person IDs to add or remove.
+     * @param {string} [xRequestID] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
      */
-    public updatePersonsInGroup(groupId: number, updateGroup: UpdateGroup, options?: AxiosRequestConfig) {
-        return GroupApiFp(this.configuration).updatePersonsInGroup(groupId, updateGroup, options).then((request) => request(this.axios, this.basePath));
+    public updatePersonsInGroup(groupId: number, updateGroup: UpdateGroup, xRequestID?: string, options?: AxiosRequestConfig) {
+        return GroupApiFp(this.configuration).updatePersonsInGroup(groupId, updateGroup, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 }

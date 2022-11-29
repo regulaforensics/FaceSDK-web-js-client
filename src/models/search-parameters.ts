@@ -13,37 +13,30 @@
  */
 
 
-import { FaceImageQualityAlignType } from './face-image-quality-align-type';
 
 /**
- * 
+ * Request search data.
  * @export
- * @interface Crop
+ * @interface SearchParameters
  */
-export interface Crop {
+export interface SearchParameters {
     /**
-     * 
-     * @type {FaceImageQualityAlignType}
-     * @memberof Crop
+     * The number of returned Persons limit.
+     * @type {number}
+     * @memberof SearchParameters
      */
-    'type'?: FaceImageQualityAlignType;
+    'limit'?: number;
     /**
-     * 
+     * The similarity distance threshold.
+     * @type {number}
+     * @memberof SearchParameters
+     */
+    'threshold'?: number;
+    /**
+     * The IDs of the groups in which the search is performed.
      * @type {Array<number>}
-     * @memberof Crop
+     * @memberof SearchParameters
      */
-    'padColor'?: Array<number>;
-    /**
-     * The resize value in case type matches this value. If it doesn\'t, no resize is done.
-     * @type {Array<number>}
-     * @memberof Crop
-     */
-    'size'?: Array<number>;
-    /**
-     * Whether to return the coordinates of the rectangle with the face in the original image prepared for the face crop.
-     * @type {boolean}
-     * @memberof Crop
-     */
-    'returnOriginalRect'?: boolean;
+    'group_ids'?: Array<number>;
 }
 

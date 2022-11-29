@@ -13,37 +13,26 @@
  */
 
 
-import { FaceImageQualityAlignType } from './face-image-quality-align-type';
+import { ImageSource } from './image-source';
+import { ImageData } from './image-data';
 
 /**
  * 
  * @export
- * @interface Crop
+ * @interface MatchAndSearchRequestAllOfImages
  */
-export interface Crop {
+export interface MatchAndSearchRequestAllOfImages {
     /**
      * 
-     * @type {FaceImageQualityAlignType}
-     * @memberof Crop
+     * @type {ImageData}
+     * @memberof MatchAndSearchRequestAllOfImages
      */
-    'type'?: FaceImageQualityAlignType;
+    'content'?: ImageData;
     /**
      * 
-     * @type {Array<number>}
-     * @memberof Crop
+     * @type {ImageSource}
+     * @memberof MatchAndSearchRequestAllOfImages
      */
-    'padColor'?: Array<number>;
-    /**
-     * The resize value in case type matches this value. If it doesn\'t, no resize is done.
-     * @type {Array<number>}
-     * @memberof Crop
-     */
-    'size'?: Array<number>;
-    /**
-     * Whether to return the coordinates of the rectangle with the face in the original image prepared for the face crop.
-     * @type {boolean}
-     * @memberof Crop
-     */
-    'returnOriginalRect'?: boolean;
+    'type'?: ImageSource;
 }
 

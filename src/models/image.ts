@@ -39,6 +39,12 @@ export interface Image {
      */
     'created_at'?: string;
     /**
+     * The returned image update date.
+     * @type {string}
+     * @memberof Image
+     */
+    'updated_at'?: string;
+    /**
      * The returned image S3 path.
      * @type {string}
      * @memberof Image
@@ -50,5 +56,11 @@ export interface Image {
      * @memberof Image
      */
     'url'?: string;
+    /**
+     * A free-form object containing person\'s extended attributes.
+     * @type {{ [key: string]: object; }}
+     * @memberof Image
+     */
+    'metadata'?: { [key: string]: object; };
 }
 

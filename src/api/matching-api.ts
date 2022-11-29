@@ -25,6 +25,10 @@ import { DetectRequest } from '../models';
 // @ts-ignore
 import { DetectResponse } from '../models';
 // @ts-ignore
+import { MatchAndSearchRequest } from '../models';
+// @ts-ignore
+import { MatchAndSearchResponse } from '../models';
+// @ts-ignore
 import { MatchRequest } from '../models';
 // @ts-ignore
 import { MatchResponse } from '../models';
@@ -77,7 +81,7 @@ export const MatchingApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * 
-         * @summary Compare provided face images in all combinations and return similarity score for each pair.
+         * @summary Compare provided face images in all combinations and return the similarity score for each pair.
          * @param {MatchRequest} matchRequest 
          * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
@@ -116,6 +120,47 @@ export const MatchingApiAxiosParamCreator = function (configuration?: Configurat
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Match and Search in one request
+         * @param {MatchAndSearchRequest} matchAndSearchRequest 
+         * @param {string} [xRequestID] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        matchAndSearch: async (matchAndSearchRequest: MatchAndSearchRequest, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'matchAndSearchRequest' is not null or undefined
+            assertParamExists('matchAndSearch', 'matchAndSearchRequest', matchAndSearchRequest)
+            const localVarPath = `/api/match_and_search`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (xRequestID !== undefined && xRequestID !== null) {
+                localVarHeaderParameter['X-RequestID'] = String(xRequestID);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(matchAndSearchRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -140,7 +185,7 @@ export const MatchingApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Compare provided face images in all combinations and return similarity score for each pair.
+         * @summary Compare provided face images in all combinations and return the similarity score for each pair.
          * @param {MatchRequest} matchRequest 
          * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
@@ -148,6 +193,18 @@ export const MatchingApiFp = function(configuration?: Configuration) {
          */
         async match(matchRequest: MatchRequest, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MatchResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.match(matchRequest, xRequestID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Match and Search in one request
+         * @param {MatchAndSearchRequest} matchAndSearchRequest 
+         * @param {string} [xRequestID] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async matchAndSearch(matchAndSearchRequest: MatchAndSearchRequest, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MatchAndSearchResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.matchAndSearch(matchAndSearchRequest, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -173,7 +230,7 @@ export const MatchingApiFactory = function (configuration?: Configuration, baseP
         },
         /**
          * 
-         * @summary Compare provided face images in all combinations and return similarity score for each pair.
+         * @summary Compare provided face images in all combinations and return the similarity score for each pair.
          * @param {MatchRequest} matchRequest 
          * @param {string} [xRequestID] 
          * @param {*} [options] Override http request option.
@@ -181,6 +238,17 @@ export const MatchingApiFactory = function (configuration?: Configuration, baseP
          */
         match(matchRequest: MatchRequest, xRequestID?: string, options?: any): AxiosPromise<MatchResponse> {
             return localVarFp.match(matchRequest, xRequestID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Match and Search in one request
+         * @param {MatchAndSearchRequest} matchAndSearchRequest 
+         * @param {string} [xRequestID] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        matchAndSearch(matchAndSearchRequest: MatchAndSearchRequest, xRequestID?: string, options?: any): AxiosPromise<MatchAndSearchResponse> {
+            return localVarFp.matchAndSearch(matchAndSearchRequest, xRequestID, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -207,7 +275,7 @@ export class MatchingApi extends BaseAPI {
 
     /**
      * 
-     * @summary Compare provided face images in all combinations and return similarity score for each pair.
+     * @summary Compare provided face images in all combinations and return the similarity score for each pair.
      * @param {MatchRequest} matchRequest 
      * @param {string} [xRequestID] 
      * @param {*} [options] Override http request option.
@@ -216,5 +284,18 @@ export class MatchingApi extends BaseAPI {
      */
     public match(matchRequest: MatchRequest, xRequestID?: string, options?: AxiosRequestConfig) {
         return MatchingApiFp(this.configuration).match(matchRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Match and Search in one request
+     * @param {MatchAndSearchRequest} matchAndSearchRequest 
+     * @param {string} [xRequestID] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MatchingApi
+     */
+    public matchAndSearch(matchAndSearchRequest: MatchAndSearchRequest, xRequestID?: string, options?: AxiosRequestConfig) {
+        return MatchingApiFp(this.configuration).matchAndSearch(matchAndSearchRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 }

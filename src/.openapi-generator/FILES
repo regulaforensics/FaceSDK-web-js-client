@@ -33,6 +33,12 @@ models/image-page.ts
 models/image-source.ts
 models/image.ts
 models/index.ts
+models/match-and-search-request-all-of-images.ts
+models/match-and-search-request-all-of.ts
+models/match-and-search-request.ts
+models/match-and-search-response-all-of-detections.ts
+models/match-and-search-response-all-of.ts
+models/match-and-search-response.ts
 models/match-image-detection.ts
 models/match-image-result.ts
 models/match-image.ts
@@ -44,6 +50,8 @@ models/output-image-params.ts
 models/page.ts
 models/person-all-of.ts
 models/person-fields.ts
+models/person-with-images-all-of.ts
+models/person-with-images.ts
 models/person.ts
 models/persons-page-all-of.ts
 models/persons-page.ts
@@ -54,9 +62,9 @@ models/quality-details-groups.ts
 models/quality-request.ts
 models/recognize-image-all-of.ts
 models/recognize-image.ts
+models/search-parameters.ts
 models/search-person-all-of.ts
 models/search-person.ts
-models/search-request-all-of.ts
 models/search-request.ts
 models/search-result.ts
 models/update-group.ts

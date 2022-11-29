@@ -26,5 +26,11 @@ export interface RecognizeImageAllOf {
      * @memberof RecognizeImageAllOf
      */
     'similarity'?: number;
+    /**
+     * The similarity distance score: the lower the distance, the higher the face\'s similarity.
+     * @type {number}
+     * @memberof RecognizeImageAllOf
+     */
+    'distance'?: number;
 }
 

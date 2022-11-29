@@ -13,37 +13,19 @@
  */
 
 
-import { FaceImageQualityAlignType } from './face-image-quality-align-type';
+import { RecognizeImage } from './recognize-image';
 
 /**
  * 
  * @export
- * @interface Crop
+ * @interface PersonWithImagesAllOf
  */
-export interface Crop {
+export interface PersonWithImagesAllOf {
     /**
      * 
-     * @type {FaceImageQualityAlignType}
-     * @memberof Crop
+     * @type {Array<RecognizeImage>}
+     * @memberof PersonWithImagesAllOf
      */
-    'type'?: FaceImageQualityAlignType;
-    /**
-     * 
-     * @type {Array<number>}
-     * @memberof Crop
-     */
-    'padColor'?: Array<number>;
-    /**
-     * The resize value in case type matches this value. If it doesn\'t, no resize is done.
-     * @type {Array<number>}
-     * @memberof Crop
-     */
-    'size'?: Array<number>;
-    /**
-     * Whether to return the coordinates of the rectangle with the face in the original image prepared for the face crop.
-     * @type {boolean}
-     * @memberof Crop
-     */
-    'returnOriginalRect'?: boolean;
+    'images'?: Array<RecognizeImage>;
 }
 

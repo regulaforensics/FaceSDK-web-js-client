@@ -13,37 +13,33 @@
  */
 
 
-import { FaceImageQualityAlignType } from './face-image-quality-align-type';
+import { DetectionFace } from './detection-face';
+import { FaceSDKResultCode } from './face-sdkresult-code';
+import { PersonWithImages } from './person-with-images';
 
 /**
  * 
  * @export
- * @interface Crop
+ * @interface MatchAndSearchResponseAllOfDetections
  */
-export interface Crop {
+export interface MatchAndSearchResponseAllOfDetections {
     /**
      * 
-     * @type {FaceImageQualityAlignType}
-     * @memberof Crop
+     * @type {Array<DetectionFace & object>}
+     * @memberof MatchAndSearchResponseAllOfDetections
      */
-    'type'?: FaceImageQualityAlignType;
+    'faces'?: Array<DetectionFace & object>;
+    /**
+     * Image index used to identify input photos between themselves. If not specified, than input list index is used.
+     * @type {number}
+     * @memberof MatchAndSearchResponseAllOfDetections
+     */
+    'imageIndex'?: number;
     /**
      * 
-     * @type {Array<number>}
-     * @memberof Crop
+     * @type {FaceSDKResultCode}
+     * @memberof MatchAndSearchResponseAllOfDetections
      */
-    'padColor'?: Array<number>;
-    /**
-     * The resize value in case type matches this value. If it doesn\'t, no resize is done.
-     * @type {Array<number>}
-     * @memberof Crop
-     */
-    'size'?: Array<number>;
-    /**
-     * Whether to return the coordinates of the rectangle with the face in the original image prepared for the face crop.
-     * @type {boolean}
-     * @memberof Crop
-     */
-    'returnOriginalRect'?: boolean;
+    'status'?: FaceSDKResultCode;
 }
 

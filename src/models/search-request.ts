@@ -15,12 +15,12 @@
 
 import { ImageFields } from './image-fields';
 import { ImageFieldsImage } from './image-fields-image';
-import { SearchRequestAllOf } from './search-request-all-of';
+import { SearchParameters } from './search-parameters';
 
 /**
  * @type SearchRequest
  * @export
  */
-export type SearchRequest = ImageFields & SearchRequestAllOf;
+export type SearchRequest = ImageFields & SearchParameters;
 
 

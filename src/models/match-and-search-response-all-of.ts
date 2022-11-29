@@ -13,37 +13,38 @@
  */
 
 
-import { FaceImageQualityAlignType } from './face-image-quality-align-type';
+import { MatchAndSearchResponseAllOfDetections } from './match-and-search-response-all-of-detections';
+import { MatchImageResult } from './match-image-result';
 
 /**
  * 
  * @export
- * @interface Crop
+ * @interface MatchAndSearchResponseAllOf
  */
-export interface Crop {
+export interface MatchAndSearchResponseAllOf {
     /**
      * 
-     * @type {FaceImageQualityAlignType}
-     * @memberof Crop
+     * @type {Array<MatchAndSearchResponseAllOfDetections>}
+     * @memberof MatchAndSearchResponseAllOf
      */
-    'type'?: FaceImageQualityAlignType;
+    'detections'?: Array<MatchAndSearchResponseAllOfDetections>;
     /**
      * 
-     * @type {Array<number>}
-     * @memberof Crop
+     * @type {MatchImageResult}
+     * @memberof MatchAndSearchResponseAllOf
      */
-    'padColor'?: Array<number>;
+    'results'?: MatchImageResult;
     /**
-     * The resize value in case type matches this value. If it doesn\'t, no resize is done.
-     * @type {Array<number>}
-     * @memberof Crop
+     * 
+     * @type {number}
+     * @memberof MatchAndSearchResponseAllOf
      */
-    'size'?: Array<number>;
+    'elapsedTime'?: number;
     /**
-     * Whether to return the coordinates of the rectangle with the face in the original image prepared for the face crop.
-     * @type {boolean}
-     * @memberof Crop
+     * A free-form object containing person\'s extended attributes.
+     * @type {{ [key: string]: object; }}
+     * @memberof MatchAndSearchResponseAllOf
      */
-    'returnOriginalRect'?: boolean;
+    'metadata'?: { [key: string]: object; };
 }
 

@@ -13,7 +13,6 @@
  */
 
 
-import { onFace } from './on-face';
 import { DetectionFace } from './detection-face';
 import { FaceSDKResultCode } from './face-sdkresult-code';
 import { PersonWithImages } from './person-with-images';

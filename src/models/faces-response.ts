@@ -13,32 +13,14 @@
  */
 
 
-import { FaceSDKResultCode } from './face-sdkresult-code';
-import { FacesResponse } from './faces-response';
+import { DetectionFace } from './detection-face';
+import { FacesResponseAllOf } from './faces-response-all-of';
+import { PersonWithImages } from './person-with-images';
 
 /**
- * 
+ * @type FacesResponse
  * @export
- * @interface MatchAndSearchResponseAllOfDetections
  */
-export interface MatchAndSearchResponseAllOfDetections {
-    /**
-     * 
-     * @type {Array<FacesResponse>}
-     * @memberof MatchAndSearchResponseAllOfDetections
-     */
-    'faces'?: Array<FacesResponse>;
-    /**
-     * Image index used to identify input photos between themselves. If not specified, than input list index is used.
-     * @type {number}
-     * @memberof MatchAndSearchResponseAllOfDetections
-     */
-    'imageIndex'?: number;
-    /**
-     * 
-     * @type {FaceSDKResultCode}
-     * @memberof MatchAndSearchResponseAllOfDetections
-     */
-    'status'?: FaceSDKResultCode;
-}
+export type FacesResponse = DetectionFace & FacesResponseAllOf;
+
 

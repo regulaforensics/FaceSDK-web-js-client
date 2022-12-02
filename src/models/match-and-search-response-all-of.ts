@@ -24,16 +24,10 @@ import { MatchImageResult } from './match-image-result';
 export interface MatchAndSearchResponseAllOf {
     /**
      * 
-     * @type {Array<MatchAndSearchResponseAllOfDetections>}
+     * @type {Array<MatchImageResult>}
      * @memberof MatchAndSearchResponseAllOf
      */
-    'detections'?: Array<MatchAndSearchResponseAllOfDetections>;
-    /**
-     * 
-     * @type {MatchImageResult}
-     * @memberof MatchAndSearchResponseAllOf
-     */
-    'results'?: MatchImageResult;
+    'results'?: Array<MatchImageResult>;
     /**
      * 
      * @type {number}
@@ -46,5 +40,11 @@ export interface MatchAndSearchResponseAllOf {
      * @memberof MatchAndSearchResponseAllOf
      */
     'metadata'?: { [key: string]: object; };
+    /**
+     * 
+     * @type {Array<MatchAndSearchResponseAllOfDetections>}
+     * @memberof MatchAndSearchResponseAllOf
+     */
+    'detections'?: Array<MatchAndSearchResponseAllOfDetections>;
 }
 

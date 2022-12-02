@@ -13,6 +13,8 @@ export * from './face-quality-config-name';
 export * from './face-quality-scenarios';
 export * from './face-sdkresult';
 export * from './face-sdkresult-code';
+export * from './faces-response';
+export * from './faces-response-all-of';
 export * from './group';
 export * from './group-all-of';
 export * from './group-page';

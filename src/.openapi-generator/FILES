@@ -21,6 +21,8 @@ models/face-quality-config-name.ts
 models/face-quality-scenarios.ts
 models/face-sdkresult-code.ts
 models/face-sdkresult.ts
+models/faces-response-all-of.ts
+models/faces-response.ts
 models/group-all-of.ts
 models/group-page-all-of.ts
 models/group-page.ts

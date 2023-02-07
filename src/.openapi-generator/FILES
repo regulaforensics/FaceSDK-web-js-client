@@ -1,5 +1,6 @@
 api.ts
 api/group-api.ts
+api/liveness-api.ts
 api/matching-api.ts
 api/person-api.ts
 api/search-api.ts

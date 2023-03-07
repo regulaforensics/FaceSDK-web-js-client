@@ -60,4 +60,5 @@ export * from './search-person';
 export * from './search-person-all-of';
 export * from './search-request';
 export * from './search-result';
+export * from './transaction-info';
 export * from './update-group';

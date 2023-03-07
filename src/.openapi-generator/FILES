@@ -1,6 +1,6 @@
 api.ts
 api/group-api.ts
-api/liveness-api.ts
+api/liveness20-api.ts
 api/matching-api.ts
 api/person-api.ts
 api/search-api.ts
@@ -70,4 +70,5 @@ models/search-person-all-of.ts
 models/search-person.ts
 models/search-request.ts
 models/search-result.ts
+models/transaction-info.ts
 models/update-group.ts

@@ -21,29 +21,24 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { OperationLog } from '../models';
-// @ts-ignore
-import { SearchRequest } from '../models';
-// @ts-ignore
-import { SearchResult } from '../models';
+import { TransactionInfo } from '../models';
 /**
- * SearchApi - axios parameter creator
+ * Liveness20Api - axios parameter creator
  * @export
  */
-export const SearchApiAxiosParamCreator = function (configuration?: Configuration) {
+export const Liveness20ApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * 
-         * @summary Find person by image in groups.
-         * @param {SearchRequest} searchRequest 
-         * @param {string} [xRequestID] 
+         * @summary liveness
+         * @param {number} transactionId ID of the current liveness transaction.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        search: async (searchRequest: SearchRequest, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'searchRequest' is not null or undefined
-            assertParamExists('search', 'searchRequest', searchRequest)
-            const localVarPath = `/api/search`;
+        getLivenessTransactionInfo: async (transactionId: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'transactionId' is not null or undefined
+            assertParamExists('getLivenessTransactionInfo', 'transactionId', transactionId)
+            const localVarPath = `/api/v2/liveness`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -51,22 +46,19 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
                 baseOptions = configuration.baseOptions;
             }
 
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            if (xRequestID !== undefined && xRequestID !== null) {
-                localVarHeaderParameter['X-RequestID'] = String(xRequestID);
+            if (transactionId !== undefined) {
+                localVarQueryParameter['transactionId'] = transactionId;
             }
 
 
     
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(searchRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -77,65 +69,62 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
 };
 
 /**
- * SearchApi - functional programming interface
+ * Liveness20Api - functional programming interface
  * @export
  */
-export const SearchApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = SearchApiAxiosParamCreator(configuration)
+export const Liveness20ApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = Liveness20ApiAxiosParamCreator(configuration)
     return {
         /**
          * 
-         * @summary Find person by image in groups.
-         * @param {SearchRequest} searchRequest 
-         * @param {string} [xRequestID] 
+         * @summary liveness
+         * @param {number} transactionId ID of the current liveness transaction.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async search(searchRequest: SearchRequest, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchResult>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.search(searchRequest, xRequestID, options);
+        async getLivenessTransactionInfo(transactionId: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionInfo>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getLivenessTransactionInfo(transactionId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
 };
 
 /**
- * SearchApi - factory interface
+ * Liveness20Api - factory interface
  * @export
  */
-export const SearchApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = SearchApiFp(configuration)
+export const Liveness20ApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = Liveness20ApiFp(configuration)
     return {
         /**
          * 
-         * @summary Find person by image in groups.
-         * @param {SearchRequest} searchRequest 
-         * @param {string} [xRequestID] 
+         * @summary liveness
+         * @param {number} transactionId ID of the current liveness transaction.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        search(searchRequest: SearchRequest, xRequestID?: string, options?: any): AxiosPromise<SearchResult> {
-            return localVarFp.search(searchRequest, xRequestID, options).then((request) => request(axios, basePath));
+        getLivenessTransactionInfo(transactionId: number, options?: any): AxiosPromise<TransactionInfo> {
+            return localVarFp.getLivenessTransactionInfo(transactionId, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * SearchApi - object-oriented interface
+ * Liveness20Api - object-oriented interface
  * @export
- * @class SearchApi
+ * @class Liveness20Api
  * @extends {BaseAPI}
  */
-export class SearchApi extends BaseAPI {
+export class Liveness20Api extends BaseAPI {
     /**
      * 
-     * @summary Find person by image in groups.
-     * @param {SearchRequest} searchRequest 
-     * @param {string} [xRequestID] 
+     * @summary liveness
+     * @param {number} transactionId ID of the current liveness transaction.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SearchApi
+     * @memberof Liveness20Api
      */
-    public search(searchRequest: SearchRequest, xRequestID?: string, options?: AxiosRequestConfig) {
-        return SearchApiFp(this.configuration).search(searchRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
+    public getLivenessTransactionInfo(transactionId: number, options?: AxiosRequestConfig) {
+        return Liveness20ApiFp(this.configuration).getLivenessTransactionInfo(transactionId, options).then((request) => request(this.axios, this.basePath));
     }
 }

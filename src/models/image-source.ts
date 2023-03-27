@@ -25,7 +25,8 @@ export const ImageSource = {
     DOCUMENT_RFID: 2,
     LIVE: 3,
     DOCUMENT_WITH_LIVE: 4,
-    EXTERNAL: 5
+    EXTERNAL: 5,
+    GHOST: 6
 } as const;
 
 export type ImageSource = typeof ImageSource[keyof typeof ImageSource];

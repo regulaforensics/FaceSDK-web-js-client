@@ -26,6 +26,7 @@ export * from './image-fields-image';
 export * from './image-page';
 export * from './image-page-all-of';
 export * from './image-source';
+export * from './liveness-transaction';
 export * from './match-and-search-request';
 export * from './match-and-search-request-all-of';
 export * from './match-and-search-request-all-of-images';

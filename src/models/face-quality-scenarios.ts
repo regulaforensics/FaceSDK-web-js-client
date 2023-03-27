@@ -21,6 +21,7 @@
  */
 
 export const FaceQualityScenarios = {
+    OLD_MODE: 'OldMode',
     QUALITY_FULL: 'QualityFull',
     QUALITY_ICAO: 'QualityICAO',
     QUALITY_VISA_SCHENGEN: 'QualityVisaSchengen',

@@ -13,31 +13,48 @@
  */
 
 
-import { MatchImage } from './match-image';
 
 /**
  * 
  * @export
- * @interface MatchRequest
+ * @interface TransactionInfo
  */
-export interface MatchRequest {
+export interface TransactionInfo {
     /**
-     * Session identificator.
+     * Return code value
+     * @type {number}
+     * @memberof TransactionInfo
+     */
+    'code'?: number;
+    /**
+     * Session ID
+     * @type {number}
+     * @memberof TransactionInfo
+     */
+    'sessionId'?: number;
+    /**
+     * Transaction ID
      * @type {string}
-     * @memberof MatchRequest
+     * @memberof TransactionInfo
      */
-    'tag'?: string;
+    'transactionId'?: string;
     /**
-     * Whether to return cropped portraits of the detected people.
-     * @type {boolean}
-     * @memberof MatchRequest
+     * S3 link to transaction video
+     * @type {string}
+     * @memberof TransactionInfo
      */
-    'thumbnails'?: boolean;
+    'video'?: string;
     /**
-     * Base64 images.
-     * @type {Array<MatchImage>}
-     * @memberof MatchRequest
+     * S3 link to transaction portrait
+     * @type {string}
+     * @memberof TransactionInfo
      */
-    'images': Array<MatchImage>;
+    'portrait'?: string;
+    /**
+     * 
+     * @type {{ [key: string]: object; }}
+     * @memberof TransactionInfo
+     */
+    'metadata'?: { [key: string]: object; };
 }
 

@@ -36,7 +36,6 @@ models/image-page.ts
 models/image-source.ts
 models/image.ts
 models/index.ts
-models/liveness-transaction.ts
 models/match-and-search-request-all-of-images.ts
 models/match-and-search-request-all-of.ts
 models/match-and-search-request.ts
@@ -71,4 +70,5 @@ models/search-person-all-of.ts
 models/search-person.ts
 models/search-request.ts
 models/search-result.ts
+models/transaction-info.ts
 models/update-group.ts

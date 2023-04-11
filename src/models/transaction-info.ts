@@ -15,51 +15,51 @@
 
 
 /**
- * Image in the response.
+ * 
  * @export
- * @interface Image
+ * @interface TransactionInfo
  */
-export interface Image {
+export interface TransactionInfo {
     /**
-     * Response image ID.
+     * The result code, one of the FaceSDKResultCode enum values. See the enum: https://docs.regulaforensics.com/develop/face-sdk/web-service/development/enums/face-sdk-result-code/
      * @type {number}
-     * @memberof Image
+     * @memberof TransactionInfo
      */
-    'id'?: number;
+    'code'?: number;
     /**
-     * The original media type of the returned image.
-     * @type {string}
-     * @memberof Image
+     * Whether the liveness detection is confirmed (0) or not (1).
+     * @type {number}
+     * @memberof TransactionInfo
      */
-    'content_type'?: string;
+    'status'?: number;
     /**
-     * The returned image creation date.
-     * @type {string}
-     * @memberof Image
+     * Session ID, one session may include many transactions.
+     * @type {number}
+     * @memberof TransactionInfo
      */
-    'created_at'?: string;
+    'sessionId'?: number;
     /**
-     * The returned image update date.
+     * Transaction ID, there can be several transactions within one session.
      * @type {string}
-     * @memberof Image
+     * @memberof TransactionInfo
      */
-    'updated_at'?: string;
+    'transactionId'?: string;
     /**
-     * The returned image S3 path.
+     * An S3 link to the session video.
      * @type {string}
-     * @memberof Image
+     * @memberof TransactionInfo
      */
-    'path'?: string;
+    'video'?: string;
     /**
-     * The returned image URL.
+     * An S3 link to the portrait.
      * @type {string}
-     * @memberof Image
+     * @memberof TransactionInfo
      */
-    'url'?: string;
+    'portrait'?: string;
     /**
      * A free-form object containing person\'s extended attributes.
      * @type {{ [key: string]: object; }}
-     * @memberof Image
+     * @memberof TransactionInfo
      */
     'metadata'?: { [key: string]: object; };
 }

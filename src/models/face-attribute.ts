@@ -15,23 +15,28 @@
 
 
 /**
- * Face detection scenario.
+ * Face attributes.
  * @export
  * @enum {string}
  */
 
-export const FaceQualityScenarios = {
-    OLD_MODE: 'OldMode',
-    QUALITY_FULL: 'QualityFull',
-    QUALITY_ICAO: 'QualityICAO',
-    QUALITY_VISA_SCHENGEN: 'QualityVisaSchengen',
-    QUALITY_VISA_USA: 'QualityVisaUSA',
-    CROP_CENTRAL_FACE: 'CropCentralFace',
-    CROP_ALL_FACES: 'CropAllFaces',
-    THUMBNAIL: 'Thumbnail'
+export const FaceAttribute = {
+    AGE: 'Age',
+    EMOTION: 'Emotion',
+    EYE_LEFT: 'EyeLeft',
+    EYE_RIGHT: 'EyeRight',
+    SMILE: 'Smile',
+    GLASSES: 'Glasses',
+    HEAD_COVERING: 'HeadCovering',
+    FOREHEAD_COVERING: 'ForeheadCovering',
+    MOUTH: 'Mouth',
+    MEDICAL_MASK: 'MedicalMask',
+    OCCLUSION: 'Occlusion',
+    STRONG_MAKEUP: 'StrongMakeup',
+    HEADPHONES: 'Headphones'
 } as const;
 
-export type FaceQualityScenarios = typeof FaceQualityScenarios[keyof typeof FaceQualityScenarios];
+export type FaceAttribute = typeof FaceAttribute[keyof typeof FaceAttribute];
 
 
 

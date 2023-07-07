@@ -1,4 +1,5 @@
 api.ts
+api/diagnostics-api.ts
 api/group-api.ts
 api/liveness20-api.ts
 api/matching-api.ts
@@ -8,6 +9,7 @@ base.ts
 common.ts
 configuration.ts
 models/crop.ts
+models/detect-request-attributes.ts
 models/detect-request.ts
 models/detect-response-all-of.ts
 models/detect-response.ts
@@ -15,6 +17,7 @@ models/detect-result.ts
 models/detection-face.ts
 models/detection-quality.ts
 models/detection.ts
+models/face-attribute.ts
 models/face-image-quality-align-type.ts
 models/face-image-quality-groups.ts
 models/face-image-quality-status.ts
@@ -52,6 +55,7 @@ models/operation-log.ts
 models/output-image-params.ts
 models/page.ts
 models/person-all-of.ts
+models/person-created-response.ts
 models/person-fields.ts
 models/person-with-images-all-of.ts
 models/person-with-images.ts
@@ -65,6 +69,10 @@ models/quality-details-groups.ts
 models/quality-request.ts
 models/recognize-image-all-of.ts
 models/recognize-image.ts
+models/resize-options.ts
+models/search-bad-params.ts
+models/search-detection.ts
+models/search-parameters-create-person.ts
 models/search-parameters.ts
 models/search-person-all-of.ts
 models/search-person.ts

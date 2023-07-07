@@ -7,7 +7,7 @@ export class GroupApi extends GenGroupApi {
         return super.createGroup(groupToCreate, xRequestID, options).then(r => r.data);
     }
 
-    deleteGroup(groupId: number, xRequestID?: string, options?: AxiosRequestConfig): any {
+    deleteGroup(groupId: string, xRequestID?: string, options?: AxiosRequestConfig): any {
         return super.deleteGroup(groupId, xRequestID, options).then(r => r.data);
     }
 
@@ -15,19 +15,19 @@ export class GroupApi extends GenGroupApi {
         return super.getAllGroups(page, size, xRequestID, options).then(r => r.data);
     }
 
-    getAllPersonsByGroupId(page: number, size: number, groupId: number, xRequestID?: string, options?: AxiosRequestConfig): any {
+    getAllPersonsByGroupId(page: number, size: number, groupId: string, xRequestID?: string, options?: AxiosRequestConfig): any {
         return super.getAllPersonsByGroupId(page, size, groupId, xRequestID, options).then(r => r.data);
     }
 
-    getGroup(groupId: number, xRequestID?: string, options?: AxiosRequestConfig): any {
+    getGroup(groupId: string, xRequestID?: string, options?: AxiosRequestConfig): any {
         return super.getGroup(groupId, xRequestID, options).then(r => r.data);
     }
 
-    updateGroup(groupId: number, groupToCreate: GroupToCreate, xRequestID?: string, options?: AxiosRequestConfig): any {
+    updateGroup(groupId: string, groupToCreate: GroupToCreate, xRequestID?: string, options?: AxiosRequestConfig): any {
         return super.updateGroup(groupId, groupToCreate, xRequestID, options).then(r => r.data);
     }
 
-    updatePersonsInGroup(groupId: number, updateGroup: UpdateGroup, xRequestID?: string, options?: AxiosRequestConfig): any {
+    updatePersonsInGroup(groupId: string, updateGroup: UpdateGroup, xRequestID?: string, options?: AxiosRequestConfig): any {
         return super.updatePersonsInGroup(groupId, updateGroup, xRequestID, options).then(r => r.data);
     }
 

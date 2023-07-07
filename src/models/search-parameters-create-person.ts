@@ -15,23 +15,22 @@
 
 
 /**
- * Face detection scenario.
+ * If a person is not found, a new person entry is created using the descriptor calculated while searching.
  * @export
- * @enum {string}
+ * @interface SearchParametersCreatePerson
  */
-
-export const FaceQualityScenarios = {
-    OLD_MODE: 'OldMode',
-    QUALITY_FULL: 'QualityFull',
-    QUALITY_ICAO: 'QualityICAO',
-    QUALITY_VISA_SCHENGEN: 'QualityVisaSchengen',
-    QUALITY_VISA_USA: 'QualityVisaUSA',
-    CROP_CENTRAL_FACE: 'CropCentralFace',
-    CROP_ALL_FACES: 'CropAllFaces',
-    THUMBNAIL: 'Thumbnail'
-} as const;
-
-export type FaceQualityScenarios = typeof FaceQualityScenarios[keyof typeof FaceQualityScenarios];
-
-
+export interface SearchParametersCreatePerson {
+    /**
+     * Person\'s name.
+     * @type {string}
+     * @memberof SearchParametersCreatePerson
+     */
+    'name'?: string;
+    /**
+     * A free-form object containing person\'s extended attributes.
+     * @type {{ [key: string]: object; }}
+     * @memberof SearchParametersCreatePerson
+     */
+    'metadata'?: { [key: string]: object; };
+}
 

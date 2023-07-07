@@ -15,40 +15,76 @@
 
 
 /**
- * 
+ * The array of identified persons.
  * @export
- * @interface DetectionFace
+ * @interface SearchDetection
  */
-export interface DetectionFace {
+export interface SearchDetection {
     /**
-     * The detected face index number.
+     * Internal.
      * @type {number}
-     * @memberof DetectionFace
+     * @memberof SearchDetection
      */
-    'faceIndex'?: number;
+    'code'?: number;
+    /**
+     * Base64 of the aligned and cropped portrait.
+     * @type {string}
+     * @memberof SearchDetection
+     */
+    'crop'?: string;
+    /**
+     * Internal.
+     * @type {number}
+     * @memberof SearchDetection
+     */
+    'detectorType'?: number;
+    /**
+     * Internal.
+     * @type {string}
+     * @memberof SearchDetection
+     */
+    'hash'?: string;
+    /**
+     * Internal.
+     * @type {number}
+     * @memberof SearchDetection
+     */
+    'idx'?: number;
+    /**
+     * Internal.
+     * @type {string}
+     * @memberof SearchDetection
+     */
+    'image'?: string;
     /**
      * Absolute coordinates (x,y) of five points of each detected face: left eye, right eye, nose, left point of lips, right point of lips.
      * @type {Array<Array<number>>}
-     * @memberof DetectionFace
+     * @memberof SearchDetection
      */
     'landmarks'?: Array<Array<number>>;
     /**
-     * Angle of rotation of the face from the vertical axis, degrees.
+     * Internal.
      * @type {number}
-     * @memberof DetectionFace
+     * @memberof SearchDetection
      */
-    'rotationAngle'?: number;
+    'landmarksType'?: number;
+    /**
+     * Internal.
+     * @type {string}
+     * @memberof SearchDetection
+     */
+    'msg'?: string;
     /**
      * The rectangular area of a detected face that is represented by a set of four elements: the X and Y coordinates of the top-left point, and the width and height dimensions of the rectangle.
      * @type {Array<number>}
-     * @memberof DetectionFace
+     * @memberof SearchDetection
      */
     'roi'?: Array<number>;
     /**
-     * Base64 of the cropped portrait.
+     * 
      * @type {string}
-     * @memberof DetectionFace
+     * @memberof SearchDetection
      */
-    'thumbnail'?: string;
+    'versionSDK'?: string;
 }
 

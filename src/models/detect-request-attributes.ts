@@ -13,25 +13,19 @@
  */
 
 
+import { QualityConfig } from './quality-config';
 
 /**
- * Face detection scenario.
+ * Whether to evaluate attributes, such as age and emotions.
  * @export
- * @enum {string}
+ * @interface DetectRequestAttributes
  */
-
-export const FaceQualityScenarios = {
-    OLD_MODE: 'OldMode',
-    QUALITY_FULL: 'QualityFull',
-    QUALITY_ICAO: 'QualityICAO',
-    QUALITY_VISA_SCHENGEN: 'QualityVisaSchengen',
-    QUALITY_VISA_USA: 'QualityVisaUSA',
-    CROP_CENTRAL_FACE: 'CropCentralFace',
-    CROP_ALL_FACES: 'CropAllFaces',
-    THUMBNAIL: 'Thumbnail'
-} as const;
-
-export type FaceQualityScenarios = typeof FaceQualityScenarios[keyof typeof FaceQualityScenarios];
-
-
+export interface DetectRequestAttributes {
+    /**
+     * 
+     * @type {Array<QualityConfig>}
+     * @memberof DetectRequestAttributes
+     */
+    'config'?: Array<QualityConfig>;
+}
 

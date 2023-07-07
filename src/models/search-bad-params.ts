@@ -15,23 +15,28 @@
 
 
 /**
- * Face detection scenario.
+ * 
  * @export
- * @enum {string}
+ * @interface SearchBadParams
  */
-
-export const FaceQualityScenarios = {
-    OLD_MODE: 'OldMode',
-    QUALITY_FULL: 'QualityFull',
-    QUALITY_ICAO: 'QualityICAO',
-    QUALITY_VISA_SCHENGEN: 'QualityVisaSchengen',
-    QUALITY_VISA_USA: 'QualityVisaUSA',
-    CROP_CENTRAL_FACE: 'CropCentralFace',
-    CROP_ALL_FACES: 'CropAllFaces',
-    THUMBNAIL: 'Thumbnail'
-} as const;
-
-export type FaceQualityScenarios = typeof FaceQualityScenarios[keyof typeof FaceQualityScenarios];
-
-
+export interface SearchBadParams {
+    /**
+     * 
+     * @type {string}
+     * @memberof SearchBadParams
+     */
+    'msg'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof SearchBadParams
+     */
+    'statusCode'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof SearchBadParams
+     */
+    'type'?: string;
+}
 

@@ -15,23 +15,28 @@
 
 
 /**
- * Face detection scenario.
+ * Set to resize the original image.
  * @export
- * @enum {string}
+ * @interface ResizeOptions
  */
-
-export const FaceQualityScenarios = {
-    OLD_MODE: 'OldMode',
-    QUALITY_FULL: 'QualityFull',
-    QUALITY_ICAO: 'QualityICAO',
-    QUALITY_VISA_SCHENGEN: 'QualityVisaSchengen',
-    QUALITY_VISA_USA: 'QualityVisaUSA',
-    CROP_CENTRAL_FACE: 'CropCentralFace',
-    CROP_ALL_FACES: 'CropAllFaces',
-    THUMBNAIL: 'Thumbnail'
-} as const;
-
-export type FaceQualityScenarios = typeof FaceQualityScenarios[keyof typeof FaceQualityScenarios];
-
-
+export interface ResizeOptions {
+    /**
+     * Resized image width, px.
+     * @type {number}
+     * @memberof ResizeOptions
+     */
+    'width'?: number;
+    /**
+     * Resized image height, px.
+     * @type {number}
+     * @memberof ResizeOptions
+     */
+    'height'?: number;
+    /**
+     * Resized image quality, percent.
+     * @type {number}
+     * @memberof ResizeOptions
+     */
+    'quality'?: number;
+}
 

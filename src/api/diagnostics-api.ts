@@ -20,32 +20,21 @@ import { Configuration } from '../configuration';
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
-// @ts-ignore
-import { PersonCreatedResponse } from '../models';
-// @ts-ignore
-import { SearchBadParams } from '../models';
-// @ts-ignore
-import { SearchRequest } from '../models';
-// @ts-ignore
-import { SearchResult } from '../models';
 /**
- * SearchApi - axios parameter creator
+ * DiagnosticsApi - axios parameter creator
  * @export
  */
-export const SearchApiAxiosParamCreator = function (configuration?: Configuration) {
+export const DiagnosticsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * 
-         * @summary Find person by image in groups
-         * @param {SearchRequest} searchRequest 
+         * @summary Checking the license status
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        search: async (searchRequest: SearchRequest, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'searchRequest' is not null or undefined
-            assertParamExists('search', 'searchRequest', searchRequest)
-            const localVarPath = `/api/search`;
+        readiness: async (xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/readiness`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -53,7 +42,7 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
                 baseOptions = configuration.baseOptions;
             }
 
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
@@ -63,12 +52,9 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
 
 
     
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(searchRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -79,65 +65,62 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
 };
 
 /**
- * SearchApi - functional programming interface
+ * DiagnosticsApi - functional programming interface
  * @export
  */
-export const SearchApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = SearchApiAxiosParamCreator(configuration)
+export const DiagnosticsApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = DiagnosticsApiAxiosParamCreator(configuration)
     return {
         /**
          * 
-         * @summary Find person by image in groups
-         * @param {SearchRequest} searchRequest 
+         * @summary Checking the license status
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async search(searchRequest: SearchRequest, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchResult>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.search(searchRequest, xRequestID, options);
+        async readiness(xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<{ [key: string]: object; }>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readiness(xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
 };
 
 /**
- * SearchApi - factory interface
+ * DiagnosticsApi - factory interface
  * @export
  */
-export const SearchApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = SearchApiFp(configuration)
+export const DiagnosticsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = DiagnosticsApiFp(configuration)
     return {
         /**
          * 
-         * @summary Find person by image in groups
-         * @param {SearchRequest} searchRequest 
+         * @summary Checking the license status
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        search(searchRequest: SearchRequest, xRequestID?: string, options?: any): AxiosPromise<SearchResult> {
-            return localVarFp.search(searchRequest, xRequestID, options).then((request) => request(axios, basePath));
+        readiness(xRequestID?: string, options?: any): AxiosPromise<{ [key: string]: object; }> {
+            return localVarFp.readiness(xRequestID, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * SearchApi - object-oriented interface
+ * DiagnosticsApi - object-oriented interface
  * @export
- * @class SearchApi
+ * @class DiagnosticsApi
  * @extends {BaseAPI}
  */
-export class SearchApi extends BaseAPI {
+export class DiagnosticsApi extends BaseAPI {
     /**
      * 
-     * @summary Find person by image in groups
-     * @param {SearchRequest} searchRequest 
+     * @summary Checking the license status
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SearchApi
+     * @memberof DiagnosticsApi
      */
-    public search(searchRequest: SearchRequest, xRequestID?: string, options?: AxiosRequestConfig) {
-        return SearchApiFp(this.configuration).search(searchRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
+    public readiness(xRequestID?: string, options?: AxiosRequestConfig) {
+        return DiagnosticsApiFp(this.configuration).readiness(xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 }

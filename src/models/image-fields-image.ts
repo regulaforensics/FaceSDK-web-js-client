@@ -35,7 +35,7 @@ export interface ImageFieldsImage {
      */
     'content'?: ImageData;
     /**
-     * Image URL, can be a link to Amazon S3, Google Storage, File System, or HTTP(S).
+     * Image URL.
      * @type {string}
      * @memberof ImageFieldsImage
      */

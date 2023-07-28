@@ -45,7 +45,7 @@ export interface Image {
      */
     'updatedAt'?: string;
     /**
-     * Returned image S3 path.
+     * Returned image path.
      * @type {string}
      * @memberof Image
      */

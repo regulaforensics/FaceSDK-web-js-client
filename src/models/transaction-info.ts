@@ -45,7 +45,7 @@ export interface TransactionInfo {
      */
     'transactionId'?: string;
     /**
-     * An S3 link to the session video.
+     * Link to the session video.
      * @type {string}
      * @memberof TransactionInfo
      */
@@ -63,7 +63,7 @@ export interface TransactionInfo {
      */
     'estimatedAge'?: number;
     /**
-     * S3 link to the portrait.
+     * Link to the portrait.
      * @type {string}
      * @memberof TransactionInfo
      */

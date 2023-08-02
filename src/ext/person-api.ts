@@ -11,7 +11,7 @@ export class PersonApi extends GenPersonApi {
     }
 
     addImageToPerson(personId: string, imageFields: ImageFields, xRequestID?: string, options?: AxiosRequestConfig): any {
-        if (imageFields.image.content && typeof imageFields.image.content !== "string") {
+        if (imageFields?.image?.content && typeof imageFields.image.content !== "string") {
             imageFields.image.content = converter.encode(imageFields.image.content)
         }
         return super.addImageToPerson(personId, imageFields, xRequestID, options).then(r => r.data);

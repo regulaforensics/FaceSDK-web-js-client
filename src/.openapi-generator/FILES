@@ -19,6 +19,7 @@ models/detection-quality.ts
 models/detection.ts
 models/face-attribute.ts
 models/face-image-quality-align-type.ts
+models/face-image-quality-groups-strings.ts
 models/face-image-quality-groups.ts
 models/face-image-quality-status.ts
 models/face-quality-config-name.ts

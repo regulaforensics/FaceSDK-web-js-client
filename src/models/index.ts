@@ -10,6 +10,7 @@ export * from './detection-quality';
 export * from './face-attribute';
 export * from './face-image-quality-align-type';
 export * from './face-image-quality-groups';
+export * from './face-image-quality-groups-strings';
 export * from './face-image-quality-status';
 export * from './face-quality-config-name';
 export * from './face-quality-scenarios';

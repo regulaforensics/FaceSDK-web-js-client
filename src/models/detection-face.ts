@@ -50,5 +50,11 @@ export interface DetectionFace {
      * @memberof DetectionFace
      */
     'thumbnail'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DetectionFace
+     */
+    'crop'?: string;
 }
 

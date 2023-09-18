@@ -39,6 +39,8 @@ export * from './match-image';
 export * from './match-image-detection';
 export * from './match-image-result';
 export * from './match-request';
+export * from './match-request-output-image-params';
+export * from './match-request-output-image-params-crop';
 export * from './match-response';
 export * from './match-response-all-of';
 export * from './operation-log';

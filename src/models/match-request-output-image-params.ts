@@ -13,38 +13,25 @@
  */
 
 
-import { MatchImage } from './match-image';
-import { MatchRequestOutputImageParams } from './match-request-output-image-params';
+import { MatchRequestOutputImageParamsCrop } from './match-request-output-image-params-crop';
 
 /**
- * 
+ * Whether to process the uploaded image according to the indicated settings.
  * @export
- * @interface MatchRequest
+ * @interface MatchRequestOutputImageParams
  */
-export interface MatchRequest {
+export interface MatchRequestOutputImageParams {
     /**
-     * Session identificator.
-     * @type {string}
-     * @memberof MatchRequest
+     * The RGB value of a color for filling background behind a person\'s silhouette and for aligning the image.
+     * @type {Array<number>}
+     * @memberof MatchRequestOutputImageParams
      */
-    'tag'?: string;
-    /**
-     * Whether to return thumbnails: Base64 cropped images that contain vertically aligned faces.
-     * @type {boolean}
-     * @memberof MatchRequest
-     */
-    'thumbnails'?: boolean;
-    /**
-     * The array of all images included in the comparison.
-     * @type {Array<MatchImage>}
-     * @memberof MatchRequest
-     */
-    'images': Array<MatchImage>;
+    'backgroundColor'?: Array<number>;
     /**
      * 
-     * @type {MatchRequestOutputImageParams}
-     * @memberof MatchRequest
+     * @type {MatchRequestOutputImageParamsCrop}
+     * @memberof MatchRequestOutputImageParams
      */
-    'outputImageParams'?: MatchRequestOutputImageParams;
+    'crop'?: MatchRequestOutputImageParamsCrop;
 }
 

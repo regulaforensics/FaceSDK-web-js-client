@@ -14,7 +14,6 @@
 
 
 import { MatchImage } from './match-image';
-import { MatchRequestOutputImageParams } from './match-request-output-image-params';
 
 /**
  * 
@@ -40,11 +39,5 @@ export interface MatchRequest {
      * @memberof MatchRequest
      */
     'images': Array<MatchImage>;
-    /**
-     * 
-     * @type {MatchRequestOutputImageParams}
-     * @memberof MatchRequest
-     */
-    'outputImageParams'?: MatchRequestOutputImageParams;
 }
 

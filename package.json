@@ -17,7 +17,7 @@
     "./esm": "./dist/esm-es5/index.js",
     ".": "./dist/cjs-es5/index.js"
   },
-  "typings": "./src/index.ts",
+  "types": "./dist/lib/index.d.ts",
   "scripts": {
     "clean": "rm -rf ./dist",
     "build-cjs": "tsc --project tsconfig.commonjs.json",
@@ -25,6 +25,9 @@
     "format": "eslint --fix ./src --ext .ts",
     "build": "npm run clean && npm run format && npm run build-cjs && npm run build-esm && echo '{\"type\": \"commonjs\"}' > ./dist/cjs-es5/package.json"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "axios": "^0.21.1",
     "base64-arraybuffer": "^0.2.0"

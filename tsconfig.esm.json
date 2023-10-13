@@ -4,6 +4,8 @@
     "target": "es5",
     "module": "ES2015",
     "outDir": "dist/esm-es5",
+    "declaration": true,
+    "declarationDir": "dist/lib",
     "moduleResolution": "node",
     "inlineSourceMap": true,
     "lib": [

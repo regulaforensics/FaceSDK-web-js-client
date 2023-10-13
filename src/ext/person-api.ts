@@ -35,8 +35,7 @@ export class PersonApi extends GenPersonApi {
     }
 
     async deleteImageOfPersonT(imageId: string, personId: string, xRequestID?: string, options?: AxiosRequestConfig): Promise<void> {
-        const response = await super.deleteImageOfPerson(imageId, personId, xRequestID, options);
-        return response.data; // TODO: check this method
+        await super.deleteImageOfPerson(imageId, personId, xRequestID, options);
     }
 
     deletePerson(personId: string, xRequestID?: string, options?: AxiosRequestConfig): any {
@@ -44,8 +43,7 @@ export class PersonApi extends GenPersonApi {
     }
 
     async deletePersonT(personId: string, xRequestID?: string, options?: AxiosRequestConfig): Promise<void> {
-        const response = await super.deletePerson(personId, xRequestID, options);
-        return response.data; // TODO: check this method
+        await super.deletePerson(personId, xRequestID, options);
     }
 
     getAllGroupsByPersonId(page: number, size: number, personId: string, xRequestID?: string, options?: AxiosRequestConfig): any {
@@ -89,7 +87,6 @@ export class PersonApi extends GenPersonApi {
     }
 
     async updatePersonT(personId: string, personFields: PersonFields, xRequestID?: string, options?: AxiosRequestConfig): Promise<void> {
-        const response = await super.updatePerson(personId, personFields, xRequestID, options);
-        return response.data;
+        await super.updatePerson(personId, personFields, xRequestID, options);
     }
 }

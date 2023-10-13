@@ -17,8 +17,7 @@ export class GroupApi extends GenGroupApi {
     }
 
     async deleteGroupT(groupId: string, xRequestID?: string, options?: AxiosRequestConfig): Promise<void> {
-        const response = await super.deleteGroup(groupId, xRequestID, options);
-        return response.data;
+        await super.deleteGroup(groupId, xRequestID, options);
     }
 
     getAllGroups(page: number, size: number, xRequestID?: string, options?: AxiosRequestConfig): any {
@@ -53,8 +52,7 @@ export class GroupApi extends GenGroupApi {
     }
 
     async updateGroupT(groupId: string, groupToCreate: GroupToCreate, xRequestID?: string, options?: AxiosRequestConfig): Promise<void> {
-        const response = await super.updateGroup(groupId, groupToCreate, xRequestID, options);
-        return response.data;
+        await super.updateGroup(groupId, groupToCreate, xRequestID, options);
     }
 
     updatePersonsInGroup(groupId: string, updateGroup: UpdateGroup, xRequestID?: string, options?: AxiosRequestConfig): any {
@@ -62,8 +60,7 @@ export class GroupApi extends GenGroupApi {
     }
 
     async updatePersonsInGroupT(groupId: string, updateGroup: UpdateGroup, xRequestID?: string, options?: AxiosRequestConfig): Promise<void> {
-        const response = await super.updatePersonsInGroup(groupId, updateGroup, xRequestID, options);
-        return response.data;
+        await super.updatePersonsInGroup(groupId, updateGroup, xRequestID, options);
     }
 
 }

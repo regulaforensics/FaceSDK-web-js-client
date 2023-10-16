@@ -22,10 +22,10 @@
 export interface Image {
     /**
      * Response image ID. The list is sorted by decreasing ID value.
-     * @type {number}
+     * @type {string}
      * @memberof Image
      */
-    'id'?: number;
+    'id'?: string;
     /**
      * Original media type of the returned image.
      * @type {string}

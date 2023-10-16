@@ -31,11 +31,11 @@ export const Liveness20ApiAxiosParamCreator = function (configuration?: Configur
         /**
          * 
          * @summary Liveness assessment
-         * @param {number} transactionId ID of the current liveness transaction.
+         * @param {string} transactionId ID of the current liveness transaction.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLivenessTransactionInfo: async (transactionId: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getLivenessTransactionInfo: async (transactionId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'transactionId' is not null or undefined
             assertParamExists('getLivenessTransactionInfo', 'transactionId', transactionId)
             const localVarPath = `/api/v2/liveness`;
@@ -78,11 +78,11 @@ export const Liveness20ApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Liveness assessment
-         * @param {number} transactionId ID of the current liveness transaction.
+         * @param {string} transactionId ID of the current liveness transaction.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getLivenessTransactionInfo(transactionId: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionInfo>> {
+        async getLivenessTransactionInfo(transactionId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionInfo>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getLivenessTransactionInfo(transactionId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -99,11 +99,11 @@ export const Liveness20ApiFactory = function (configuration?: Configuration, bas
         /**
          * 
          * @summary Liveness assessment
-         * @param {number} transactionId ID of the current liveness transaction.
+         * @param {string} transactionId ID of the current liveness transaction.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLivenessTransactionInfo(transactionId: number, options?: any): AxiosPromise<TransactionInfo> {
+        getLivenessTransactionInfo(transactionId: string, options?: any): AxiosPromise<TransactionInfo> {
             return localVarFp.getLivenessTransactionInfo(transactionId, options).then((request) => request(axios, basePath));
         },
     };
@@ -119,12 +119,12 @@ export class Liveness20Api extends BaseAPI {
     /**
      * 
      * @summary Liveness assessment
-     * @param {number} transactionId ID of the current liveness transaction.
+     * @param {string} transactionId ID of the current liveness transaction.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof Liveness20Api
      */
-    public getLivenessTransactionInfo(transactionId: number, options?: AxiosRequestConfig) {
+    public getLivenessTransactionInfo(transactionId: string, options?: AxiosRequestConfig) {
         return Liveness20ApiFp(this.configuration).getLivenessTransactionInfo(transactionId, options).then((request) => request(this.axios, this.basePath));
     }
 }

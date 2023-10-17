@@ -14,7 +14,7 @@ export class FaceSdk {
     personApi: PersonApi;
     searchApi: SearchApi;
     diagnosticsApi: DiagnosticsApi;
-    liveness20Api: Liveness20Api;
+    livenessApi: Liveness20Api;
 
     constructor(configuration?: Configuration, protected basePath: string = BASE_PATH, protected axios: AxiosInstance = globalAxios) {
         this.matchingApi = new MatchingApi(configuration, basePath, axios);
@@ -22,6 +22,6 @@ export class FaceSdk {
         this.personApi = new PersonApi(configuration, basePath, axios);
         this.searchApi = new SearchApi(configuration, basePath, axios);
         this.diagnosticsApi = new DiagnosticsApi(configuration, basePath, axios);
-        this.liveness20Api = new Liveness20Api(configuration, basePath, axios);
+        this.livenessApi = new Liveness20Api(configuration, basePath, axios);
     }
 }

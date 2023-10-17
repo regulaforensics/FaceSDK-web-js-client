@@ -1,6 +1,6 @@
 import {MatchingApi as GenMatchingApi} from "../api/matching-api.js";
-import {MatchRequest, DetectRequest, ImageSource, MatchResponse, DetectResponse} from "../models/index.js";
-import { AxiosRequestConfig, AxiosInstance } from 'axios';
+import {MatchRequest, DetectRequest, ImageSource, MatchResponse, DetectResponse} from "../models";
+import { AxiosRequestConfig, AxiosInstance } from "axios";
 import {Configuration} from "../configuration.js";
 // @ts-ignore
 import * as converter from "base64-arraybuffer";

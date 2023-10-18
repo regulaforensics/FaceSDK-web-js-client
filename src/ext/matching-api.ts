@@ -1,12 +1,17 @@
 import {MatchingApi as GenMatchingApi} from "../api/matching-api.js";
-import {MatchRequest, DetectRequest, ImageSource} from "../models/index.js";
-
+import {MatchRequest, DetectRequest, ImageSource, MatchResponse, DetectResponse} from "../models";
+import { AxiosRequestConfig, AxiosInstance } from "axios";
+import {Configuration} from "../configuration.js";
 // @ts-ignore
 import * as converter from "base64-arraybuffer";
 
-export class MatchingApi extends GenMatchingApi {
+export class MatchingApi {
+  private superClass: GenMatchingApi;
+  constructor(configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    this.superClass = new GenMatchingApi(configuration, basePath, axios);
+  }
 
-  match(compareRequest: MatchRequest, xRequestID: string, options?: any): any {
+  async match(compareRequest: MatchRequest, xRequestID: string, options?: AxiosRequestConfig ): Promise<MatchResponse> {
     for (const image of compareRequest.images) {
       if (!image.type) {
         image.type = ImageSource.LIVE
@@ -15,14 +20,15 @@ export class MatchingApi extends GenMatchingApi {
         image.data = converter.encode(image.data)
       }
     }
-
-    return super.match(compareRequest, xRequestID, options).then(r => r.data);
+    const response = await this.superClass.match(compareRequest, xRequestID, options);
+    return response.data;
   }
-
-  detect(detectRequest: DetectRequest, xRequestID? : string, options?: any): any {
+  async detect(detectRequest: DetectRequest, xRequestID?: string, options?: AxiosRequestConfig): Promise<DetectResponse> {
     if (detectRequest.image && typeof detectRequest.image !== "string") {
-      detectRequest.image = converter.encode(detectRequest.image)
+      detectRequest.image = converter.encode(detectRequest.image);
     }
-    return super.detect(detectRequest, xRequestID, options).then(r => r.data)
+    
+    const response = await this.superClass.detect(detectRequest, xRequestID, options);
+    return response.data;
   }
 }

@@ -41,8 +41,8 @@ const response = await sdk.matchingApi.match({
 
 Parsing results:
 ```js
-  for (const result of response.results) {
-  console.log(`pair(${result.firstIndex},${result.secondIndex})   similarity: ${result.similarity}`)
+for (const result of response.results) {
+    console.log(`pair(${result.firstIndex},${result.secondIndex})   similarity: ${result.similarity}`)
 }
 ```
 
@@ -58,4 +58,4 @@ Module system
 * ES6 module system
 
 Definitions
-* TypeScript's definitions should be automatically resolved via `package.json`. ([Reference](http://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html))
+* TypeScript's definitions should be automatically resolved via `package.json`. ([Reference](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#including-declarations-in-your-npm-package))

@@ -10,34 +10,35 @@
     "regula"
   ],
   "license": "MIT",
-  "type": "module",
-  "main": "./dist/cjs-es5/index.js",
-  "module": "./dist/esm-es5/index.js",
-  "exports": {
-    "./esm": "./dist/esm-es5/index.js",
-    ".": "./dist/cjs-es5/index.js"
-  },
-  "types": "./dist/lib/index.d.ts",
+  "module": "esm/main.js",
+  "main": "dist/main.js",
+  "types": "lib/index.d.ts",
+  "source": "src/index.ts",
+  "browserslist": "> 0.25%, not dead",
   "scripts": {
-    "clean": "rm -rf ./dist",
-    "build-cjs": "tsc --project tsconfig.commonjs.json",
-    "build-esm": "tsc  --project tsconfig.esm.json",
+    "clean": "rm -rf ./dist rm -rf ./esm rm -rf ./lib",
     "format": "eslint --fix ./src --ext .ts",
-    "build": "npm run clean && npm run format && npm run build-cjs && npm run build-esm && echo '{\"type\": \"commonjs\"}' > ./dist/cjs-es5/package.json"
+    "build": "npm run clean && parcel build"
   },
   "files": [
-    "dist"
+    "dist",
+    "esm",
+    "lib"
   ],
   "dependencies": {
     "axios": "^0.21.1",
-    "base64-arraybuffer": "^0.2.0"
+    "base64-arraybuffer": "^1.0.2"
   },
   "devDependencies": {
+    "@parcel/packager-ts": "^2.10.0",
+    "@parcel/transformer-typescript-types": "^2.10.0",
     "@types/node": "^12.11.5",
-    "@typescript-eslint/eslint-plugin": "^3.5.0",
-    "@typescript-eslint/parser": "^3.5.0",
-    "eslint": "^7.4.0",
-    "eslint-plugin-unused-imports": "^0.1.3",
-    "typescript": "^3.9.6"
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "eslint": "^8.51.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "parcel": "^2.10.0",
+    "typescript": "^5.2.2"
   }
 }

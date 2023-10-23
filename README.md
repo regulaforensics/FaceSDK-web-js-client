@@ -46,7 +46,7 @@ for (const result of response.results) {
 }
 ```
 
-You can find more detailed guide and run this sample in [example](./example/README.md) folder.
+You can find more detailed guide and run this sample in [example](https://github.com/regulaforensics/FaceSDK-web-js-client/tree/master/example) folder.
 
 ## Compatibility
 

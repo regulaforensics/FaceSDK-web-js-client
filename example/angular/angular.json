@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "face-sdk-web-client": {
+    "face-sdk-web-client-angular-example": {
       "projectType": "application",
       "schematics": {},
       "root": "",

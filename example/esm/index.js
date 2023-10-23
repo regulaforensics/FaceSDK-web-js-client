@@ -1,4 +1,4 @@
-import FaceSdkWebClient from '@regulaforensics/facesdk-webclient';
+import { FaceSdk, ImageSource } from '@regulaforensics/facesdk-webclient';
 import fs from 'fs';
 
 (async () => {
@@ -6,7 +6,6 @@ import fs from 'fs';
 
     const face1 = fs.readFileSync('../face1.jpg').buffer;
     const face2 = fs.readFileSync('../face2.jpg').buffer;
-    const { FaceSdk, ImageSource } = FaceSdkWebClient;
     const sdk = new FaceSdk({ basePath: apiBasePath });
 
     const diagnostic = await sdk.diagnosticsApi.readiness();

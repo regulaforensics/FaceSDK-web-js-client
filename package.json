@@ -10,21 +10,41 @@
     "regula"
   ],
   "license": "MIT",
-  "module": "esm/main.js",
-  "main": "dist/main.js",
+  "exports": {
+    "import": "./dist/module/index.mjs",
+    "require": "./dist/main/index.cjs"
+  },
+  "main": "dist/main/index.cjs",
+  "module": "dist/module/index.mjs",
   "types": "lib/index.d.ts",
   "source": "src/index.ts",
   "browserslist": "> 0.25%, not dead",
   "scripts": {
-    "clean": "rm -rf ./dist rm -rf ./esm rm -rf ./lib",
-    "format": "eslint --fix ./src --ext .ts",
-    "build": "npm run clean && parcel build"
+    "check-types": "tsc --noEmit",
+    "format": "eslint --fix",
+    "build": "parcel build",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --fix"
   },
   "files": [
     "dist",
-    "esm",
     "lib"
   ],
+  "targets": {
+    "main": {
+      "optimize": true,
+      "sourceMap": false
+    },
+    "module": {
+      "optimize": true,
+      "sourceMap": false
+    },
+    "types": {
+      "sourceMap": false
+    }
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "base64-arraybuffer": "^1.0.2"
@@ -36,8 +56,11 @@
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
     "eslint": "^8.51.0",
-    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
     "parcel": "^2.10.0",
     "typescript": "^5.2.2"
   }

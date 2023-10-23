@@ -1,9 +1,8 @@
-import FaceSdkWebClient from '@regulaforensics/facesdk-webclient';
+import { FaceSdk } from '@regulaforensics/facesdk-webclient';
 import fs from 'fs';
 
 (async () => {
     let apiBasePath = process.env.API_BASE_PATH || 'http://127.0.0.0:41101';
-    const { FaceSdk } = FaceSdkWebClient;
     const face1 = fs.readFileSync('../face1.jpg').buffer;
     const face2 = fs.readFileSync('../face2.jpg').buffer;
 

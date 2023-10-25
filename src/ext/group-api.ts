@@ -1,7 +1,7 @@
-import {GroupApi as GenGroupApi} from "../api/group-api";
-import {Group, GroupPage, GroupToCreate, PersonsPage, UpdateGroup} from "../models";
-import {AxiosRequestConfig, AxiosInstance} from "axios";
-import {Configuration} from "../configuration.js";
+import { GroupApi as GenGroupApi } from '../api/group-api';
+import { Group, GroupPage, GroupToCreate, PersonsPage, UpdateGroup } from '../models';
+import { AxiosRequestConfig, AxiosInstance } from 'axios';
+import { Configuration } from '../configuration';
 
 export class GroupApi {
     private superClass: GenGroupApi;
@@ -18,11 +18,22 @@ export class GroupApi {
         await this.superClass.deleteGroup(groupId, xRequestID, options);
     }
 
-    async getAllGroups(page: number, size: number, xRequestID?: string, options?: AxiosRequestConfig): Promise<GroupPage> {
+    async getAllGroups(
+        page: number,
+        size: number,
+        xRequestID?: string,
+        options?: AxiosRequestConfig,
+    ): Promise<GroupPage> {
         const response = await this.superClass.getAllGroups(page, size, xRequestID, options);
         return response.data;
     }
-    async getAllPersonsByGroupId(page: number, size: number, groupId: string, xRequestID?: string, options?: AxiosRequestConfig): Promise<PersonsPage> {
+    async getAllPersonsByGroupId(
+        page: number,
+        size: number,
+        groupId: string,
+        xRequestID?: string,
+        options?: AxiosRequestConfig,
+    ): Promise<PersonsPage> {
         const response = await this.superClass.getAllPersonsByGroupId(page, size, groupId, xRequestID, options);
         return response.data;
     }
@@ -31,10 +42,20 @@ export class GroupApi {
         return response.data;
     }
 
-    async updateGroup(groupId: string, groupToCreate: GroupToCreate, xRequestID?: string, options?: AxiosRequestConfig): Promise<void> {
+    async updateGroup(
+        groupId: string,
+        groupToCreate: GroupToCreate,
+        xRequestID?: string,
+        options?: AxiosRequestConfig,
+    ): Promise<void> {
         await this.superClass.updateGroup(groupId, groupToCreate, xRequestID, options);
     }
-    async updatePersonsInGroup(groupId: string, updateGroup: UpdateGroup, xRequestID?: string, options?: AxiosRequestConfig): Promise<void> {
+    async updatePersonsInGroup(
+        groupId: string,
+        updateGroup: UpdateGroup,
+        xRequestID?: string,
+        options?: AxiosRequestConfig,
+    ): Promise<void> {
         await this.superClass.updatePersonsInGroup(groupId, updateGroup, xRequestID, options);
     }
 }

@@ -1,1 +1,1 @@
-export * from "./face-sdk.js";
+export * from './face-sdk';

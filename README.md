@@ -26,17 +26,17 @@ npm install @regulaforensics/facesdk-webclient
 Performing request:
 
 ```js
-const face1 = fs.readFileSync('face1.jpg').buffer
-const face2 = fs.readFileSync('face2.jpg').buffer
+const face1 = fs.readFileSync('face1.jpg').buffer;
+const face2 = fs.readFileSync('face2.jpg').buffer;
 
-const sdk = new FaceSdk({basePath: "http://localhost:41101"})
+const sdk = new FaceSdk({ basePath: 'http://localhost:41101' });
 
 const response = await sdk.matchingApi.match({
     images: [
-        {type: ImageSource.LIVE, data: face1, index: 1},
-        {type: ImageSource.DOCUMENT_RFID, data: face2, index: 2}
+        { type: ImageSource.LIVE, data: face1, index: 1 },
+        { type: ImageSource.DOCUMENT_RFID, data: face2, index: 2 }
     ]
-  })
+  });
 ```
 
 Parsing results:
@@ -46,7 +46,7 @@ for (const result of response.results) {
 }
 ```
 
-You can find more detailed guide and run this sample in [example](./example/README.md) folder.
+You can find more detailed guide and run this sample in [example](https://github.com/regulaforensics/FaceSDK-web-js-client/tree/master/example) folder.
 
 ## Compatibility
 

@@ -11,14 +11,18 @@
   ],
   "license": "MIT",
   "exports": {
-    "import": "./dist/module/index.mjs",
+    "import": "./dist/module/index.js",
     "require": "./dist/main/index.cjs"
   },
   "main": "dist/main/index.cjs",
-  "module": "dist/module/index.mjs",
+  "module": "dist/module/index.js",
+  "type": "module",
   "types": "lib/index.d.ts",
   "source": "src/index.ts",
-  "browserslist": "> 0.25%, not dead",
+  "browserslist": [
+    "> 0.2%",
+    "not dead"
+  ],
   "scripts": {
     "check-types": "tsc --noEmit",
     "format": "eslint --fix",
@@ -46,6 +50,7 @@
     }
   },
   "dependencies": {
+    "@swc/helpers": "^0.5.3",
     "axios": "^0.21.1",
     "base64-arraybuffer": "^1.0.2"
   },

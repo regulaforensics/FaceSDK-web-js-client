@@ -14,6 +14,8 @@ models/detect-request.ts
 models/detect-response-all-of.ts
 models/detect-response.ts
 models/detect-result.ts
+models/detection-attributes-details.ts
+models/detection-attributes.ts
 models/detection-face.ts
 models/detection-quality.ts
 models/detection.ts

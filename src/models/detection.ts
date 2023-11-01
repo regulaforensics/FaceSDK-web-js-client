@@ -13,6 +13,7 @@
  */
 
 
+import { DetectionAttributes } from './detection-attributes';
 import { DetectionQuality } from './detection-quality';
 import { ImageData } from './image-data';
 
@@ -30,10 +31,10 @@ export interface Detection {
     'crop'?: ImageData;
     /**
      * 
-     * @type {{ [key: string]: object; }}
+     * @type {DetectionAttributes}
      * @memberof Detection
      */
-    'attributes'?: { [key: string]: object; };
+    'attributes'?: DetectionAttributes;
     /**
      * Absolute coordinates (x,y) of five points of each detected face: left eye, right eye, nose, left point of lips, right point of lips.
      * @type {Array<Array<number>>}

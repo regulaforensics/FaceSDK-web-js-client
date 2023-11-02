@@ -5,6 +5,7 @@ export * from './detect-response';
 export * from './detect-response-all-of';
 export * from './detect-result';
 export * from './detection';
+export * from './detection-attributes';
 export * from './detection-face';
 export * from './detection-quality';
 export * from './face-attribute';

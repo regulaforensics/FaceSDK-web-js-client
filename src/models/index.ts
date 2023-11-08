@@ -25,6 +25,7 @@ export * from './group-page';
 export * from './group-page-all-of';
 export * from './group-to-create';
 export * from './image';
+export * from './image-data';
 export * from './image-fields';
 export * from './image-fields-image';
 export * from './image-page';

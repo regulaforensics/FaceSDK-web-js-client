@@ -11,7 +11,11 @@ export class PersonApi {
     }
 
     async createPerson(personFields: PersonFields, xRequestID?: string, options?: AxiosRequestConfig): Promise<Person> {
-        const response = await this.superClass.createPerson(personFields, xRequestID, options);
+        const personFieldsWithGuard = {
+            ...personFields,
+            metadata: !personFields?.metadata ? {} : personFields.metadata
+        }
+        const response = await this.superClass.createPerson(personFieldsWithGuard, xRequestID, options);
         return response.data;
     }
     async addImageToPerson(

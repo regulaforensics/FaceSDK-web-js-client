@@ -10,7 +10,11 @@ export class GroupApi {
     }
 
     async createGroup(groupToCreate: GroupToCreate, xRequestID?: string, options?: AxiosRequestConfig): Promise<Group> {
-        const response = await this.superClass.createGroup(groupToCreate, xRequestID, options);
+        const groupToCreateWithGuard = {
+            ...groupToCreate,
+            metadata: !groupToCreate?.metadata ? {} : groupToCreate.metadata
+        }
+        const response = await this.superClass.createGroup(groupToCreateWithGuard, xRequestID, options);
         return response.data;
     }
 

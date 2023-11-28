@@ -13,7 +13,6 @@
  */
 
 
-import { DetectRequestAttributes } from './detect-request-attributes';
 import { ProcessParam } from './process-param';
 import { ImageData } from './image-data';
 
@@ -47,11 +46,5 @@ export interface DetectRequest {
      * @memberof DetectRequest
      */
     'thumbnails'?: boolean;
-    /**
-     * 
-     * @type {DetectRequestAttributes}
-     * @memberof DetectRequest
-     */
-    'attributes'?: DetectRequestAttributes;
 }
 

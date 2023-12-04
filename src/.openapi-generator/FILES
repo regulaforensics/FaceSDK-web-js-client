@@ -9,7 +9,6 @@ base.ts
 common.ts
 configuration.ts
 models/crop.ts
-models/detect-request-attributes.ts
 models/detect-request.ts
 models/detect-response-all-of.ts
 models/detect-response.ts
@@ -64,6 +63,7 @@ models/person-with-images.ts
 models/person.ts
 models/persons-page-all-of.ts
 models/persons-page.ts
+models/process-param-attributes.ts
 models/process-param.ts
 models/quality-config.ts
 models/quality-detail.ts

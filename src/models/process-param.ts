@@ -15,6 +15,7 @@
 
 import { FaceQualityScenarios } from './face-quality-scenarios';
 import { OutputImageParams } from './output-image-params';
+import { ProcessParamAttributes } from './process-param-attributes';
 import { QualityRequest } from './quality-request';
 
 /**
@@ -48,10 +49,10 @@ export interface ProcessParam {
      */
     'quality'?: QualityRequest;
     /**
-     * Whether to evaluate attributes, such as age and emotions.
-     * @type {boolean}
+     * 
+     * @type {ProcessParamAttributes}
      * @memberof ProcessParam
      */
-    'attributes'?: boolean;
+    'attributes'?: ProcessParamAttributes;
 }
 

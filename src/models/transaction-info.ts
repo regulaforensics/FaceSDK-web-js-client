@@ -51,17 +51,11 @@ export interface TransactionInfo {
      */
     'video'?: string;
     /**
-     * List of base64 images
-     * @type {Array<string>}
-     * @memberof TransactionInfo
-     */
-    'images'?: Array<string>;
-    /**
      * Approximate age with an accuracy of +/-3 years.
      * @type {number}
      * @memberof TransactionInfo
      */
-    'estimatedAge'?: number;
+    'age'?: number;
     /**
      * Link to the portrait.
      * @type {string}

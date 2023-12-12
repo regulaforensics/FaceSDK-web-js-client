@@ -16,7 +16,7 @@
 import { QualityConfig } from './quality-config';
 
 /**
- * Whether to evaluate attributes, such as age and emotions.
+ * If set, the selected attributes, such as age or emotions, are evaluated.
  * @export
  * @interface ProcessParamAttributes
  */

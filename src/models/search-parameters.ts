@@ -29,9 +29,9 @@ export interface SearchParameters {
     'createPerson'?: SearchParametersCreatePerson;
     /**
      * IDs of the groups in which the search is performed.
-     * @type {Array<number>}
+     * @type {Array<string>}
      * @memberof SearchParameters
      */
-    'groupIds'?: Array<number>;
+    'groupIds'?: Array<string>;
 }
 

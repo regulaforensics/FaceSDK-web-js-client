@@ -13,38 +13,19 @@
  */
 
 
-import { ProcessParam } from './process-param';
-import { ImageData } from './image-data';
+import { QualityConfig } from './quality-config';
 
 /**
- * 
+ * Whether to evaluate attributes, such as age and emotions.
  * @export
- * @interface DetectRequest
+ * @interface ProcessParamAttributes
  */
-export interface DetectRequest {
-    /**
-     * Session identificator.
-     * @type {string}
-     * @memberof DetectRequest
-     */
-    'tag'?: string;
+export interface ProcessParamAttributes {
     /**
      * 
-     * @type {ProcessParam}
-     * @memberof DetectRequest
+     * @type {Array<QualityConfig>}
+     * @memberof ProcessParamAttributes
      */
-    'processParam'?: ProcessParam;
-    /**
-     * 
-     * @type {ImageData}
-     * @memberof DetectRequest
-     */
-    'image'?: ImageData;
-    /**
-     * Whether to return the cropped portrains with the detected faces.
-     * @type {boolean}
-     * @memberof DetectRequest
-     */
-    'thumbnails'?: boolean;
+    'config'?: Array<QualityConfig>;
 }
 

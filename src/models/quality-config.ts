@@ -13,7 +13,7 @@
  */
 
 
-import { FaceAttribute } from './face-attribute';
+import { FaceQualityConfigName } from './face-quality-config-name';
 
 /**
  * The configuration that defines the list of returned quality check characteristics.
@@ -23,10 +23,10 @@ import { FaceAttribute } from './face-attribute';
 export interface QualityConfig {
     /**
      * 
-     * @type {FaceAttribute}
+     * @type {FaceQualityConfigName}
      * @memberof QualityConfig
      */
-    'name'?: FaceAttribute;
+    'name'?: FaceQualityConfigName;
     /**
      * The range of applicable values for this characteristic. If the returned in the Response value fits this range, the value is identified as compliant with the requirements.
      * @type {Array<number>}

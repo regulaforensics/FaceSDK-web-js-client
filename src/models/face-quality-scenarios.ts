@@ -28,7 +28,8 @@ export const FaceQualityScenarios = {
     QUALITY_VISA_USA: 'QualityVisaUSA',
     CROP_CENTRAL_FACE: 'CropCentralFace',
     CROP_ALL_FACES: 'CropAllFaces',
-    THUMBNAIL: 'Thumbnail'
+    THUMBNAIL: 'Thumbnail',
+    EMPTY: ''
 } as const;
 
 export type FaceQualityScenarios = typeof FaceQualityScenarios[keyof typeof FaceQualityScenarios];

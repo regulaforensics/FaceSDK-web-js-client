@@ -17,14 +17,14 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npm install
-        working-directory: ./example/esm
+        working-directory: ./examples/basic/esm
       - run: node --unhandled-rejections=strict index.js
-        working-directory: ./example/esm
+        working-directory: ./examples/basic/esm
         env:
           API_BASE_PATH: "https://test-faceapi.regulaforensics.com"
       - run: npm install
-        working-directory: ./example/cjs
+        working-directory: ./examples/basic/cjs
       - run: node --unhandled-rejections=strict index.js
-        working-directory: ./example/cjs
+        working-directory: ./examples/basic/cjs
         env:
           API_BASE_PATH: "https://test-faceapi.regulaforensics.com"

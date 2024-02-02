@@ -13,25 +13,19 @@
  */
 
 
-import { MatchAndSearchRequestAllOfImages } from './match-and-search-request-all-of-images';
+import { FaceAttribute } from './face-attribute';
 
 /**
- * 
+ * The configuration that defines the list of returned attribute check characteristics.
  * @export
- * @interface MatchAndSearchRequestAllOf
+ * @interface AttributeConfig
  */
-export interface MatchAndSearchRequestAllOf {
+export interface AttributeConfig {
     /**
-     * Session identificator.
-     * @type {string}
-     * @memberof MatchAndSearchRequestAllOf
+     * 
+     * @type {FaceAttribute}
+     * @memberof AttributeConfig
      */
-    'tag'?: string;
-    /**
-     * Array of Person images.
-     * @type {Array<MatchAndSearchRequestAllOfImages>}
-     * @memberof MatchAndSearchRequestAllOf
-     */
-    'images'?: Array<MatchAndSearchRequestAllOfImages>;
+    'name'?: FaceAttribute;
 }
 

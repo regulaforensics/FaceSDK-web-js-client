@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Regula FaceSDK Web API
- * Regula FaceSDK Web API # Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
+ * [Download OpenAPI specification](https://github.com/regulaforensics/FaceSDK-web-openapi) ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
  *
  * The version of the OpenAPI document: 6.1.0
  * 
@@ -13,13 +13,14 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { DetectRequest } from '../models';
 // @ts-ignore
@@ -46,7 +47,7 @@ export const MatchingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        detect: async (detectRequest: DetectRequest, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        detect: async (detectRequest: DetectRequest, xRequestID?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'detectRequest' is not null or undefined
             assertParamExists('detect', 'detectRequest', detectRequest)
             const localVarPath = `/api/detect`;
@@ -61,7 +62,7 @@ export const MatchingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            if (xRequestID !== undefined && xRequestID !== null) {
+            if (xRequestID != null) {
                 localVarHeaderParameter['X-RequestID'] = String(xRequestID);
             }
 
@@ -87,7 +88,7 @@ export const MatchingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        match: async (matchRequest: MatchRequest, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        match: async (matchRequest: MatchRequest, xRequestID?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'matchRequest' is not null or undefined
             assertParamExists('match', 'matchRequest', matchRequest)
             const localVarPath = `/api/match`;
@@ -102,7 +103,7 @@ export const MatchingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            if (xRequestID !== undefined && xRequestID !== null) {
+            if (xRequestID != null) {
                 localVarHeaderParameter['X-RequestID'] = String(xRequestID);
             }
 
@@ -128,7 +129,7 @@ export const MatchingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        matchAndSearch: async (matchAndSearchRequest: MatchAndSearchRequest, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        matchAndSearch: async (matchAndSearchRequest: MatchAndSearchRequest, xRequestID?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'matchAndSearchRequest' is not null or undefined
             assertParamExists('matchAndSearch', 'matchAndSearchRequest', matchAndSearchRequest)
             const localVarPath = `/api/match_and_search`;
@@ -143,7 +144,7 @@ export const MatchingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            if (xRequestID !== undefined && xRequestID !== null) {
+            if (xRequestID != null) {
                 localVarHeaderParameter['X-RequestID'] = String(xRequestID);
             }
 
@@ -179,9 +180,11 @@ export const MatchingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async detect(detectRequest: DetectRequest, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DetectResponse>> {
+        async detect(detectRequest: DetectRequest, xRequestID?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DetectResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.detect(detectRequest, xRequestID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['MatchingApi.detect']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
          * 
@@ -191,9 +194,11 @@ export const MatchingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async match(matchRequest: MatchRequest, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MatchResponse>> {
+        async match(matchRequest: MatchRequest, xRequestID?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MatchResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.match(matchRequest, xRequestID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['MatchingApi.match']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
          * 
@@ -203,9 +208,11 @@ export const MatchingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async matchAndSearch(matchAndSearchRequest: MatchAndSearchRequest, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MatchAndSearchResponse>> {
+        async matchAndSearch(matchAndSearchRequest: MatchAndSearchRequest, xRequestID?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MatchAndSearchResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.matchAndSearch(matchAndSearchRequest, xRequestID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['MatchingApi.matchAndSearch']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
     }
 };
@@ -269,7 +276,7 @@ export class MatchingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MatchingApi
      */
-    public detect(detectRequest: DetectRequest, xRequestID?: string, options?: AxiosRequestConfig) {
+    public detect(detectRequest: DetectRequest, xRequestID?: string, options?: RawAxiosRequestConfig) {
         return MatchingApiFp(this.configuration).detect(detectRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -282,7 +289,7 @@ export class MatchingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MatchingApi
      */
-    public match(matchRequest: MatchRequest, xRequestID?: string, options?: AxiosRequestConfig) {
+    public match(matchRequest: MatchRequest, xRequestID?: string, options?: RawAxiosRequestConfig) {
         return MatchingApiFp(this.configuration).match(matchRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -295,7 +302,8 @@ export class MatchingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MatchingApi
      */
-    public matchAndSearch(matchAndSearchRequest: MatchAndSearchRequest, xRequestID?: string, options?: AxiosRequestConfig) {
+    public matchAndSearch(matchAndSearchRequest: MatchAndSearchRequest, xRequestID?: string, options?: RawAxiosRequestConfig) {
         return MatchingApiFp(this.configuration).matchAndSearch(matchAndSearchRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

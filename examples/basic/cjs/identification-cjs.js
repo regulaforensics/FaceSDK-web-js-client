@@ -2,7 +2,7 @@ const { FaceSdk } = require('@regulaforensics/facesdk-webclient');
 const fs = require('fs');
 
 (async () => {
-    let apiBasePath = process.env.API_BASE_PATH || 'http://127.0.0.0:41101';
+    let apiBasePath = process.env.API_BASE_PATH || 'http://172.20.40.141:41101';
 
     const face1 = fs.readFileSync('../face1.jpg').buffer;
     const face2 = fs.readFileSync('../face2.jpg').buffer;

@@ -21,8 +21,6 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { PersonCreatedResponse } from '../models';
-// @ts-ignore
 import { SearchBadParams } from '../models';
 // @ts-ignore
 import { SearchRequest } from '../models';

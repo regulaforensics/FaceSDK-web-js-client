@@ -49,7 +49,6 @@ export * from './output-image-params';
 export * from './page';
 export * from './person';
 export * from './person-all-of';
-export * from './person-created-response';
 export * from './person-fields';
 export * from './person-with-images';
 export * from './person-with-images-all-of';

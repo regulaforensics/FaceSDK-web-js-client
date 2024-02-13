@@ -59,7 +59,6 @@ models/operation-log.ts
 models/output-image-params.ts
 models/page.ts
 models/person-all-of.ts
-models/person-created-response.ts
 models/person-fields.ts
 models/person-with-images-all-of.ts
 models/person-with-images.ts

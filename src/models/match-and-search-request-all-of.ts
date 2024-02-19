@@ -33,5 +33,11 @@ export interface MatchAndSearchRequestAllOf {
      * @memberof MatchAndSearchRequestAllOf
      */
     'images'?: Array<MatchAndSearchRequestAllOfImages>;
+    /**
+     * IDs of the groups in which the search is performed.
+     * @type {Array<string>}
+     * @memberof MatchAndSearchRequestAllOf
+     */
+    'groupIds'?: Array<string>;
 }
 

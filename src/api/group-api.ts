@@ -121,17 +121,13 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
         /**
          * 
          * @summary Get groups
-         * @param {number} page The page number to get a list of persons or groups.
-         * @param {number} size The page size with a list of persons or groups, items.
+         * @param {number} [page] The page number to get a list of persons or groups.
+         * @param {number} [size] The page size with a list of persons or groups, items.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllGroups: async (page: number, size: number, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'page' is not null or undefined
-            assertParamExists('getAllGroups', 'page', page)
-            // verify required parameter 'size' is not null or undefined
-            assertParamExists('getAllGroups', 'size', size)
+        getAllGroups: async (page?: number, size?: number, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/groups`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -170,18 +166,14 @@ export const GroupApiAxiosParamCreator = function (configuration?: Configuration
         /**
          * 
          * @summary Get group persons
-         * @param {number} page The page number to get a list of persons or groups.
-         * @param {number} size The page size with a list of persons or groups, items.
          * @param {string} groupId Group ID.
+         * @param {number} [page] The page number to get a list of persons or groups.
+         * @param {number} [size] The page size with a list of persons or groups, items.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllPersonsByGroupId: async (page: number, size: number, groupId: string, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'page' is not null or undefined
-            assertParamExists('getAllPersonsByGroupId', 'page', page)
-            // verify required parameter 'size' is not null or undefined
-            assertParamExists('getAllPersonsByGroupId', 'size', size)
+        getAllPersonsByGroupId: async (groupId: string, page?: number, size?: number, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'groupId' is not null or undefined
             assertParamExists('getAllPersonsByGroupId', 'groupId', groupId)
             const localVarPath = `/api/groups/{groupId}/persons`
@@ -386,28 +378,28 @@ export const GroupApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get groups
-         * @param {number} page The page number to get a list of persons or groups.
-         * @param {number} size The page size with a list of persons or groups, items.
+         * @param {number} [page] The page number to get a list of persons or groups.
+         * @param {number} [size] The page size with a list of persons or groups, items.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllGroups(page: number, size: number, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GroupPage>> {
+        async getAllGroups(page?: number, size?: number, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GroupPage>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAllGroups(page, size, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get group persons
-         * @param {number} page The page number to get a list of persons or groups.
-         * @param {number} size The page size with a list of persons or groups, items.
          * @param {string} groupId Group ID.
+         * @param {number} [page] The page number to get a list of persons or groups.
+         * @param {number} [size] The page size with a list of persons or groups, items.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllPersonsByGroupId(page: number, size: number, groupId: string, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PersonsPage>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllPersonsByGroupId(page, size, groupId, xRequestID, options);
+        async getAllPersonsByGroupId(groupId: string, page?: number, size?: number, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PersonsPage>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllPersonsByGroupId(groupId, page, size, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -483,27 +475,27 @@ export const GroupApiFactory = function (configuration?: Configuration, basePath
         /**
          * 
          * @summary Get groups
-         * @param {number} page The page number to get a list of persons or groups.
-         * @param {number} size The page size with a list of persons or groups, items.
+         * @param {number} [page] The page number to get a list of persons or groups.
+         * @param {number} [size] The page size with a list of persons or groups, items.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllGroups(page: number, size: number, xRequestID?: string, options?: any): AxiosPromise<GroupPage> {
+        getAllGroups(page?: number, size?: number, xRequestID?: string, options?: any): AxiosPromise<GroupPage> {
             return localVarFp.getAllGroups(page, size, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get group persons
-         * @param {number} page The page number to get a list of persons or groups.
-         * @param {number} size The page size with a list of persons or groups, items.
          * @param {string} groupId Group ID.
+         * @param {number} [page] The page number to get a list of persons or groups.
+         * @param {number} [size] The page size with a list of persons or groups, items.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllPersonsByGroupId(page: number, size: number, groupId: string, xRequestID?: string, options?: any): AxiosPromise<PersonsPage> {
-            return localVarFp.getAllPersonsByGroupId(page, size, groupId, xRequestID, options).then((request) => request(axios, basePath));
+        getAllPersonsByGroupId(groupId: string, page?: number, size?: number, xRequestID?: string, options?: any): AxiosPromise<PersonsPage> {
+            return localVarFp.getAllPersonsByGroupId(groupId, page, size, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -579,30 +571,30 @@ export class GroupApi extends BaseAPI {
     /**
      * 
      * @summary Get groups
-     * @param {number} page The page number to get a list of persons or groups.
-     * @param {number} size The page size with a list of persons or groups, items.
+     * @param {number} [page] The page number to get a list of persons or groups.
+     * @param {number} [size] The page size with a list of persons or groups, items.
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
      */
-    public getAllGroups(page: number, size: number, xRequestID?: string, options?: AxiosRequestConfig) {
+    public getAllGroups(page?: number, size?: number, xRequestID?: string, options?: AxiosRequestConfig) {
         return GroupApiFp(this.configuration).getAllGroups(page, size, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get group persons
-     * @param {number} page The page number to get a list of persons or groups.
-     * @param {number} size The page size with a list of persons or groups, items.
      * @param {string} groupId Group ID.
+     * @param {number} [page] The page number to get a list of persons or groups.
+     * @param {number} [size] The page size with a list of persons or groups, items.
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupApi
      */
-    public getAllPersonsByGroupId(page: number, size: number, groupId: string, xRequestID?: string, options?: AxiosRequestConfig) {
-        return GroupApiFp(this.configuration).getAllPersonsByGroupId(page, size, groupId, xRequestID, options).then((request) => request(this.axios, this.basePath));
+    public getAllPersonsByGroupId(groupId: string, page?: number, size?: number, xRequestID?: string, options?: AxiosRequestConfig) {
+        return GroupApiFp(this.configuration).getAllPersonsByGroupId(groupId, page, size, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

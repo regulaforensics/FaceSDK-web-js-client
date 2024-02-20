@@ -14,12 +14,12 @@
 
 
 import { GroupAllOf } from './group-all-of';
-import { GroupToCreate } from './group-to-create';
+import { GroupResponse } from './group-response';
 
 /**
  * @type Group
  * @export
  */
-export type Group = GroupAllOf & GroupToCreate;
+export type Group = GroupAllOf & GroupResponse;
 
 

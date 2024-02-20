@@ -21,11 +21,11 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
+import { AddImageToPersonRequest } from '../models';
+// @ts-ignore
+import { AddImageToPersonResponse } from '../models';
+// @ts-ignore
 import { GroupPage } from '../models';
-// @ts-ignore
-import { Image } from '../models';
-// @ts-ignore
-import { ImageFields } from '../models';
 // @ts-ignore
 import { ImagePage } from '../models';
 // @ts-ignore
@@ -34,6 +34,8 @@ import { OperationLog } from '../models';
 import { Person } from '../models';
 // @ts-ignore
 import { PersonFields } from '../models';
+// @ts-ignore
+import { PersonToUpdateFields } from '../models';
 /**
  * PersonApi - axios parameter creator
  * @export
@@ -44,16 +46,16 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @summary Add person image
          * @param {string} personId Person ID.
-         * @param {ImageFields} imageFields Image to add.
+         * @param {AddImageToPersonRequest} addImageToPersonRequest Image to add.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addImageToPerson: async (personId: string, imageFields: ImageFields, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        addImageToPerson: async (personId: string, addImageToPersonRequest: AddImageToPersonRequest, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'personId' is not null or undefined
             assertParamExists('addImageToPerson', 'personId', personId)
-            // verify required parameter 'imageFields' is not null or undefined
-            assertParamExists('addImageToPerson', 'imageFields', imageFields)
+            // verify required parameter 'addImageToPersonRequest' is not null or undefined
+            assertParamExists('addImageToPerson', 'addImageToPersonRequest', addImageToPersonRequest)
             const localVarPath = `/api/persons/{personId}/images`
                 .replace(`{${"personId"}}`, encodeURIComponent(String(personId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -78,7 +80,7 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(imageFields, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(addImageToPersonRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -211,18 +213,14 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Get person groups
-         * @param {number} page The page number to get a list of persons or groups.
-         * @param {number} size The page size with a list of persons or groups, items.
          * @param {string} personId Person ID.
+         * @param {number} [page] The page number to get a list of persons or groups.
+         * @param {number} [size] The page size with a list of persons or groups, items.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllGroupsByPersonId: async (page: number, size: number, personId: string, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'page' is not null or undefined
-            assertParamExists('getAllGroupsByPersonId', 'page', page)
-            // verify required parameter 'size' is not null or undefined
-            assertParamExists('getAllGroupsByPersonId', 'size', size)
+        getAllGroupsByPersonId: async (personId: string, page?: number, size?: number, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'personId' is not null or undefined
             assertParamExists('getAllGroupsByPersonId', 'personId', personId)
             const localVarPath = `/api/persons/{personId}/groups`
@@ -264,18 +262,14 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Get person images
-         * @param {number} page The page number to get a list of persons or groups.
-         * @param {number} size The page size with a list of persons or groups, items.
          * @param {string} personId Person ID.
+         * @param {number} [page] The page number to get a list of persons or groups.
+         * @param {number} [size] The page size with a list of persons or groups, items.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllImagesByPersonId: async (page: number, size: number, personId: string, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'page' is not null or undefined
-            assertParamExists('getAllImagesByPersonId', 'page', page)
-            // verify required parameter 'size' is not null or undefined
-            assertParamExists('getAllImagesByPersonId', 'size', size)
+        getAllImagesByPersonId: async (personId: string, page?: number, size?: number, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'personId' is not null or undefined
             assertParamExists('getAllImagesByPersonId', 'personId', personId)
             const localVarPath = `/api/persons/{personId}/images`
@@ -400,16 +394,16 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @summary Update person
          * @param {string} personId Person ID.
-         * @param {PersonFields} personFields Request body for the Person to update.
+         * @param {PersonToUpdateFields} personToUpdateFields Request body for the Person to update.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updatePerson: async (personId: string, personFields: PersonFields, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updatePerson: async (personId: string, personToUpdateFields: PersonToUpdateFields, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'personId' is not null or undefined
             assertParamExists('updatePerson', 'personId', personId)
-            // verify required parameter 'personFields' is not null or undefined
-            assertParamExists('updatePerson', 'personFields', personFields)
+            // verify required parameter 'personToUpdateFields' is not null or undefined
+            assertParamExists('updatePerson', 'personToUpdateFields', personToUpdateFields)
             const localVarPath = `/api/persons/{personId}`
                 .replace(`{${"personId"}}`, encodeURIComponent(String(personId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -434,7 +428,7 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(personFields, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(personToUpdateFields, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -455,13 +449,13 @@ export const PersonApiFp = function(configuration?: Configuration) {
          * 
          * @summary Add person image
          * @param {string} personId Person ID.
-         * @param {ImageFields} imageFields Image to add.
+         * @param {AddImageToPersonRequest} addImageToPersonRequest Image to add.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async addImageToPerson(personId: string, imageFields: ImageFields, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Image>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.addImageToPerson(personId, imageFields, xRequestID, options);
+        async addImageToPerson(personId: string, addImageToPersonRequest: AddImageToPersonRequest, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AddImageToPersonResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.addImageToPerson(personId, addImageToPersonRequest, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -504,29 +498,29 @@ export const PersonApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get person groups
-         * @param {number} page The page number to get a list of persons or groups.
-         * @param {number} size The page size with a list of persons or groups, items.
          * @param {string} personId Person ID.
+         * @param {number} [page] The page number to get a list of persons or groups.
+         * @param {number} [size] The page size with a list of persons or groups, items.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllGroupsByPersonId(page: number, size: number, personId: string, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GroupPage>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllGroupsByPersonId(page, size, personId, xRequestID, options);
+        async getAllGroupsByPersonId(personId: string, page?: number, size?: number, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GroupPage>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllGroupsByPersonId(personId, page, size, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get person images
-         * @param {number} page The page number to get a list of persons or groups.
-         * @param {number} size The page size with a list of persons or groups, items.
          * @param {string} personId Person ID.
+         * @param {number} [page] The page number to get a list of persons or groups.
+         * @param {number} [size] The page size with a list of persons or groups, items.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllImagesByPersonId(page: number, size: number, personId: string, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImagePage>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllImagesByPersonId(page, size, personId, xRequestID, options);
+        async getAllImagesByPersonId(personId: string, page?: number, size?: number, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImagePage>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllImagesByPersonId(personId, page, size, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -558,13 +552,13 @@ export const PersonApiFp = function(configuration?: Configuration) {
          * 
          * @summary Update person
          * @param {string} personId Person ID.
-         * @param {PersonFields} personFields Request body for the Person to update.
+         * @param {PersonToUpdateFields} personToUpdateFields Request body for the Person to update.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updatePerson(personId: string, personFields: PersonFields, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.updatePerson(personId, personFields, xRequestID, options);
+        async updatePerson(personId: string, personToUpdateFields: PersonToUpdateFields, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updatePerson(personId, personToUpdateFields, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -581,13 +575,13 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
          * 
          * @summary Add person image
          * @param {string} personId Person ID.
-         * @param {ImageFields} imageFields Image to add.
+         * @param {AddImageToPersonRequest} addImageToPersonRequest Image to add.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addImageToPerson(personId: string, imageFields: ImageFields, xRequestID?: string, options?: any): AxiosPromise<Image> {
-            return localVarFp.addImageToPerson(personId, imageFields, xRequestID, options).then((request) => request(axios, basePath));
+        addImageToPerson(personId: string, addImageToPersonRequest: AddImageToPersonRequest, xRequestID?: string, options?: any): AxiosPromise<AddImageToPersonResponse> {
+            return localVarFp.addImageToPerson(personId, addImageToPersonRequest, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -626,28 +620,28 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Get person groups
-         * @param {number} page The page number to get a list of persons or groups.
-         * @param {number} size The page size with a list of persons or groups, items.
          * @param {string} personId Person ID.
+         * @param {number} [page] The page number to get a list of persons or groups.
+         * @param {number} [size] The page size with a list of persons or groups, items.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllGroupsByPersonId(page: number, size: number, personId: string, xRequestID?: string, options?: any): AxiosPromise<GroupPage> {
-            return localVarFp.getAllGroupsByPersonId(page, size, personId, xRequestID, options).then((request) => request(axios, basePath));
+        getAllGroupsByPersonId(personId: string, page?: number, size?: number, xRequestID?: string, options?: any): AxiosPromise<GroupPage> {
+            return localVarFp.getAllGroupsByPersonId(personId, page, size, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get person images
-         * @param {number} page The page number to get a list of persons or groups.
-         * @param {number} size The page size with a list of persons or groups, items.
          * @param {string} personId Person ID.
+         * @param {number} [page] The page number to get a list of persons or groups.
+         * @param {number} [size] The page size with a list of persons or groups, items.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllImagesByPersonId(page: number, size: number, personId: string, xRequestID?: string, options?: any): AxiosPromise<ImagePage> {
-            return localVarFp.getAllImagesByPersonId(page, size, personId, xRequestID, options).then((request) => request(axios, basePath));
+        getAllImagesByPersonId(personId: string, page?: number, size?: number, xRequestID?: string, options?: any): AxiosPromise<ImagePage> {
+            return localVarFp.getAllImagesByPersonId(personId, page, size, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -676,13 +670,13 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
          * 
          * @summary Update person
          * @param {string} personId Person ID.
-         * @param {PersonFields} personFields Request body for the Person to update.
+         * @param {PersonToUpdateFields} personToUpdateFields Request body for the Person to update.
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updatePerson(personId: string, personFields: PersonFields, xRequestID?: string, options?: any): AxiosPromise<void> {
-            return localVarFp.updatePerson(personId, personFields, xRequestID, options).then((request) => request(axios, basePath));
+        updatePerson(personId: string, personToUpdateFields: PersonToUpdateFields, xRequestID?: string, options?: any): AxiosPromise<void> {
+            return localVarFp.updatePerson(personId, personToUpdateFields, xRequestID, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -698,14 +692,14 @@ export class PersonApi extends BaseAPI {
      * 
      * @summary Add person image
      * @param {string} personId Person ID.
-     * @param {ImageFields} imageFields Image to add.
+     * @param {AddImageToPersonRequest} addImageToPersonRequest Image to add.
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
      */
-    public addImageToPerson(personId: string, imageFields: ImageFields, xRequestID?: string, options?: AxiosRequestConfig) {
-        return PersonApiFp(this.configuration).addImageToPerson(personId, imageFields, xRequestID, options).then((request) => request(this.axios, this.basePath));
+    public addImageToPerson(personId: string, addImageToPersonRequest: AddImageToPersonRequest, xRequestID?: string, options?: AxiosRequestConfig) {
+        return PersonApiFp(this.configuration).addImageToPerson(personId, addImageToPersonRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -751,31 +745,31 @@ export class PersonApi extends BaseAPI {
     /**
      * 
      * @summary Get person groups
-     * @param {number} page The page number to get a list of persons or groups.
-     * @param {number} size The page size with a list of persons or groups, items.
      * @param {string} personId Person ID.
+     * @param {number} [page] The page number to get a list of persons or groups.
+     * @param {number} [size] The page size with a list of persons or groups, items.
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
      */
-    public getAllGroupsByPersonId(page: number, size: number, personId: string, xRequestID?: string, options?: AxiosRequestConfig) {
-        return PersonApiFp(this.configuration).getAllGroupsByPersonId(page, size, personId, xRequestID, options).then((request) => request(this.axios, this.basePath));
+    public getAllGroupsByPersonId(personId: string, page?: number, size?: number, xRequestID?: string, options?: AxiosRequestConfig) {
+        return PersonApiFp(this.configuration).getAllGroupsByPersonId(personId, page, size, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get person images
-     * @param {number} page The page number to get a list of persons or groups.
-     * @param {number} size The page size with a list of persons or groups, items.
      * @param {string} personId Person ID.
+     * @param {number} [page] The page number to get a list of persons or groups.
+     * @param {number} [size] The page size with a list of persons or groups, items.
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
      */
-    public getAllImagesByPersonId(page: number, size: number, personId: string, xRequestID?: string, options?: AxiosRequestConfig) {
-        return PersonApiFp(this.configuration).getAllImagesByPersonId(page, size, personId, xRequestID, options).then((request) => request(this.axios, this.basePath));
+    public getAllImagesByPersonId(personId: string, page?: number, size?: number, xRequestID?: string, options?: AxiosRequestConfig) {
+        return PersonApiFp(this.configuration).getAllImagesByPersonId(personId, page, size, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -809,13 +803,13 @@ export class PersonApi extends BaseAPI {
      * 
      * @summary Update person
      * @param {string} personId Person ID.
-     * @param {PersonFields} personFields Request body for the Person to update.
+     * @param {PersonToUpdateFields} personToUpdateFields Request body for the Person to update.
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
      */
-    public updatePerson(personId: string, personFields: PersonFields, xRequestID?: string, options?: AxiosRequestConfig) {
-        return PersonApiFp(this.configuration).updatePerson(personId, personFields, xRequestID, options).then((request) => request(this.axios, this.basePath));
+    public updatePerson(personId: string, personToUpdateFields: PersonToUpdateFields, xRequestID?: string, options?: AxiosRequestConfig) {
+        return PersonApiFp(this.configuration).updatePerson(personId, personToUpdateFields, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 }

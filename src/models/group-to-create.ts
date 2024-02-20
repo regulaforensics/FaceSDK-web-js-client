@@ -31,12 +31,12 @@ export interface GroupToCreate {
      * @type {string}
      * @memberof GroupToCreate
      */
-    'name'?: string;
+    'name': string;
     /**
      * A free-form object containing group\'s extended attributes.
      * @type {{ [key: string]: object; }}
      * @memberof GroupToCreate
      */
-    'metadata'?: { [key: string]: object; };
+    'metadata': { [key: string]: object; };
 }
 

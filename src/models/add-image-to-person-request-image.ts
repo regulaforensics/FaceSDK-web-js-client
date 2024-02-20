@@ -13,30 +13,38 @@
  */
 
 
+import { ResizeOptions } from './resize-options';
+import { ImageData } from './image-data';
 
 /**
- * Person Request body: name and metadata.
+ * Uploaded image.
  * @export
- * @interface PersonFields
+ * @interface AddImageToPersonRequestImage
  */
-export interface PersonFields {
+export interface AddImageToPersonRequestImage {
     /**
-     * Person name.
+     * Original media type of the uploaded image.
      * @type {string}
-     * @memberof PersonFields
+     * @memberof AddImageToPersonRequestImage
      */
-    'name': string;
+    'contentType'?: string;
     /**
-     * A free-form object containing person\'s extended attributes.
-     * @type {{ [key: string]: object; }}
-     * @memberof PersonFields
+     * 
+     * @type {ImageData}
+     * @memberof AddImageToPersonRequestImage
      */
-    'metadata'?: { [key: string]: object; };
+    'content'?: ImageData;
     /**
-     * Groups a person should be placed to. If no group is specified in request, a Default group is created and the person is placed to it.
-     * @type {Array<string>}
-     * @memberof PersonFields
+     * Image URL.
+     * @type {string}
+     * @memberof AddImageToPersonRequestImage
      */
-    'groups'?: Array<string>;
+    'imageUrl'?: string;
+    /**
+     * 
+     * @type {ResizeOptions}
+     * @memberof AddImageToPersonRequestImage
+     */
+    'resizeOptions'?: ResizeOptions;
 }
 

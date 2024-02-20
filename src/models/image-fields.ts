@@ -13,7 +13,7 @@
  */
 
 
-import { ImageFieldsImage } from './image-fields-image';
+import { AddImageToPersonRequestImage } from './add-image-to-person-request-image';
 import { OutputImageParams } from './output-image-params';
 
 /**
@@ -30,10 +30,10 @@ export interface ImageFields {
     'tag'?: string;
     /**
      * 
-     * @type {ImageFieldsImage}
+     * @type {AddImageToPersonRequestImage}
      * @memberof ImageFields
      */
-    'image'?: ImageFieldsImage;
+    'image'?: AddImageToPersonRequestImage;
     /**
      * 
      * @type {OutputImageParams}

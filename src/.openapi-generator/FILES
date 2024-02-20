@@ -8,6 +8,9 @@ api/search-api.ts
 base.ts
 common.ts
 configuration.ts
+models/add-image-to-person-request-image.ts
+models/add-image-to-person-request.ts
+models/add-image-to-person-response.ts
 models/attribute-config.ts
 models/crop.ts
 models/detect-request.ts
@@ -32,9 +35,9 @@ models/faces-response.ts
 models/group-all-of.ts
 models/group-page-all-of.ts
 models/group-page.ts
+models/group-response.ts
 models/group-to-create.ts
 models/group.ts
-models/image-fields-image.ts
 models/image-fields.ts
 models/image-page-all-of.ts
 models/image-page.ts
@@ -60,6 +63,7 @@ models/output-image-params.ts
 models/page.ts
 models/person-all-of.ts
 models/person-fields.ts
+models/person-to-update-fields.ts
 models/person-with-images-all-of.ts
 models/person-with-images.ts
 models/person.ts

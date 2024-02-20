@@ -13,8 +13,8 @@
  */
 
 
+import { AddImageToPersonRequestImage } from './add-image-to-person-request-image';
 import { ImageFields } from './image-fields';
-import { ImageFieldsImage } from './image-fields-image';
 import { OutputImageParams } from './output-image-params';
 import { SearchParameters } from './search-parameters';
 import { SearchParametersCreatePerson } from './search-parameters-create-person';

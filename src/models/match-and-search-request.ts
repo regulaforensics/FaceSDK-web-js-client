@@ -15,13 +15,11 @@
 
 import { MatchAndSearchRequestAllOf } from './match-and-search-request-all-of';
 import { MatchAndSearchRequestAllOfImages } from './match-and-search-request-all-of-images';
-import { SearchParameters } from './search-parameters';
-import { SearchParametersCreatePerson } from './search-parameters-create-person';
 
 /**
  * @type MatchAndSearchRequest
  * @export
  */
-export type MatchAndSearchRequest = MatchAndSearchRequestAllOf & SearchParameters;
+export type MatchAndSearchRequest = MatchAndSearchRequestAllOf;
 
 

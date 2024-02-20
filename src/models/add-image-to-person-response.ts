@@ -15,28 +15,46 @@
 
 
 /**
- * Person Request body: name and metadata.
+ * Image in the response.
  * @export
- * @interface PersonFields
+ * @interface AddImageToPersonResponse
  */
-export interface PersonFields {
+export interface AddImageToPersonResponse {
     /**
-     * Person name.
+     * Response image ID. The list is sorted by decreasing ID value.
      * @type {string}
-     * @memberof PersonFields
+     * @memberof AddImageToPersonResponse
      */
-    'name': string;
+    'id'?: string;
+    /**
+     * Original media type of the returned image.
+     * @type {string}
+     * @memberof AddImageToPersonResponse
+     */
+    'contentType'?: string;
+    /**
+     * Returned image creation date.
+     * @type {string}
+     * @memberof AddImageToPersonResponse
+     */
+    'createdAt'?: string;
+    /**
+     * Returned image path.
+     * @type {string}
+     * @memberof AddImageToPersonResponse
+     */
+    'path'?: string;
+    /**
+     * Returned image URL.
+     * @type {string}
+     * @memberof AddImageToPersonResponse
+     */
+    'url'?: string;
     /**
      * A free-form object containing person\'s extended attributes.
      * @type {{ [key: string]: object; }}
-     * @memberof PersonFields
+     * @memberof AddImageToPersonResponse
      */
     'metadata'?: { [key: string]: object; };
-    /**
-     * Groups a person should be placed to. If no group is specified in request, a Default group is created and the person is placed to it.
-     * @type {Array<string>}
-     * @memberof PersonFields
-     */
-    'groups'?: Array<string>;
 }
 

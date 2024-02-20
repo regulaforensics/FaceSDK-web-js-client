@@ -34,5 +34,11 @@ export interface MatchResponseAllOf {
      * @memberof MatchResponseAllOf
      */
     'results'?: Array<MatchImageResult>;
+    /**
+     * A free-form object containing person\'s extended attributes.
+     * @type {{ [key: string]: object; }}
+     * @memberof MatchResponseAllOf
+     */
+    'metadata'?: { [key: string]: object; };
 }
 

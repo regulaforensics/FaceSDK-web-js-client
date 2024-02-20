@@ -52,10 +52,10 @@ export interface TransactionInfo {
     'video'?: string;
     /**
      * Approximate age with an accuracy of +/-3 years.
-     * @type {number}
+     * @type {Array<{ [key: string]: object; }>}
      * @memberof TransactionInfo
      */
-    'age'?: number;
+    'age'?: Array<{ [key: string]: object; }>;
     /**
      * Link to the portrait, depends on the selected storage type. [Learn more](https://docs.regulaforensics.com/develop/face-sdk/web-service/administration/storage/)
      * @type {string}

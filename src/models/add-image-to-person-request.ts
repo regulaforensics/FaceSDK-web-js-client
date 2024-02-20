@@ -13,30 +13,37 @@
  */
 
 
+import { AddImageToPersonRequestImage } from './add-image-to-person-request-image';
 
 /**
- * Person Request body: name and metadata.
+ * Image in the request data, includes image and contentType.
  * @export
- * @interface PersonFields
+ * @interface AddImageToPersonRequest
  */
-export interface PersonFields {
+export interface AddImageToPersonRequest {
     /**
-     * Person name.
+     * Session identificator.
      * @type {string}
-     * @memberof PersonFields
+     * @memberof AddImageToPersonRequest
      */
-    'name': string;
+    'tag'?: string;
     /**
-     * A free-form object containing person\'s extended attributes.
-     * @type {{ [key: string]: object; }}
-     * @memberof PersonFields
+     * 
+     * @type {AddImageToPersonRequestImage}
+     * @memberof AddImageToPersonRequest
      */
-    'metadata'?: { [key: string]: object; };
+    'image': AddImageToPersonRequestImage;
     /**
-     * Groups a person should be placed to. If no group is specified in request, a Default group is created and the person is placed to it.
-     * @type {Array<string>}
-     * @memberof PersonFields
+     * The similarity threshold.
+     * @type {number}
+     * @memberof AddImageToPersonRequest
      */
-    'groups'?: Array<string>;
+    'threshold'?: number;
+    /**
+     * The maximum number of results to be returned.
+     * @type {number}
+     * @memberof AddImageToPersonRequest
+     */
+    'limit'?: number;
 }
 

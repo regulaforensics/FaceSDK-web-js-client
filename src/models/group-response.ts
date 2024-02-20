@@ -15,28 +15,22 @@
 
 
 /**
- * Person Request body: name and metadata.
+ * Response group create data, includes name and metadata.
  * @export
- * @interface PersonFields
+ * @interface GroupResponse
  */
-export interface PersonFields {
+export interface GroupResponse {
     /**
-     * Person name.
+     * Group to create name.
      * @type {string}
-     * @memberof PersonFields
+     * @memberof GroupResponse
      */
-    'name': string;
+    'name'?: string;
     /**
-     * A free-form object containing person\'s extended attributes.
+     * A free-form object containing group\'s extended attributes.
      * @type {{ [key: string]: object; }}
-     * @memberof PersonFields
+     * @memberof GroupResponse
      */
     'metadata'?: { [key: string]: object; };
-    /**
-     * Groups a person should be placed to. If no group is specified in request, a Default group is created and the person is placed to it.
-     * @type {Array<string>}
-     * @memberof PersonFields
-     */
-    'groups'?: Array<string>;
 }
 

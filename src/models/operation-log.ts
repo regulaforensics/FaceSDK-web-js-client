@@ -38,5 +38,11 @@ export interface OperationLog {
      * @memberof OperationLog
      */
     'msg'?: string;
+    /**
+     * A free-form object containing group\'s extended attributes.
+     * @type {{ [key: string]: object; }}
+     * @memberof OperationLog
+     */
+    'metadata'?: { [key: string]: object; };
 }
 

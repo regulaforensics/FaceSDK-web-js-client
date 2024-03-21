@@ -13,7 +13,7 @@ export class MatchingApi {
 
     async match(
         compareRequest: MatchRequest,
-        xRequestID: string,
+        xRequestID?: string,
         options?: AxiosRequestConfig,
     ): Promise<MatchResponse> {
         for (const image of compareRequest.images) {

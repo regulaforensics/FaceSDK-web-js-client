@@ -1,9 +1,9 @@
 api.ts
 api/diagnostics-api.ts
+api/face-identification-api.ts
 api/group-api.ts
 api/liveness20-api.ts
 api/matching-api.ts
-api/person-api.ts
 api/search-api.ts
 base.ts
 common.ts

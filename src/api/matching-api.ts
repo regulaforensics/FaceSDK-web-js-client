@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Regula FaceSDK Web API
- * [Download OpenAPI specification](https://github.com/regulaforensics/FaceSDK-web-openapi) ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
+ * Regula Face SDK Web API
+ * <a href=\"https://regulaforensics.com/products/face-recognition-sdk/  \" target=\"_blank\">Regula Face SDK</a> is a cross-platform biometric verification solution for a digital identity verification process. The SDK enables convenient and reliable face capture on the client side (mobile, web, and desktop) and further processing on the client or server side.  The Face SDK includes the following features:  * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-detection\" target=\"_blank\">Face Detection</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-comparison-11\" target=\"_blank\">Face Match (1:1)</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#face-identification-1n\" target=\"_blank\">Face Search (1:N)</a> * <a href=\"https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#liveness-assessment\" target=\"_blank\">Liveness Assessment</a>  Here is the <a href=\"https://github.com/regulaforensics/FaceSDK-web-openapi  \" target=\"_blank\">OpenAPI specification on GitHub</a>.   ### Clients * [JavaScript](https://github.com/regulaforensics/FaceSDK-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/FaceSDK-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/FaceSDK-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/FaceSDK-web-csharp-client) client for .NET & .NET Core 
  *
  * The version of the OpenAPI document: 6.1.0
  * 
@@ -39,8 +39,8 @@ import { MatchResponse } from '../models';
 export const MatchingApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * 
-         * @summary Detect face, evaluate attributes, assess the portrait quality
+         * Detect face, evaluate attributes, assess the portrait quality
+         * @summary detect faces
          * @param {DetectRequest} detectRequest 
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
@@ -80,8 +80,8 @@ export const MatchingApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * 
-         * @summary Compare faces in all combinations
+         * To perform a comparison of faces in the same image or in two different images, use POST `/api/match`. It\'s possible to compare faces in the same image or in two different images, this is defined by the `images.type` parameter. <br><br> The face detection result is displayed in the `detections` field. Each face is identified by two parameters: `faceIndex` (the index number of the face) and `imageIndex` (the index number of the image on which the face is detected). So, if there are two images each of which has two faces in them, the parameters will be the following: - First face in the first image: `faceIndex: 0`, `imageIndex: 0` - Second face in the first image: `faceIndex: 1`, `imageIndex: 0` - First face of the second image: `faceIndex: 0`, `imageIndex: 1` - Second face in the second image: `faceIndex: 1`, `imageIndex: 1`
+         * @summary compare faces (1:1)
          * @param {MatchRequest} matchRequest 
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
@@ -121,8 +121,8 @@ export const MatchingApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * 
-         * @summary Match and Search in one request
+         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, matching is not performed and only search is carried out.
+         * @summary match and search (1:1 + 1:N)
          * @param {MatchAndSearchRequest} matchAndSearchRequest 
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
@@ -172,8 +172,8 @@ export const MatchingApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = MatchingApiAxiosParamCreator(configuration)
     return {
         /**
-         * 
-         * @summary Detect face, evaluate attributes, assess the portrait quality
+         * Detect face, evaluate attributes, assess the portrait quality
+         * @summary detect faces
          * @param {DetectRequest} detectRequest 
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
@@ -184,8 +184,8 @@ export const MatchingApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 
-         * @summary Compare faces in all combinations
+         * To perform a comparison of faces in the same image or in two different images, use POST `/api/match`. It\'s possible to compare faces in the same image or in two different images, this is defined by the `images.type` parameter. <br><br> The face detection result is displayed in the `detections` field. Each face is identified by two parameters: `faceIndex` (the index number of the face) and `imageIndex` (the index number of the image on which the face is detected). So, if there are two images each of which has two faces in them, the parameters will be the following: - First face in the first image: `faceIndex: 0`, `imageIndex: 0` - Second face in the first image: `faceIndex: 1`, `imageIndex: 0` - First face of the second image: `faceIndex: 0`, `imageIndex: 1` - Second face in the second image: `faceIndex: 1`, `imageIndex: 1`
+         * @summary compare faces (1:1)
          * @param {MatchRequest} matchRequest 
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
@@ -196,8 +196,8 @@ export const MatchingApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 
-         * @summary Match and Search in one request
+         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, matching is not performed and only search is carried out.
+         * @summary match and search (1:1 + 1:N)
          * @param {MatchAndSearchRequest} matchAndSearchRequest 
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
@@ -218,8 +218,8 @@ export const MatchingApiFactory = function (configuration?: Configuration, baseP
     const localVarFp = MatchingApiFp(configuration)
     return {
         /**
-         * 
-         * @summary Detect face, evaluate attributes, assess the portrait quality
+         * Detect face, evaluate attributes, assess the portrait quality
+         * @summary detect faces
          * @param {DetectRequest} detectRequest 
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
@@ -229,8 +229,8 @@ export const MatchingApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.detect(detectRequest, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
-         * @summary Compare faces in all combinations
+         * To perform a comparison of faces in the same image or in two different images, use POST `/api/match`. It\'s possible to compare faces in the same image or in two different images, this is defined by the `images.type` parameter. <br><br> The face detection result is displayed in the `detections` field. Each face is identified by two parameters: `faceIndex` (the index number of the face) and `imageIndex` (the index number of the image on which the face is detected). So, if there are two images each of which has two faces in them, the parameters will be the following: - First face in the first image: `faceIndex: 0`, `imageIndex: 0` - Second face in the first image: `faceIndex: 1`, `imageIndex: 0` - First face of the second image: `faceIndex: 0`, `imageIndex: 1` - Second face in the second image: `faceIndex: 1`, `imageIndex: 1`
+         * @summary compare faces (1:1)
          * @param {MatchRequest} matchRequest 
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
@@ -240,8 +240,8 @@ export const MatchingApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.match(matchRequest, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
-         * @summary Match and Search in one request
+         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, matching is not performed and only search is carried out.
+         * @summary match and search (1:1 + 1:N)
          * @param {MatchAndSearchRequest} matchAndSearchRequest 
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
@@ -261,8 +261,8 @@ export const MatchingApiFactory = function (configuration?: Configuration, baseP
  */
 export class MatchingApi extends BaseAPI {
     /**
-     * 
-     * @summary Detect face, evaluate attributes, assess the portrait quality
+     * Detect face, evaluate attributes, assess the portrait quality
+     * @summary detect faces
      * @param {DetectRequest} detectRequest 
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
@@ -274,8 +274,8 @@ export class MatchingApi extends BaseAPI {
     }
 
     /**
-     * 
-     * @summary Compare faces in all combinations
+     * To perform a comparison of faces in the same image or in two different images, use POST `/api/match`. It\'s possible to compare faces in the same image or in two different images, this is defined by the `images.type` parameter. <br><br> The face detection result is displayed in the `detections` field. Each face is identified by two parameters: `faceIndex` (the index number of the face) and `imageIndex` (the index number of the image on which the face is detected). So, if there are two images each of which has two faces in them, the parameters will be the following: - First face in the first image: `faceIndex: 0`, `imageIndex: 0` - Second face in the first image: `faceIndex: 1`, `imageIndex: 0` - First face of the second image: `faceIndex: 0`, `imageIndex: 1` - Second face in the second image: `faceIndex: 1`, `imageIndex: 1`
+     * @summary compare faces (1:1)
      * @param {MatchRequest} matchRequest 
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
@@ -287,8 +287,8 @@ export class MatchingApi extends BaseAPI {
     }
 
     /**
-     * 
-     * @summary Match and Search in one request
+     * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, matching is not performed and only search is carried out.
+     * @summary match and search (1:1 + 1:N)
      * @param {MatchAndSearchRequest} matchAndSearchRequest 
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.

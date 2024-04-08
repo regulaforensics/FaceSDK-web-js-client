@@ -68,6 +68,6 @@ export interface SearchResult {
      * @type {{ [key: string]: object; }}
      * @memberof SearchResult
      */
-    'metadata'?: { [key: string]: object; } | null;
+    'metadata'?: { [key: string]: object; };
 }
 

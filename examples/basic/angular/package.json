@@ -18,14 +18,14 @@
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
-    "@regulaforensics/facesdk-webclient": "file:../..",
+    "@regulaforensics/facesdk-webclient": "file:../../..",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.1.4",
-    "@angular/cli": "~15.1.4",
+    "@angular/cli": "^15.2.11",
     "@angular/compiler-cli": "^15.1.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",

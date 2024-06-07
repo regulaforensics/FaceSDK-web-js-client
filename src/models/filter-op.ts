@@ -15,28 +15,17 @@
 
 
 /**
- * 
+ * The filter condition, determines the type of comparison to be performed on the `name` values of the Person entity. <br><br>When set to `in`, the `name` values of the Person should match any of the values specified in the `value` list. <br><br>When set to `nin`, the `name` values of the Person should not match any of the values specified in the `value` list.
  * @export
- * @interface SearchBadParams
+ * @enum {string}
  */
-export interface SearchBadParams {
-    /**
-     * 
-     * @type {string}
-     * @memberof SearchBadParams
-     */
-    'msg'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof SearchBadParams
-     */
-    'statusCode'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof SearchBadParams
-     */
-    'type'?: string;
-}
+
+export const FilterOp = {
+    IN: 'in',
+    NOT_IN: 'nin'
+} as const;
+
+export type FilterOp = typeof FilterOp[keyof typeof FilterOp];
+
+
 

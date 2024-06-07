@@ -15,28 +15,17 @@
 
 
 /**
- * 
+ * Liveness detection can be performed in two modes: active `0` and passive `1`. [Learn more](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/liveness/#active-and-passive-modes)
  * @export
- * @interface SearchBadParams
+ * @enum {string}
  */
-export interface SearchBadParams {
-    /**
-     * 
-     * @type {string}
-     * @memberof SearchBadParams
-     */
-    'msg'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof SearchBadParams
-     */
-    'statusCode'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof SearchBadParams
-     */
-    'type'?: string;
-}
+
+export const LivenessType = {
+    ACTIVE: 0,
+    PASSIVE: 1
+} as const;
+
+export type LivenessType = typeof LivenessType[keyof typeof LivenessType];
+
+
 

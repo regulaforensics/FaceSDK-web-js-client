@@ -32,6 +32,8 @@ models/face-sdkresult-code.ts
 models/face-sdkresult.ts
 models/faces-response-all-of.ts
 models/faces-response.ts
+models/filter-op.ts
+models/filter-search-request.ts
 models/group-all-of.ts
 models/group-page-all-of.ts
 models/group-page.ts
@@ -44,6 +46,7 @@ models/image-page.ts
 models/image-source.ts
 models/image.ts
 models/index.ts
+models/liveness-type.ts
 models/match-and-search-request-all-of-images.ts
 models/match-and-search-request-all-of.ts
 models/match-and-search-request.ts

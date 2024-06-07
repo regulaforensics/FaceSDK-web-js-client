@@ -9,12 +9,6 @@ const fs = require('fs');
 
     const sdk = new FaceSdk({ basePath: apiBasePath });
 
-    const diagnostic = await sdk.diagnosticsApi.readiness();
-    console.log('-----------------------------------------------------------------');
-    console.log('                         Diagnostic                              ');
-    console.log('-----------------------------------------------------------------');
-    console.log(diagnostic);
-
     const matchingResponse = await sdk.matchingApi.match({
         images: [
             { type: ImageSource.LIVE, data: face1 },

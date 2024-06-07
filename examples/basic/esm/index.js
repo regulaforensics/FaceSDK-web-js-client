@@ -8,12 +8,6 @@ import fs from 'fs';
     const face2 = fs.readFileSync('../face2.jpg').buffer;
     const sdk = new FaceSdk({ basePath: apiBasePath });
 
-    const diagnostic = await sdk.diagnosticsApi.readiness();
-    console.log('-----------------------------------------------------------------');
-    console.log('                         Diagnostic                              ');
-    console.log('-----------------------------------------------------------------');
-    console.log(diagnostic);
-
     const matchingResponse = await sdk.matchingApi.match({
         tag: '1',
         images: [

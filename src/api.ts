@@ -14,10 +14,9 @@
 
 
 
-export * from './api/diagnostics-api';
-export * from './api/group-api';
-export * from './api/liveness20-api';
-export * from './api/matching-api';
-export * from './api/person-api';
-export * from './api/search-api';
+export * from './api/diagnostic-api';
+export * from './api/face-comparison-api';
+export * from './api/face-detection-api';
+export * from './api/face-identification-api';
+export * from './api/liveness-assessment-api';
 

@@ -13,30 +13,31 @@
  */
 
 
+import { FilterOp } from './filter-op';
 
 /**
- * 
+ * Allows to filter the search results based on the Person\'s `name`. If enabled, only the search results that meet the filter condition will be returned.
  * @export
- * @interface SearchBadParams
+ * @interface FilterSearchRequest
  */
-export interface SearchBadParams {
+export interface FilterSearchRequest {
     /**
      * 
+     * @type {FilterOp}
+     * @memberof FilterSearchRequest
+     */
+    'op'?: FilterOp;
+    /**
+     * `name` of the Person.
      * @type {string}
-     * @memberof SearchBadParams
+     * @memberof FilterSearchRequest
      */
-    'msg'?: string;
+    'field'?: string;
     /**
-     * 
-     * @type {number}
-     * @memberof SearchBadParams
+     * The list of `name` values against which the `field` is compared.
+     * @type {Array<string>}
+     * @memberof FilterSearchRequest
      */
-    'statusCode'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof SearchBadParams
-     */
-    'type'?: string;
+    'value'?: Array<string>;
 }
 

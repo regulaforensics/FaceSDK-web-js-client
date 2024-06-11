@@ -21,10 +21,10 @@ jobs:
       - run: node --unhandled-rejections=strict index.js
         working-directory: ./examples/basic/esm
         env:
-          API_BASE_PATH: "https://test-faceapi.regulaforensics.com"
+          API_BASE_PATH: "https://nightly-faceapi.regulaforensics.com"
       - run: npm install
         working-directory: ./examples/basic/cjs
       - run: node --unhandled-rejections=strict index.js
         working-directory: ./examples/basic/cjs
         env:
-          API_BASE_PATH: "https://test-faceapi.regulaforensics.com"
+          API_BASE_PATH: "https://nightly-faceapi.regulaforensics.com"

@@ -1,7 +1,7 @@
 import { FaceSdk, ImageSource } from '@regulaforensics/facesdk-webclient';
 import fs from 'fs';
-import qs from "qs";
-import axios from "axios";
+import qs from 'qs';
+import axios from 'axios';
 
 const GATEWAY_BASE_URL = 'http://localhost:8080';
 
@@ -39,13 +39,7 @@ async function get_authorization_token() {
     const face1 = fs.readFileSync('face1.jpg').buffer;
     const face2 = fs.readFileSync('face2.jpg').buffer;
     const token = await get_authorization_token();
-    const sdk = new FaceSdk({ basePath: apiBasePath, baseOptions: { headers: { Authorization: `Bearer ${token}` }},});
-
-    const diagnostic = await sdk.diagnosticsApi.readiness();
-    console.log('-----------------------------------------------------------------');
-    console.log('                         Diagnostic                              ');
-    console.log('-----------------------------------------------------------------');
-    console.log(diagnostic);
+    const sdk = new FaceSdk({ basePath: apiBasePath, baseOptions: { headers: { Authorization: `Bearer ${token}` } } });
 
     const matchingResponse = await sdk.matchingApi.match({
         tag: '1',

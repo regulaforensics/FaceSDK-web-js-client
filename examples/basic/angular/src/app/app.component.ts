@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FaceSdk } from '@regulaforensics/facesdk-webclient';
+import { imageBase64 } from './resources';
 
 @Component({
     selector: 'app-root',
@@ -15,7 +16,16 @@ export class AppComponent {
     title = 'Face Sdk Web Client Example';
 
     async diagnostic() {
-        const result = await this.faceSdk.diagnosticsApi.readiness();
-        this.resultObject = result;
+        const detectResponse = await this.faceSdk.matchingApi.detect({
+            tag: '1',
+            image: imageBase64,
+            thumbnails: true,
+        });
+        const detectResults = detectResponse.results;
+        if (detectResults) {
+            detectResults.detections[0].crop = 'base64Image';
+            detectResults.detections[0].thumbnail = 'base64Thumbnail';
+            this.resultObject = detectResults;
+        }
     }
 }

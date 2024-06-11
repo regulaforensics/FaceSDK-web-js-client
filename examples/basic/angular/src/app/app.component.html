@@ -1,8 +1,9 @@
 <div class="container">
     Face Sdk
     <button (click)="diagnostic()">
-        Diagnostic
+        Diagnostic Detection
     </button>
-
-    <pre>{{ resultObject | json }}</pre>
+    <div class="result">
+        <ngx-json-viewer [json]="resultObject"></ngx-json-viewer>
+    </div>
 </div>

@@ -56,8 +56,6 @@ models/match-and-search-response.ts
 models/match-image-detection.ts
 models/match-image-result.ts
 models/match-image.ts
-models/match-request-output-image-params-crop.ts
-models/match-request-output-image-params.ts
 models/match-request.ts
 models/match-response-all-of.ts
 models/match-response.ts

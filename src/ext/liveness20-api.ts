@@ -8,7 +8,7 @@ export class Liveness20Api {
     constructor(configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
         this.superClass = new GenLiveness20Api(configuration, basePath, axios);
     }
-    async getLivenessTransactionInfo(transactionId: number, options?: AxiosRequestConfig): Promise<TransactionInfo> {
+    async getLivenessTransactionInfo(transactionId: string, options?: AxiosRequestConfig): Promise<TransactionInfo> {
         const response = await this.superClass.getLivenessTransactionInfo(transactionId, options);
         return response.data;
     }

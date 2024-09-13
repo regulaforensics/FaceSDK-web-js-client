@@ -1,6 +1,6 @@
 import { PersonApi as GenPersonApi } from '../api/person-api';
 import * as converter from 'base64-arraybuffer';
-import { GroupPage, Image, ImageFields, ImagePage, Person, PersonFields } from '../models';
+import { GroupPage, Image, ImagePage, Person, PersonFields, AddImageToPersonRequest } from '../models';
 import { AxiosRequestConfig, AxiosInstance } from 'axios';
 import { Configuration } from '../configuration';
 
@@ -11,12 +11,16 @@ export class PersonApi {
     }
 
     async createPerson(personFields: PersonFields, xRequestID?: string, options?: AxiosRequestConfig): Promise<Person> {
-        const response = await this.superClass.createPerson(personFields, xRequestID, options);
+        const personFieldsWithGuard = {
+            ...personFields,
+            metadata: !personFields?.metadata ? {} : personFields.metadata,
+        };
+        const response = await this.superClass.createPerson(personFieldsWithGuard, xRequestID, options);
         return response.data;
     }
     async addImageToPerson(
         personId: string,
-        imageFields: ImageFields,
+        imageFields: AddImageToPersonRequest,
         xRequestID?: string,
         options?: AxiosRequestConfig,
     ): Promise<Image> {
@@ -44,7 +48,7 @@ export class PersonApi {
         xRequestID?: string,
         options?: AxiosRequestConfig,
     ): Promise<GroupPage> {
-        const response = await this.superClass.getAllGroupsByPersonId(page, size, personId, xRequestID, options);
+        const response = await this.superClass.getAllGroupsByPersonId(personId, page, size, xRequestID, options);
         return response.data;
     }
     async getAllImagesByPersonId(
@@ -54,7 +58,7 @@ export class PersonApi {
         xRequestID?: string,
         options?: AxiosRequestConfig,
     ): Promise<ImagePage> {
-        const response = await this.superClass.getAllImagesByPersonId(page, size, personId, xRequestID, options);
+        const response = await this.superClass.getAllImagesByPersonId(personId, page, size, xRequestID, options);
         return response.data;
     }
     async getImageOfPerson(

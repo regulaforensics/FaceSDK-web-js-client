@@ -1,8 +1,9 @@
 import { MatchingApi as GenMatchingApi } from '../api/matching-api';
-import { MatchRequest, DetectRequest, ImageSource, MatchResponse, DetectResponse } from '../models';
+import { MatchRequest, DetectRequest, ImageSource, MatchResponse } from '../models';
 import { AxiosRequestConfig, AxiosInstance } from 'axios';
 import { Configuration } from '../configuration';
 import * as converter from 'base64-arraybuffer';
+import { TDetectResponse } from './extra-types/match-detection-types';
 
 export class MatchingApi {
     private superClass: GenMatchingApi;
@@ -12,7 +13,7 @@ export class MatchingApi {
 
     async match(
         compareRequest: MatchRequest,
-        xRequestID: string,
+        xRequestID?: string,
         options?: AxiosRequestConfig,
     ): Promise<MatchResponse> {
         for (const image of compareRequest.images) {
@@ -30,12 +31,12 @@ export class MatchingApi {
         detectRequest: DetectRequest,
         xRequestID?: string,
         options?: AxiosRequestConfig,
-    ): Promise<DetectResponse> {
+    ): Promise<TDetectResponse> {
         if (detectRequest.image && typeof detectRequest.image !== 'string') {
             detectRequest.image = converter.encode(detectRequest.image);
         }
 
         const response = await this.superClass.detect(detectRequest, xRequestID, options);
-        return response.data;
+        return response.data as TDetectResponse;
     }
 }

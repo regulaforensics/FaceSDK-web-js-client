@@ -11,6 +11,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "isolatedModules": true,
-    "experimentalDecorators": true
   },
+  "exclude": ["examples"]
 }

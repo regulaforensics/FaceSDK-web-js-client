@@ -1,7 +1,7 @@
 npm install
 npm run build
 
-cd example
+cd examples/basic/cjs
 npm install
 
 node index.js

@@ -9,22 +9,22 @@ jobs:
   run_smoke_test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: 18
           registry-url: https://registry.npmjs.org/
       - run: npm install
       - run: npm run build
       - run: npm install
-        working-directory: ./example/esm
+        working-directory: ./examples/basic/esm
       - run: node --unhandled-rejections=strict index.js
-        working-directory: ./example/esm
+        working-directory: ./examples/basic/esm
         env:
-          API_BASE_PATH: "https://test-faceapi.regulaforensics.com"
+          API_BASE_PATH: "https://nightly-faceapi.regulaforensics.com"
       - run: npm install
-        working-directory: ./example/cjs
+        working-directory: ./examples/basic/cjs
       - run: node --unhandled-rejections=strict index.js
-        working-directory: ./example/cjs
+        working-directory: ./examples/basic/cjs
         env:
-          API_BASE_PATH: "https://test-faceapi.regulaforensics.com"
+          API_BASE_PATH: "https://nightly-faceapi.regulaforensics.com"

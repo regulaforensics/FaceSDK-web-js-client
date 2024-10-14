@@ -39,7 +39,9 @@ async function get_authorization_token() {
     const face1 = fs.readFileSync('face1.jpg').buffer;
     const face2 = fs.readFileSync('face2.jpg').buffer;
     const token = await get_authorization_token();
-    const sdk = new FaceSdk({ basePath: apiBasePath, baseOptions: { headers: { Authorization: `Bearer ${token}` } } });
+    const sdk = new FaceSdk({
+        configuration: { basePath: apiBasePath, baseOptions: { headers: { Authorization: `Bearer ${token}` } } },
+    });
 
     const matchingResponse = await sdk.matchingApi.match({
         tag: '1',

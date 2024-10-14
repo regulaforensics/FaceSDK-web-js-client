@@ -1,4 +1,4 @@
-import { FaceSdk, ImageSource } from '@regulaforensics/facesdk-webclient';
+import {FaceSdk, ImageSource} from '@regulaforensics/facesdk-webclient';
 import fs from 'fs';
 
 (async () => {

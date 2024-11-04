@@ -9,7 +9,7 @@ const fs = require('fs');
 
     const sdk = new FaceSdk({ basePath: apiBasePath });
 
-    const matchingResponse = await sdk.matchingApi.match({
+    const matchingResponse = await sdk.matchApi.match({
         images: [
             { type: ImageSource.LIVE, data: face1 },
             { type: ImageSource.DOCUMENT_RFID, data: face1 },
@@ -26,7 +26,7 @@ const fs = require('fs');
     }
     console.log('-----------------------------------------------------------------');
 
-    const detectResponse = await sdk.matchingApi.detect({
+    const detectResponse = await sdk.matchApi.detect({
         image: face1,
         onlyCentralFace: false,
         thumbnails: true,

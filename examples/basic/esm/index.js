@@ -8,7 +8,7 @@ import fs from 'fs';
     const face2 = fs.readFileSync('../face2.jpg').buffer;
     const sdk = new FaceSdk({ basePath: apiBasePath });
 
-    const matchingResponse = await sdk.matchingApi.match({
+    const matchingResponse = await sdk.matchApi.match({
         tag: '1',
         images: [
             { type: ImageSource.LIVE, data: face1 },
@@ -25,7 +25,7 @@ import fs from 'fs';
     }
     console.log('-----------------------------------------------------------------');
 
-    const detectResponse = await sdk.matchingApi.detect({
+    const detectResponse = await sdk.matchApi.detect({
         tag: '1',
         image: face1,
         onlyCentralFace: false,

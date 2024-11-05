@@ -16,7 +16,7 @@ export class AppComponent {
     title = 'Face Sdk Web Client Example';
 
     async diagnostic() {
-        const detectResponse = await this.faceSdk.matchingApi.detect({
+        const detectResponse = await this.faceSdk.matchApi.detect({
             tag: '1',
             image: imageBase64,
             thumbnails: true,

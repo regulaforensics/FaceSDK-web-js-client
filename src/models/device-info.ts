@@ -14,10 +14,41 @@
 
 
 
-export * from './api/group-api';
-export * from './api/healthcheck-api';
-export * from './api/liveness20-api';
-export * from './api/match-api';
-export * from './api/person-api';
-export * from './api/search-api';
+/**
+ * 
+ * @export
+ * @interface DeviceInfo
+ */
+export interface DeviceInfo {
+    /**
+     * Application name.
+     * @type {string}
+     * @memberof DeviceInfo
+     */
+    'app': string;
+    /**
+     * Unique license identifier.
+     * @type {string}
+     * @memberof DeviceInfo
+     */
+    'licenseId': string | null;
+    /**
+     * License serial number.
+     * @type {string}
+     * @memberof DeviceInfo
+     */
+    'licenseSerial': string | null;
+    /**
+     * License validity date.
+     * @type {string}
+     * @memberof DeviceInfo
+     */
+    'licenseValidUntil': string | null;
+    /**
+     * Product version.
+     * @type {string}
+     * @memberof DeviceInfo
+     */
+    'version': string | null;
+}
 

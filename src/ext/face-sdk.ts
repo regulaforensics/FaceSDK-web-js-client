@@ -1,5 +1,5 @@
 import { BASE_PATH } from '../base';
-import { Configuration } from '../configuration';
+import { Configuration, ConfigurationParameters } from '../configuration';
 import globalAxios, { AxiosInstance } from 'axios';
 import { MatchingApi } from './matching-api';
 import { GroupApi } from './group-api';
@@ -16,16 +16,22 @@ export class FaceSdk {
     diagnosticsApi: DiagnosticsApi;
     livenessApi: Liveness20Api;
 
-    constructor(
-        configuration?: Configuration,
-        protected basePath: string = BASE_PATH,
-        protected axios: AxiosInstance = globalAxios,
-    ) {
-        this.matchingApi = new MatchingApi(configuration, basePath, axios);
-        this.groupApi = new GroupApi(configuration, basePath, axios);
-        this.personApi = new PersonApi(configuration, basePath, axios);
-        this.searchApi = new SearchApi(configuration, basePath, axios);
-        this.diagnosticsApi = new DiagnosticsApi(configuration, basePath, axios);
-        this.livenessApi = new Liveness20Api(configuration, basePath, axios);
+    constructor({
+        configuration,
+        basePath = BASE_PATH,
+        axios = globalAxios,
+    }: {
+        configuration?: ConfigurationParameters;
+        basePath?: string;
+        axios?: AxiosInstance;
+    }) {
+        const config = configuration ? new Configuration(configuration) : undefined;
+
+        this.matchingApi = new MatchingApi(config, basePath, axios);
+        this.groupApi = new GroupApi(config, basePath, axios);
+        this.personApi = new PersonApi(config, basePath, axios);
+        this.searchApi = new SearchApi(config, basePath, axios);
+        this.diagnosticsApi = new DiagnosticsApi(config, basePath, axios);
+        this.livenessApi = new Liveness20Api(config, basePath, axios);
     }
 }

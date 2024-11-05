@@ -16,6 +16,37 @@ If you have any problems with or questions about this client, please contact us
 through a [GitHub issue](https://github.com/regulaforensics/FaceSDK-web-js-client/issues).
 You are invited to contribute [new features, fixes, or updates](https://github.com/regulaforensics/FaceSDK-web-js-client/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), large or small; We are always thrilled to receive pull requests, and do our best to process them as fast as we can. See [dev guide](./dev.md).
 
+## Major Update: Constructor Now Accepts an Object
+Starting with version 8.x.x, we have updated the input parameters for the declaration of the FaceSDK class. Now the input parameters are set only through the object (see the typing)
+
+Old approach
+```js
+
+const sdk = new FaceSdk({ username: 'username' }, 'http://localhost:41101' );
+
+```
+
+New approach
+```javascript
+/** configuration and base path */
+const sdk = new FaceSdk({
+    configuration: { username: 'username' },
+    basePath: 'http://localhost:41101'
+});
+
+/** only base path */
+const sdk = new FaceSdk({
+    basePath: 'http://localhost:41101'
+});
+
+/** set base path via configuration */
+const sdk = new FaceSdk({
+    configuration: { username: 'username', password: 'xxx', basePath: 'http://localhost:41101' },
+});
+
+
+```
+
 ## Install package
 
 ```

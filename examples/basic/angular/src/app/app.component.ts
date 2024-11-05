@@ -11,7 +11,7 @@ export class AppComponent {
     private faceSdk: FaceSdk;
     resultObject: any;
     constructor() {
-        this.faceSdk = new FaceSdk(undefined, 'https://faceapi.regulaforensics.com');
+        this.faceSdk = new FaceSdk( {basePath: 'https://faceapi.regulaforensics.com'});
     }
     title = 'Face Sdk Web Client Example';
 

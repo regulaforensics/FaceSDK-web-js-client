@@ -53,10 +53,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "face-sdk-web-client-angular-example:build:production"
+              "buildTarget": "face-sdk-web-client-angular-example:build:production"
             },
             "development": {
-              "browserTarget": "face-sdk-web-client-angular-example:build:development"
+              "buildTarget": "face-sdk-web-client-angular-example:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -64,7 +64,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "face-sdk-web-client:build"
+            "buildTarget": "face-sdk-web-client:build"
           }
         }
       }

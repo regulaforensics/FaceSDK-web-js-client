@@ -8,8 +8,10 @@ const fs = require('fs');
     const face2 = fs.readFileSync('../face2.jpg').buffer;
 
     const sdk = new FaceSdk({ basePath: apiBasePath });
+    const testTag = (Math.random() * 1000).toFixed() + '_test';
 
     const matchingResponse = await sdk.matchApi.match({
+        tag: testTag,
         images: [
             { type: ImageSource.LIVE, data: face1 },
             { type: ImageSource.DOCUMENT_RFID, data: face1 },
@@ -27,6 +29,7 @@ const fs = require('fs');
     console.log('-----------------------------------------------------------------');
 
     const detectResponse = await sdk.matchApi.detect({
+        tag: testTag,
         image: face1,
         onlyCentralFace: false,
         thumbnails: true,

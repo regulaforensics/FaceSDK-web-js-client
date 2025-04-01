@@ -28,10 +28,4 @@ export class FaceSdk {
         this.diagnosticsApi = new DiagnosticsApi(configuration, basePath, axios);
         this.livenessApi = new Liveness20Api(configuration, basePath, axios);
     }
-    get matchingApi(): MatchApi {
-        console.warn(
-            'The matchingApi method is deprecated and will be removed in version 7.1. Please use matchApi instead.',
-        );
-        return this.matchApi;
-    }
 }

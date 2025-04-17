@@ -11,6 +11,7 @@ export * from './detection';
 export * from './detection-attributes';
 export * from './detection-face';
 export * from './detection-quality';
+export * from './device-info';
 export * from './face-attribute';
 export * from './face-image-quality-align-type';
 export * from './face-image-quality-groups';

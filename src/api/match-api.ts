@@ -33,10 +33,10 @@ import { MatchRequest } from '../models';
 // @ts-ignore
 import { MatchResponse } from '../models';
 /**
- * MatchingApi - axios parameter creator
+ * MatchApi - axios parameter creator
  * @export
  */
-export const MatchingApiAxiosParamCreator = function (configuration?: Configuration) {
+export const MatchApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * Use the POST `api/detect` endpoint to analyze images, recognize faces in them, and return cropped and aligned portraits of the detected people.  The Face Detection feature lets you: - **Check face image quality**: Assess whether a portrait meets certain standards, for example, ICAO, Schengen visa, USA visa. To perform image quality check, use the `processParam.quality` field. - **Evaluate face attributes**: Estimate the age range of a person; check whether the eyes are occluded, closed, or open; detect a facial expression or smile; see if there are glasses, sunglasses, head coverage, medical mask, etc. To evaluate attributes, add the `processParam.attributes` field.  You can perform Face Detection in two ways: - By adding parameters manually. In this case, the configuration is not saved and can not be automatically repeated. - By a processing `scenario` that includes certain parameters. You can use predefined scenarios or add custom ones.
@@ -121,7 +121,7 @@ export const MatchingApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, matching is not performed and only search is carried out.
+         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, match is not performed and only search is carried out.
          * @summary match and search (1:1 + 1:N)
          * @param {MatchAndSearchRequest} matchAndSearchRequest 
          * @param {string} [xRequestID] Request header label.
@@ -165,11 +165,11 @@ export const MatchingApiAxiosParamCreator = function (configuration?: Configurat
 };
 
 /**
- * MatchingApi - functional programming interface
+ * MatchApi - functional programming interface
  * @export
  */
-export const MatchingApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = MatchingApiAxiosParamCreator(configuration)
+export const MatchApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = MatchApiAxiosParamCreator(configuration)
     return {
         /**
          * Use the POST `api/detect` endpoint to analyze images, recognize faces in them, and return cropped and aligned portraits of the detected people.  The Face Detection feature lets you: - **Check face image quality**: Assess whether a portrait meets certain standards, for example, ICAO, Schengen visa, USA visa. To perform image quality check, use the `processParam.quality` field. - **Evaluate face attributes**: Estimate the age range of a person; check whether the eyes are occluded, closed, or open; detect a facial expression or smile; see if there are glasses, sunglasses, head coverage, medical mask, etc. To evaluate attributes, add the `processParam.attributes` field.  You can perform Face Detection in two ways: - By adding parameters manually. In this case, the configuration is not saved and can not be automatically repeated. - By a processing `scenario` that includes certain parameters. You can use predefined scenarios or add custom ones.
@@ -196,7 +196,7 @@ export const MatchingApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, matching is not performed and only search is carried out.
+         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, match is not performed and only search is carried out.
          * @summary match and search (1:1 + 1:N)
          * @param {MatchAndSearchRequest} matchAndSearchRequest 
          * @param {string} [xRequestID] Request header label.
@@ -211,11 +211,11 @@ export const MatchingApiFp = function(configuration?: Configuration) {
 };
 
 /**
- * MatchingApi - factory interface
+ * MatchApi - factory interface
  * @export
  */
-export const MatchingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = MatchingApiFp(configuration)
+export const MatchApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = MatchApiFp(configuration)
     return {
         /**
          * Use the POST `api/detect` endpoint to analyze images, recognize faces in them, and return cropped and aligned portraits of the detected people.  The Face Detection feature lets you: - **Check face image quality**: Assess whether a portrait meets certain standards, for example, ICAO, Schengen visa, USA visa. To perform image quality check, use the `processParam.quality` field. - **Evaluate face attributes**: Estimate the age range of a person; check whether the eyes are occluded, closed, or open; detect a facial expression or smile; see if there are glasses, sunglasses, head coverage, medical mask, etc. To evaluate attributes, add the `processParam.attributes` field.  You can perform Face Detection in two ways: - By adding parameters manually. In this case, the configuration is not saved and can not be automatically repeated. - By a processing `scenario` that includes certain parameters. You can use predefined scenarios or add custom ones.
@@ -240,7 +240,7 @@ export const MatchingApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.match(matchRequest, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
-         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, matching is not performed and only search is carried out.
+         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, match is not performed and only search is carried out.
          * @summary match and search (1:1 + 1:N)
          * @param {MatchAndSearchRequest} matchAndSearchRequest 
          * @param {string} [xRequestID] Request header label.
@@ -254,12 +254,12 @@ export const MatchingApiFactory = function (configuration?: Configuration, baseP
 };
 
 /**
- * MatchingApi - object-oriented interface
+ * MatchApi - object-oriented interface
  * @export
- * @class MatchingApi
+ * @class MatchApi
  * @extends {BaseAPI}
  */
-export class MatchingApi extends BaseAPI {
+export class MatchApi extends BaseAPI {
     /**
      * Use the POST `api/detect` endpoint to analyze images, recognize faces in them, and return cropped and aligned portraits of the detected people.  The Face Detection feature lets you: - **Check face image quality**: Assess whether a portrait meets certain standards, for example, ICAO, Schengen visa, USA visa. To perform image quality check, use the `processParam.quality` field. - **Evaluate face attributes**: Estimate the age range of a person; check whether the eyes are occluded, closed, or open; detect a facial expression or smile; see if there are glasses, sunglasses, head coverage, medical mask, etc. To evaluate attributes, add the `processParam.attributes` field.  You can perform Face Detection in two ways: - By adding parameters manually. In this case, the configuration is not saved and can not be automatically repeated. - By a processing `scenario` that includes certain parameters. You can use predefined scenarios or add custom ones.
      * @summary detect and check quality
@@ -267,10 +267,10 @@ export class MatchingApi extends BaseAPI {
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MatchingApi
+     * @memberof MatchApi
      */
     public detect(detectRequest: DetectRequest, xRequestID?: string, options?: AxiosRequestConfig) {
-        return MatchingApiFp(this.configuration).detect(detectRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
+        return MatchApiFp(this.configuration).detect(detectRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -280,22 +280,22 @@ export class MatchingApi extends BaseAPI {
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MatchingApi
+     * @memberof MatchApi
      */
     public match(matchRequest: MatchRequest, xRequestID?: string, options?: AxiosRequestConfig) {
-        return MatchingApiFp(this.configuration).match(matchRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
+        return MatchApiFp(this.configuration).match(matchRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, matching is not performed and only search is carried out.
+     * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, match is not performed and only search is carried out.
      * @summary match and search (1:1 + 1:N)
      * @param {MatchAndSearchRequest} matchAndSearchRequest 
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MatchingApi
+     * @memberof MatchApi
      */
     public matchAndSearch(matchAndSearchRequest: MatchAndSearchRequest, xRequestID?: string, options?: AxiosRequestConfig) {
-        return MatchingApiFp(this.configuration).matchAndSearch(matchAndSearchRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
+        return MatchApiFp(this.configuration).matchAndSearch(matchAndSearchRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 }

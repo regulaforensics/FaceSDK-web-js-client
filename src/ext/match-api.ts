@@ -1,14 +1,14 @@
-import { MatchingApi as GenMatchingApi } from '../api/matching-api';
+import { MatchApi as GenMatchApi } from '../api/match-api';
 import { MatchRequest, DetectRequest, ImageSource, MatchResponse } from '../models';
 import { AxiosRequestConfig, AxiosInstance } from 'axios';
 import { Configuration } from '../configuration';
 import * as converter from 'base64-arraybuffer';
 import { TDetectResponse } from './extra-types/match-detection-types';
 
-export class MatchingApi {
-    private superClass: GenMatchingApi;
+export class MatchApi {
+    private superClass: GenMatchApi;
     constructor(configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-        this.superClass = new GenMatchingApi(configuration, basePath, axios);
+        this.superClass = new GenMatchApi(configuration, basePath, axios);
     }
 
     async match(

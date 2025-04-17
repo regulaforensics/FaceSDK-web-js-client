@@ -5,7 +5,8 @@ import { imageBase64 } from './resources';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    styleUrls: ['./app.component.css'],
+    standalone: false,
 })
 export class AppComponent {
     private faceSdk: FaceSdk;
@@ -16,7 +17,7 @@ export class AppComponent {
     title = 'Face Sdk Web Client Example';
 
     async diagnostic() {
-        const detectResponse = await this.faceSdk.matchingApi.detect({
+        const detectResponse = await this.faceSdk.matchApi.detect({
             tag: '1',
             image: imageBase64,
             thumbnails: true,

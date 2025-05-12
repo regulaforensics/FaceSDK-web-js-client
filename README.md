@@ -31,7 +31,7 @@ const face2 = fs.readFileSync('face2.jpg').buffer;
 
 const sdk = new FaceSdk({ basePath: 'http://localhost:41101' });
 
-const response = await sdk.matchingApi.match({
+const response = await sdk.matchApi.match({
     images: [
         { type: ImageSource.LIVE, data: face1, index: 1 },
         { type: ImageSource.DOCUMENT_RFID, data: face2, index: 2 }

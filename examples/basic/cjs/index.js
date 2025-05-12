@@ -10,7 +10,7 @@ const fs = require('fs');
     const sdk = new FaceSdk({ basePath: apiBasePath });
     const testTag = (Math.random() * 1000).toFixed() + '_test';
 
-    const matchingResponse = await sdk.matchApi.match({
+    const matchResponse = await sdk.matchApi.match({
         tag: testTag,
         images: [
             { type: ImageSource.LIVE, data: face1 },
@@ -23,7 +23,7 @@ const fs = require('fs');
     console.log('-----------------------------------------------------------------');
     console.log('                         Compare Results                         ');
     console.log('-----------------------------------------------------------------');
-    for (const result of matchingResponse.results) {
+    for (const result of matchResponse.results) {
         console.log(`pair(${result.firstIndex},${result.secondIndex})   similarity: ${result.similarity}`);
     }
     console.log('-----------------------------------------------------------------');

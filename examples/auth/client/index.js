@@ -41,7 +41,7 @@ async function get_authorization_token() {
     const token = await get_authorization_token();
     const sdk = new FaceSdk({ basePath: apiBasePath, baseOptions: { headers: { Authorization: `Bearer ${token}` } } });
 
-    const matchingResponse = await sdk.matchingApi.match({
+    const matchResponse = await sdk.matchApi.match({
         tag: '1',
         images: [
             { type: ImageSource.LIVE, data: face1 },
@@ -53,12 +53,12 @@ async function get_authorization_token() {
     console.log('-----------------------------------------------------------------');
     console.log('                         Compare Results                         ');
     console.log('-----------------------------------------------------------------');
-    for (const result of matchingResponse.results) {
+    for (const result of matchResponse.results) {
         console.log(`pair(${result.firstIndex},${result.secondIndex})   similarity: ${result.similarity}`);
     }
     console.log('-----------------------------------------------------------------');
 
-    const detectResponse = await sdk.matchingApi.detect({
+    const detectResponse = await sdk.matchApi.detect({
         tag: '1',
         image: face1,
         onlyCentralFace: false,

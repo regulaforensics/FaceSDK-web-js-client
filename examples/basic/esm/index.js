@@ -7,9 +7,10 @@ import fs from 'fs';
     const face1 = fs.readFileSync('../face1.jpg').buffer;
     const face2 = fs.readFileSync('../face2.jpg').buffer;
     const sdk = new FaceSdk({ basePath: apiBasePath });
+    const testTag = (Math.random() * 1000).toFixed() + '_test';
 
-    const matchingResponse = await sdk.matchingApi.match({
-        tag: '1',
+    const matchResponse = await sdk.matchApi.match({
+        tag: testTag,
         images: [
             { type: ImageSource.LIVE, data: face1 },
             { type: ImageSource.DOCUMENT_RFID, data: face1 },
@@ -20,13 +21,13 @@ import fs from 'fs';
     console.log('-----------------------------------------------------------------');
     console.log('                         Compare Results                         ');
     console.log('-----------------------------------------------------------------');
-    for (const result of matchingResponse.results) {
+    for (const result of matchResponse.results) {
         console.log(`pair(${result.firstIndex},${result.secondIndex})   similarity: ${result.similarity}`);
     }
     console.log('-----------------------------------------------------------------');
 
-    const detectResponse = await sdk.matchingApi.detect({
-        tag: '1',
+    const detectResponse = await sdk.matchApi.detect({
+        tag: testTag,
         image: face1,
         onlyCentralFace: false,
         thumbnails: true,

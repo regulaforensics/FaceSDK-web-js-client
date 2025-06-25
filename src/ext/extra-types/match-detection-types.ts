@@ -1,7 +1,7 @@
 import { DetectionQuality, FaceQualityScenarios, FaceSDKResult } from '../../models';
 import { ImageData } from '../../models/image-data';
 
-type TDetection = {
+export type TDetection = {
     /**
      *
      * @type {ImageData}

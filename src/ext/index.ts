@@ -1,5 +1,5 @@
 export * from './face-sdk';
-export * from './extra-types/match-detection-types';
+export * from './extra-types';
 export * from './diagnostics-api';
 export * from './group-api';
 export * from './healthcheck-api';
@@ -7,4 +7,3 @@ export * from './liveness20-api';
 export * from './match-api';
 export * from './person-api';
 export * from './search-api';
-export * from '../models';

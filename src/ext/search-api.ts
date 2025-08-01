@@ -12,12 +12,13 @@ export class SearchApi {
     async search(
         searchRequest: SearchRequest,
         xRequestID?: string,
+        withImages?: boolean,
         options?: AxiosRequestConfig,
     ): Promise<SearchResult> {
         if (searchRequest?.image?.content && typeof searchRequest.image.content !== 'string') {
             searchRequest.image.content = converter.encode(searchRequest.image.content);
         }
-        const response = await this.superClass.search(searchRequest, xRequestID, options);
+        const response = await this.superClass.search(searchRequest, xRequestID, withImages, options);
         return response.data;
     }
 }

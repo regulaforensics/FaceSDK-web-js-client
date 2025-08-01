@@ -13,32 +13,24 @@
  */
 
 
-import { MatchImageDetection } from './match-image-detection';
-import { MatchImageResult } from './match-image-result';
 
 /**
  * 
  * @export
- * @interface MatchResponseAllOf
+ * @interface DetectAttributesDetails
  */
-export interface MatchResponseAllOf {
+export interface DetectAttributesDetails {
     /**
-     * The detection results.
-     * @type {Array<MatchImageDetection>}
-     * @memberof MatchResponseAllOf
+     * The name of the attribute.
+     * @type {string}
+     * @memberof DetectAttributesDetails
      */
-    'detections'?: Array<MatchImageDetection>;
+    'name'?: string;
     /**
-     * The comparison results.
-     * @type {Array<MatchImageResult>}
-     * @memberof MatchResponseAllOf
+     * The estimated value for the attribute, see the [Returned values column](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/face-detection/attributes-detection/).
+     * @type {Array<number>}
+     * @memberof DetectAttributesDetails
      */
-    'results'?: Array<MatchImageResult>;
-    /**
-     * A free-form object containing person\'s extended attributes.
-     * @type {{ [key: string]: any; }}
-     * @memberof MatchResponseAllOf
-     */
-    'metadata'?: { [key: string]: any; };
+    'value'?: Array<number>;
 }
 

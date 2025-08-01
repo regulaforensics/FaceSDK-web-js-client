@@ -13,32 +13,24 @@
  */
 
 
-import { MatchImageDetection } from './match-image-detection';
-import { MatchImageResult } from './match-image-result';
 
 /**
  * 
  * @export
- * @interface MatchResponseAllOf
+ * @interface PersonsRequestAllOf
  */
-export interface MatchResponseAllOf {
+export interface PersonsRequestAllOf {
     /**
-     * The detection results.
-     * @type {Array<MatchImageDetection>}
-     * @memberof MatchResponseAllOf
+     * A label used to group transactions by customers, applications, or other criteria.
+     * @type {string}
+     * @memberof PersonsRequestAllOf
      */
-    'detections'?: Array<MatchImageDetection>;
+    'tenant'?: string;
     /**
-     * The comparison results.
-     * @type {Array<MatchImageResult>}
-     * @memberof MatchResponseAllOf
+     * A label used to differentiate transactions by development stages.
+     * @type {string}
+     * @memberof PersonsRequestAllOf
      */
-    'results'?: Array<MatchImageResult>;
-    /**
-     * A free-form object containing person\'s extended attributes.
-     * @type {{ [key: string]: any; }}
-     * @memberof MatchResponseAllOf
-     */
-    'metadata'?: { [key: string]: any; };
+    'env'?: string;
 }
 

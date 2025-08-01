@@ -13,10 +13,13 @@ models/add-image-to-person-request.ts
 models/add-image-to-person-response.ts
 models/attribute-config.ts
 models/crop.ts
+models/detect-attributes-details.ts
+models/detect-details-meta.ts
 models/detect-request.ts
 models/detect-response-all-of.ts
 models/detect-response.ts
 models/detect-result.ts
+models/detection-attributes-details-inner.ts
 models/detection-attributes.ts
 models/detection-face.ts
 models/detection-quality.ts
@@ -71,6 +74,8 @@ models/person-with-images.ts
 models/person.ts
 models/persons-page-all-of.ts
 models/persons-page.ts
+models/persons-request-all-of.ts
+models/persons-request.ts
 models/process-param-attributes.ts
 models/process-param.ts
 models/quality-config.ts

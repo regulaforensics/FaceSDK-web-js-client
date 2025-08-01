@@ -13,32 +13,32 @@
  */
 
 
-import { MatchImageDetection } from './match-image-detection';
-import { MatchImageResult } from './match-image-result';
+import { DetectAttributesDetails } from './detect-attributes-details';
+import { DetectDetailsMeta } from './detect-details-meta';
 
 /**
  * 
  * @export
- * @interface MatchResponseAllOf
+ * @interface DetectionAttributesDetailsInner
  */
-export interface MatchResponseAllOf {
+export interface DetectionAttributesDetailsInner {
     /**
-     * The detection results.
-     * @type {Array<MatchImageDetection>}
-     * @memberof MatchResponseAllOf
+     * The name of the attribute.
+     * @type {string}
+     * @memberof DetectionAttributesDetailsInner
      */
-    'detections'?: Array<MatchImageDetection>;
+    'name'?: string;
     /**
-     * The comparison results.
-     * @type {Array<MatchImageResult>}
-     * @memberof MatchResponseAllOf
+     * The estimated value for the attribute, see the [Returned values column](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/usage/face-detection/attributes-detection/).
+     * @type {string}
+     * @memberof DetectionAttributesDetailsInner
      */
-    'results'?: Array<MatchImageResult>;
+    'value'?: string;
     /**
-     * A free-form object containing person\'s extended attributes.
-     * @type {{ [key: string]: any; }}
-     * @memberof MatchResponseAllOf
+     * The confidence in the estimated value, `1.0` is for 100% confidence.
+     * @type {number}
+     * @memberof DetectionAttributesDetailsInner
      */
-    'metadata'?: { [key: string]: any; };
+    'confidence'?: number;
 }
 

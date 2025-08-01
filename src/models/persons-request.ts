@@ -13,32 +13,13 @@
  */
 
 
-import { MatchImageDetection } from './match-image-detection';
-import { MatchImageResult } from './match-image-result';
+import { PersonFields } from './person-fields';
+import { PersonsRequestAllOf } from './persons-request-all-of';
 
 /**
- * 
+ * @type PersonsRequest
  * @export
- * @interface MatchResponseAllOf
  */
-export interface MatchResponseAllOf {
-    /**
-     * The detection results.
-     * @type {Array<MatchImageDetection>}
-     * @memberof MatchResponseAllOf
-     */
-    'detections'?: Array<MatchImageDetection>;
-    /**
-     * The comparison results.
-     * @type {Array<MatchImageResult>}
-     * @memberof MatchResponseAllOf
-     */
-    'results'?: Array<MatchImageResult>;
-    /**
-     * A free-form object containing person\'s extended attributes.
-     * @type {{ [key: string]: any; }}
-     * @memberof MatchResponseAllOf
-     */
-    'metadata'?: { [key: string]: any; };
-}
+export type PersonsRequest = PersonFields & PersonsRequestAllOf;
+
 

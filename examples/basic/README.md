@@ -1,15 +1,15 @@
-# Regula FaceSDK web API Node 8.0+ client
+# Regula FaceSDK web API Node 18.0+ client
 
 Requirements:
-- installed npm 6 or higher
-- installed node 12 or higher
+- installed npm 10 or higher
+- installed node 18 or higher
 
 Verify npm and node versions:
 ```bash
 npm --version
-> 6.4.16
+> 18.20.3
 node --version     
-> v12.18.3
+> v10.7.0
 ```
 
 Cloning example:
@@ -24,11 +24,11 @@ npm install
 npm run build
 
 # cjs
-cd example/cjs
+cd examples/basic/cjs
 npm install
 
 # esm
-cd example/esm
+cd examples/basic/esm
 npm install
 ```
 

@@ -51,8 +51,7 @@ models/image-source.ts
 models/image.ts
 models/index.ts
 models/liveness-type.ts
-models/match-and-search-request-all-of-images.ts
-models/match-and-search-request-all-of.ts
+models/match-and-search-request-images-inner.ts
 models/match-and-search-request.ts
 models/match-and-search-response-all-of-detections.ts
 models/match-and-search-response-all-of.ts

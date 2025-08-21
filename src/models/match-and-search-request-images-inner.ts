@@ -13,30 +13,32 @@
  */
 
 
+import { ImageSource } from './image-source';
+import { ImageData } from './image-data';
 
 /**
- * Set to resize the original image.
+ * 
  * @export
- * @interface ResizeOptions
+ * @interface MatchAndSearchRequestImagesInner
  */
-export interface ResizeOptions {
+export interface MatchAndSearchRequestImagesInner {
     /**
-     * Resized image width, px.
-     * @type {number}
-     * @memberof ResizeOptions
+     * 
+     * @type {ImageData}
+     * @memberof MatchAndSearchRequestImagesInner
      */
-    'width'?: number;
+    'content'?: ImageData;
     /**
-     * Resized image height, px.
-     * @type {number}
-     * @memberof ResizeOptions
+     * Image URL.
+     * @type {string}
+     * @memberof MatchAndSearchRequestImagesInner
      */
-    'height'?: number;
+    'imageUrl'?: string;
     /**
-     * Resized image quality, percent.
-     * @type {number}
-     * @memberof ResizeOptions
+     * 
+     * @type {ImageSource}
+     * @memberof MatchAndSearchRequestImagesInner
      */
-    'quality'?: number;
+    'type'?: ImageSource;
 }
 

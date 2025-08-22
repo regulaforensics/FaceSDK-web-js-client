@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FaceSdk } from '@regulaforensics/facesdk-webclient';
 import { imageBase64 } from './resources';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    standalone: false,
+    imports: [CommonModule, NgxJsonViewerModule],
 })
 export class AppComponent {
     private faceSdk: FaceSdk;

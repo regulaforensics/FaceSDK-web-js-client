@@ -121,7 +121,7 @@ export const MatchApiAxiosParamCreator = function (configuration?: Configuration
             };
         },
         /**
-         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, match is not performed and only search is carried out.
+         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. At least two photos are required. If, after processing two or more photos, only one face is detected across them, the match step is skipped, and only the search is carried out.
          * @summary match and search (1:1 + 1:N)
          * @param {MatchAndSearchRequest} matchAndSearchRequest 
          * @param {string} [xRequestID] Request header label.
@@ -196,7 +196,7 @@ export const MatchApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, match is not performed and only search is carried out.
+         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. At least two photos are required. If, after processing two or more photos, only one face is detected across them, the match step is skipped, and only the search is carried out.
          * @summary match and search (1:1 + 1:N)
          * @param {MatchAndSearchRequest} matchAndSearchRequest 
          * @param {string} [xRequestID] Request header label.
@@ -240,7 +240,7 @@ export const MatchApiFactory = function (configuration?: Configuration, basePath
             return localVarFp.match(matchRequest, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
-         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, match is not performed and only search is carried out.
+         * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. At least two photos are required. If, after processing two or more photos, only one face is detected across them, the match step is skipped, and only the search is carried out.
          * @summary match and search (1:1 + 1:N)
          * @param {MatchAndSearchRequest} matchAndSearchRequest 
          * @param {string} [xRequestID] Request header label.
@@ -287,7 +287,7 @@ export class MatchApi extends BaseAPI {
     }
 
     /**
-     * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. If only one person is identified, match is not performed and only search is carried out.
+     * To compare several images from a document and look up a person in the database in one request, use POST `/api/match_and_search`. In this case, the calculation of the descriptor will be performed only once, as opposed to using two requests for the same operation. At least two photos are required. If, after processing two or more photos, only one face is detected across them, the match step is skipped, and only the search is carried out.
      * @summary match and search (1:1 + 1:N)
      * @param {MatchAndSearchRequest} matchAndSearchRequest 
      * @param {string} [xRequestID] Request header label.

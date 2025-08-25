@@ -28,7 +28,7 @@ export interface MatchAndSearchRequest {
      */
     'tag'?: string;
     /**
-     * Person\'s images.
+     * An array of images to be processed. At least two images must be provided.
      * @type {Array<MatchAndSearchRequestImagesInner>}
      * @memberof MatchAndSearchRequest
      */

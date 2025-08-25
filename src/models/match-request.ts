@@ -29,7 +29,7 @@ export interface MatchRequest {
      */
     'tag'?: string;
     /**
-     * All images included in the comparison.
+     * An array of images to be processed. At least two images must be provided.
      * @type {Array<MatchImage>}
      * @memberof MatchRequest
      */

@@ -73,8 +73,6 @@ models/person-with-images.ts
 models/person.ts
 models/persons-page-all-of.ts
 models/persons-page.ts
-models/persons-request-all-of.ts
-models/persons-request.ts
 models/process-param-attributes.ts
 models/process-param.ts
 models/quality-config.ts
@@ -90,6 +88,7 @@ models/search-parameters-create-person.ts
 models/search-parameters.ts
 models/search-person-all-of.ts
 models/search-person.ts
+models/search-request-all-of.ts
 models/search-request.ts
 models/search-result.ts
 models/transaction-info.ts

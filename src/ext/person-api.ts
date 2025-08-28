@@ -1,6 +1,6 @@
 import { PersonApi as GenPersonApi } from '../api/person-api';
 import * as converter from 'base64-arraybuffer';
-import { GroupPage, Image, ImagePage, Person, PersonFields, AddImageToPersonRequest, PersonsRequest } from '../models';
+import { GroupPage, Image, ImagePage, Person, PersonFields, AddImageToPersonRequest } from '../models';
 import { AxiosRequestConfig, AxiosInstance } from 'axios';
 import { Configuration } from '../configuration';
 
@@ -10,16 +10,12 @@ export class PersonApi {
         this.superClass = new GenPersonApi(configuration, basePath, axios);
     }
 
-    async createPerson(
-        personsRequest: PersonsRequest,
-        xRequestID?: string,
-        options?: AxiosRequestConfig,
-    ): Promise<Person> {
-        const personsRequestWithGuard = {
-            ...personsRequest,
-            metadata: !personsRequest?.metadata ? {} : personsRequest.metadata,
+    async createPerson(personFields: PersonFields, xRequestID?: string, options?: AxiosRequestConfig): Promise<Person> {
+        const personFieldsWithGuard = {
+            ...personFields,
+            metadata: !personFields?.metadata ? {} : personFields.metadata,
         };
-        const response = await this.superClass.createPerson(personsRequestWithGuard, xRequestID, options);
+        const response = await this.superClass.createPerson(personFieldsWithGuard, xRequestID, options);
         return response.data;
     }
     async addImageToPerson(

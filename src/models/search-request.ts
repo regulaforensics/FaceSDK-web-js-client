@@ -17,14 +17,14 @@ import { AddImageToPersonRequestImage } from './add-image-to-person-request-imag
 import { FilterSearchRequest } from './filter-search-request';
 import { ImageFields } from './image-fields';
 import { OutputImageParams } from './output-image-params';
-import { PersonsRequestAllOf } from './persons-request-all-of';
 import { SearchParameters } from './search-parameters';
 import { SearchParametersCreatePerson } from './search-parameters-create-person';
+import { SearchRequestAllOf } from './search-request-all-of';
 
 /**
  * @type SearchRequest
  * @export
  */
-export type SearchRequest = ImageFields & PersonsRequestAllOf & SearchParameters;
+export type SearchRequest = ImageFields & SearchParameters & SearchRequestAllOf;
 
 

@@ -33,9 +33,9 @@ import { OperationLog } from '../models';
 // @ts-ignore
 import { Person } from '../models';
 // @ts-ignore
-import { PersonToUpdateFields } from '../models';
+import { PersonFields } from '../models';
 // @ts-ignore
-import { PersonsRequest } from '../models';
+import { PersonToUpdateFields } from '../models';
 /**
  * PersonApi - axios parameter creator
  * @export
@@ -90,14 +90,14 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Create person
-         * @param {PersonsRequest} personsRequest 
+         * @param {PersonFields} personFields 
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createPerson: async (personsRequest: PersonsRequest, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'personsRequest' is not null or undefined
-            assertParamExists('createPerson', 'personsRequest', personsRequest)
+        createPerson: async (personFields: PersonFields, xRequestID?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'personFields' is not null or undefined
+            assertParamExists('createPerson', 'personFields', personFields)
             const localVarPath = `/api/persons`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -121,7 +121,7 @@ export const PersonApiAxiosParamCreator = function (configuration?: Configuratio
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(personsRequest, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(personFields, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -461,13 +461,13 @@ export const PersonApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Create person
-         * @param {PersonsRequest} personsRequest 
+         * @param {PersonFields} personFields 
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createPerson(personsRequest: PersonsRequest, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Person>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createPerson(personsRequest, xRequestID, options);
+        async createPerson(personFields: PersonFields, xRequestID?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Person>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createPerson(personFields, xRequestID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -586,13 +586,13 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Create person
-         * @param {PersonsRequest} personsRequest 
+         * @param {PersonFields} personFields 
          * @param {string} [xRequestID] Request header label.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createPerson(personsRequest: PersonsRequest, xRequestID?: string, options?: any): AxiosPromise<Person> {
-            return localVarFp.createPerson(personsRequest, xRequestID, options).then((request) => request(axios, basePath));
+        createPerson(personFields: PersonFields, xRequestID?: string, options?: any): AxiosPromise<Person> {
+            return localVarFp.createPerson(personFields, xRequestID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -705,14 +705,14 @@ export class PersonApi extends BaseAPI {
     /**
      * 
      * @summary Create person
-     * @param {PersonsRequest} personsRequest 
+     * @param {PersonFields} personFields 
      * @param {string} [xRequestID] Request header label.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonApi
      */
-    public createPerson(personsRequest: PersonsRequest, xRequestID?: string, options?: AxiosRequestConfig) {
-        return PersonApiFp(this.configuration).createPerson(personsRequest, xRequestID, options).then((request) => request(this.axios, this.basePath));
+    public createPerson(personFields: PersonFields, xRequestID?: string, options?: AxiosRequestConfig) {
+        return PersonApiFp(this.configuration).createPerson(personFields, xRequestID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

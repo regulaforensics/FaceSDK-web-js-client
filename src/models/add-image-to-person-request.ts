@@ -45,5 +45,17 @@ export interface AddImageToPersonRequest {
      * @memberof AddImageToPersonRequest
      */
     'limit'?: number;
+    /**
+     * A label used to group transactions by customers, applications, or other criteria.
+     * @type {string}
+     * @memberof AddImageToPersonRequest
+     */
+    'tenant'?: string;
+    /**
+     * A label used to differentiate transactions by development stages.
+     * @type {string}
+     * @memberof AddImageToPersonRequest
+     */
+    'env'?: string;
 }
 

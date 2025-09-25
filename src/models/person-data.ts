@@ -20,9 +20,5 @@ export interface PersonData {
      * Person update date.
      */
     'updatedAt'?: string;
-    /**
-     * List of groups this person belongs to.
-     */
-    'groups'?: Array<string>;
 }
 

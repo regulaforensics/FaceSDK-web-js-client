@@ -15,6 +15,5 @@ export interface FacesResponseData {
      * Detected Persons.
      */
     'persons'?: Array<PersonWithImages>;
-    'rotationAngle'?: number;
 }
 

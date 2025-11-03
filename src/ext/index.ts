@@ -1,6 +1,4 @@
 export * from './face-sdk';
-export * from './extra-types';
-export * from './diagnostics-api';
 export * from './group-api';
 export * from './healthcheck-api';
 export * from './liveness20-api';

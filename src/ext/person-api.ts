@@ -36,7 +36,7 @@ export class PersonApi {
         xRequestID?: string,
         options?: AxiosRequestConfig,
     ): Promise<void> {
-        await this.superClass.deleteImageOfPerson(imageId, personId, xRequestID, options);
+        await this.superClass.deleteImageOfPerson(personId, imageId, xRequestID, options);
     }
     async deletePerson(personId: string, xRequestID?: string, options?: AxiosRequestConfig): Promise<void> {
         await this.superClass.deletePerson(personId, xRequestID, options);
@@ -48,7 +48,7 @@ export class PersonApi {
         xRequestID?: string,
         options?: AxiosRequestConfig,
     ): Promise<GroupPage> {
-        const response = await this.superClass.getAllGroupsByPersonId(personId, page, size, xRequestID, options);
+        const response = await this.superClass.getAllGroupsByPersonId(personId, xRequestID, page, size, options);
         return response.data;
     }
     async getAllImagesByPersonId(
@@ -58,7 +58,7 @@ export class PersonApi {
         xRequestID?: string,
         options?: AxiosRequestConfig,
     ): Promise<ImagePage> {
-        const response = await this.superClass.getAllImagesByPersonId(personId, page, size, xRequestID, options);
+        const response = await this.superClass.getAllImagesByPersonId(personId, xRequestID, page, size, options);
         return response.data;
     }
     async getImageOfPerson(
@@ -67,7 +67,7 @@ export class PersonApi {
         xRequestID?: string,
         options?: AxiosRequestConfig,
     ): Promise<unknown> {
-        const response = await this.superClass.getImageOfPerson(imageId, personId, xRequestID, options);
+        const response = await this.superClass.getImageOfPerson(personId, imageId, xRequestID, options);
         return response.data;
     }
     async getPerson(personId: string, xRequestID?: string, options?: AxiosRequestConfig): Promise<Person> {

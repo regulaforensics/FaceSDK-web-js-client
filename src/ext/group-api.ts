@@ -28,7 +28,7 @@ export class GroupApi {
         xRequestID?: string,
         options?: AxiosRequestConfig,
     ): Promise<GroupPage> {
-        const response = await this.superClass.getAllGroups(page, size, xRequestID, options);
+        const response = await this.superClass.getAllGroups(xRequestID, page, size, options);
         return response.data;
     }
     async getAllPersonsByGroupId(
@@ -38,7 +38,7 @@ export class GroupApi {
         xRequestID?: string,
         options?: AxiosRequestConfig,
     ): Promise<PersonsPage> {
-        const response = await this.superClass.getAllPersonsByGroupId(groupId, page, size, xRequestID, options);
+        const response = await this.superClass.getAllPersonsByGroupId(groupId, xRequestID, page, size, options);
         return response.data;
     }
     async getGroup(groupId: string, xRequestID?: string, options?: AxiosRequestConfig): Promise<Group> {

@@ -20,6 +20,10 @@ export interface MatchAndSearchRequestImagesItem {
      */
     'imageUrl'?: string;
     'type'?: ImageSource;
+    /**
+     * Identifier of the completed liveness transaction whose captured face is used as one of the comparison inputs. If this parameter is provided, it replaces one of the images in the matching request.
+     */
+    'livenessTransactionId'?: string;
 }
 
 

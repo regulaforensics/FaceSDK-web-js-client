@@ -22,6 +22,6 @@ export interface GroupToCreate {
     /**
      * A free-form object containing group\'s extended attributes.
      */
-    'metadata': { [key: string]: any; };
+    'metadata'?: { [key: string]: any; };
 }
 

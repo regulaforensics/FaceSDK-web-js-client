@@ -1,5 +1,13 @@
 import { MatchApi as GenMatchApi } from '../api/match-api';
-import { MatchRequest, DetectRequest, ImageSource, MatchResponse, DetectResponse } from '../models';
+import {
+    MatchRequest,
+    DetectRequest,
+    ImageSource,
+    MatchResponse,
+    DetectResponse,
+    MatchAndSearchRequest,
+    MatchAndSearchResponse,
+} from '../models';
 import { AxiosRequestConfig, AxiosInstance } from 'axios';
 import { Configuration } from '../configuration';
 import * as converter from 'base64-arraybuffer';
@@ -36,6 +44,25 @@ export class MatchApi {
         }
 
         const response = await this.superClass.detect(detectRequest, xRequestID, options);
+        return response.data;
+    }
+
+    async matchAndSearch(
+        matchAndSearchRequest: MatchAndSearchRequest,
+        xRequestID?: string,
+        options?: AxiosRequestConfig,
+    ): Promise<MatchAndSearchResponse> {
+        if (matchAndSearchRequest.images) {
+            for (const image of matchAndSearchRequest.images) {
+                if (!image.type) {
+                    image.type = ImageSource.LIVE;
+                }
+                if (image.content && typeof image.content !== 'string') {
+                    image.content = converter.encode(image.content);
+                }
+            }
+        }
+        const response = await this.superClass.matchAndSearch(matchAndSearchRequest, xRequestID, options);
         return response.data;
     }
 }

@@ -19,12 +19,17 @@ const fs = require('fs');
         ],
         thumbnails: true,
     });
+    const matchResults = matchResponse.results;
 
     console.log('-----------------------------------------------------------------');
     console.log('                         Compare Results                         ');
     console.log('-----------------------------------------------------------------');
-    for (const result of matchResponse.results) {
-        console.log(`pair(${result.firstIndex},${result.secondIndex})   similarity: ${result.similarity}`);
+    if (matchResults) {
+        for (const result of matchResults) {
+            console.log(`pair(${result.firstIndex},${result.secondIndex})   similarity: ${result.similarity}`);
+        }
+    } else {
+        console.log(matchResponse);
     }
     console.log('-----------------------------------------------------------------');
 
@@ -39,12 +44,16 @@ const fs = require('fs');
 
     console.log('                         Detect Results                          ');
     console.log('-----------------------------------------------------------------');
-    console.log(`detectorType: ${detectResults.detectorType}`);
-    console.log(`landmarkType: ${detectResults.landmarksType}`);
-    for (const i of detectResults.detections) {
-        console.log(`landmarks: ${JSON.stringify(i.landmarks)}`);
-        console.log(`roi: ${JSON.stringify(i.roi)}`);
-        console.log(`attributes: ${JSON.stringify(i.attributes)}`);
+    if (detectResults) {
+        console.log(`detectorType: ${detectResults.detectorType}`);
+        console.log(`landmarkType: ${detectResults.landmarksType}`);
+        for (const i of detectResults.detections) {
+            console.log(`landmarks: ${JSON.stringify(i.landmarks)}`);
+            console.log(`roi: ${JSON.stringify(i.roi)}`);
+            console.log(`attributes: ${JSON.stringify(i.attributes)}`);
+        }
+    } else {
+        console.log(detectResponse);
     }
     console.log('-----------------------------------------------------------------');
 })();

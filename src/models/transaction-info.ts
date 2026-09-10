@@ -8,7 +8,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { EnrollResult } from './enroll-result';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { LivenessType } from './liveness-type';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { VerifyResult } from './verify-result';
 
 export interface TransactionInfo {
     /**
@@ -40,10 +46,12 @@ export interface TransactionInfo {
      */
     'portrait'?: string;
     /**
-     * A free-form object containing person\'s extended attributes.
+     * A free-form object containing the Person\'s extended attributes.
      */
     'metadata'?: { [key: string]: any; };
     'type'?: LivenessType;
+    'enrollResult'?: EnrollResult;
+    'verifyResult'?: VerifyResult;
 }
 
 

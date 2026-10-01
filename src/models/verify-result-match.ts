@@ -12,7 +12,7 @@
  */
 export interface VerifyResultMatch {
     /**
-     * Whether the faces matched according to the specified similarity threshold. `true` when the face similarity meets the threshold; `false` when it does not.
+     * Whether the faces matched according to the specified threshold. `true` when the distance between the captured and enrolled portraits does not exceed the threshold; `false` when it exceeds the threshold.
      */
     'verified'?: boolean;
     /**

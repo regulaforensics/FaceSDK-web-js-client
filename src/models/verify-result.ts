@@ -22,7 +22,7 @@ export interface VerifyResult {
      */
     'verified'?: boolean;
     /**
-     * The Person the liveness portrait was verified against.
+     * The Person the liveness portrait was verified against. Absent when the liveness check fails.
      */
     'person'?: Person;
     'match'?: VerifyResultMatch;

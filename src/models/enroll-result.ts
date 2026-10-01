@@ -22,7 +22,7 @@ export interface EnrollResult {
      */
     'enrolled'?: boolean;
     /**
-     * The Person created during enrollment. Present only when `enrolled` is `true`.
+     * The Person created during enrollment. Present only when `enrolled` is `true`. If enrollment was started with an empty person object (`{}`), the Person is created with a randomly generated UUID as its `name`.
      */
     'person'?: Person;
     'search'?: EnrollSearchResult;

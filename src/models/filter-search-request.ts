@@ -11,16 +11,16 @@
 import type { FilterOp } from './filter-op';
 
 /**
- * Allows to filter the search results based on the Person\'s `name`. If enabled, only the search results that meet the filter condition will be returned.
+ * Allows you to filter search results by Person fields. Currently, filtering is supported only by the `name` field.
  */
 export interface FilterSearchRequest {
     'op'?: FilterOp;
     /**
-     * `name` of the Person.
+     * The Person field to which the filter is applied. Currently, only `name` is supported. If another field is specified, the filter is ignored.
      */
     'field'?: string;
     /**
-     * The list of `name` values against which the `field` is compared.
+     * The list of values against which the specified `field` is compared.
      */
     'value'?: Array<string>;
 }

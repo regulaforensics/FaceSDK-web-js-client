@@ -28,7 +28,7 @@ export interface ImageFields {
      */
     'detectAll'?: boolean;
     /**
-     * The similarity threshold.
+     * Maximum distance allowed for a match (lower value = stricter match).
      */
     'threshold'?: number;
     /**

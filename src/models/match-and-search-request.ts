@@ -24,7 +24,7 @@ export interface MatchAndSearchRequest {
      */
     'groupIds'?: Array<string>;
     /**
-     * The similarity threshold.
+     * Maximum distance allowed for a match (lower value = stricter match).
      */
     'threshold'?: number;
     /**

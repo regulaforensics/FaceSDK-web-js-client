@@ -27,7 +27,7 @@ export class MatchApi {
             if (!image.type) {
                 image.type = ImageSource.LIVE;
             }
-            if (typeof image.data !== 'string') {
+            if (typeof image.data !== 'string' && image.data) {
                 image.data = converter.encode(image.data);
             }
         }

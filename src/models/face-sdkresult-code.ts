@@ -8,51 +8,202 @@
 
 
 /**
- * The result code, see the [FaceSDKResultCode enum](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/enums/face-sdk-result-code/).
+ * The result code.
  */
 
 export enum FaceSDKResultCode {
+    /**
+    * No issues. The process completed successfully.
+    */
     FACER_OK = 0,
+    /**
+    * Cannot read image. The file may not be a valid image format or could be corrupted.
+    */
     FR_IMAGE_EMPTY = 1,
+    /**
+    * Face not detected.
+    */
     FR_FACE_NOT_DETECTED = 2,
+    /**
+    * Landmarks not detected.
+    */
     FR_LANDMARKS_NOT_DETECTED = 3,
+    /**
+    * An internal processing error occurred.
+    */
     FR_FACE_ALIGHNER_FAILED = 4,
+    /**
+    * An internal processing error occurred.
+    */
     FR_DESCRIPTOR_EXTRACTOR_ERROR = 5,
+    /**
+    * Cannot read image. The image may be corrupted.
+    */
     FR_IMAGE_DECODE_ERROR = 6,
+    /**
+    * An internal processing error occurred.
+    */
     FR_INTERNAL_ERROR = 7,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_CONFIG_ERROR = 199,
+    /**
+    * No appropriate license. Ensure that your license is valid, the required features are enabled, and the environment is configured correctly.
+    */
     FACER_NO_LICENSE = 200,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_IS_NOT_INITIALIZED = 201,
+    /**
+    * Incorrect request parameters. Check that the request matches the specification.
+    */
     FACER_COMMAND_IS_NOT_SUPPORTED = 202,
+    /**
+    * The worker failed because the request parameters are invalid. Check that the request follows the correct format.
+    */
     FACER_COMMAND_PARAMS_READ_ERROR = 203,
+    /**
+    * While using Match, fewer than two images were provided.
+    */
     FACER_LESS_THAN_TWO_IMAGES_IN_REQUEST = 224,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_VIDEO_DECODE_ERROR = 227,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_NOT_ENOUGH_FRAMES = 228,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_OUTPUT_IS_NOT_DEFINED = 229,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_CLOSED_EYES_DETECTED = 230,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_LOW_QUALITY = 231,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_HIGH_ASYMMETRY = 232,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_FACE_OVER_EMOTIONAL = 233,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_SUNGLASSES_DETECTED = 234,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_SMALL_AGE = 235,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_HEADDRESS_DETECTED = 236,
+    /**
+    * Liveness spoofing attempt detected.
+    */
     FACER_FACES_NOT_MATCHED = 237,
+    /**
+    * For the Match function, only two images of the same type are allowed.
+    */
     FACER_IMAGES_COUNT_LIMIT_EXCEEDED = 238,
+    /**
+    * An internal processing error occurred.
+    */
     FACER_MEDICINE_MASK_DETECTED = 239,
+    /**
+    * Liveness spoofing attempt detected.
+    */
     FACER_OCCLUSION_DETECTED = 240,
+    /**
+    * Liveness spoofing attempt detected.
+    */
     FACER_FOREHEAD_GLASSES_DETECTED = 242,
+    /**
+    * Liveness spoofing attempt detected.
+    */
     FACER_MOUTH_OPENED = 243,
+    /**
+    * Liveness spoofing attempt detected.
+    */
     FACER_ART_MASK_DETECTED = 244,
+    /**
+    * Liveness spoofing attempt detected.
+    */
     FACER_ELECTRONIC_DEVICE_DETECTED = 245,
+    /**
+    * Liveness spoofing attempt detected.
+    */
     FACER_TRACK_BREAK = 246,
+    /**
+    * Liveness spoofing attempt detected.
+    */
     FACER_WRONG_GEO = 247,
+    /**
+    * Liveness spoofing attempt detected.
+    */
     FACER_WRONG_OF = 248,
+    /**
+    * Liveness spoofing attempt detected.
+    */
     FACER_WRONG_VIEW = 249,
+    /**
+    * The user did not complete the liveness verification within the allowed time.
+    */
     FACER_TIMEOUT_LIVENESS_TRANSACTION = 250,
+    /**
+    * A system error occurred during the liveness verification process.
+    */
     FACER_FAILED_LIVENESS_TRANSACTION = 251,
+    /**
+    * The user aborted the liveness verification process by clicking the Close button or exiting the application.
+    */
     FACER_ABORTED_LIVENESS_TRANSACTION = 252,
+    /**
+    * Liveness spoofing attempt detected.
+    */
     FACER_GENERAL_ERROR = 253,
-    FACER_PASSIVE_LIVENESS_FAIL = 254
+    /**
+    * Liveness spoofing attempt detected.
+    */
+    FACER_PASSIVE_LIVENESS_FAIL = 254,
+    /**
+    * Liveness spoofing attempt detected.
+    */
+    FACER_PRINTED_FACE_DETECTED = 255,
+    /**
+    * Request processing has been blocked.
+    */
+    FACER_BLOCKED_REQUEST = 256,
+    /**
+    * The request cannot be processed because data integrity was violated during transmission.
+    */
+    FACER_CORRUPTED_REQUEST = 257,
+    /**
+    * Liveness spoofing attempt detected.
+    */
+    FACER_GENERAL_CHECK_FAIL_RTD = 258,
+    /**
+    * Blink check failed on the backend. This error applies only to the liveness mode with blinking enabled.
+    */
+    FACER_BLINK_FAILED = 259,
+    /**
+    * The quality of the captured images is too low to perform reliable detection. The user must pass liveness verification again with better lighting, a clearer background, and a properly positioned camera.
+    */
+    FACER_BAD_FACE_QUALITY_LIVENESS_TRANSACTION = 260,
+    /**
+    * The frame size is below the required minimum. Liveness verification requires at least HD-quality frames.
+    */
+    FACER_BAD_FRAME_SIZE = 261
 }
 
 

@@ -171,7 +171,7 @@ export enum FaceSDKResultCode {
     /**
     * Liveness spoofing attempt detected.
     */
-    FACER_GENERAL_ERROR = 253,
+    FACER_GENERAL_CHECK_FAIL = 253,
     /**
     * Liveness spoofing attempt detected.
     */

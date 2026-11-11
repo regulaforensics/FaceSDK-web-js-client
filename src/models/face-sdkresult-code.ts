@@ -203,7 +203,15 @@ export enum FaceSDKResultCode {
     /**
     * The frame size is below the required minimum. Liveness verification requires at least HD-quality frames.
     */
-    FACER_BAD_FRAME_SIZE = 261
+    FACER_BAD_FRAME_SIZE = 261,
+    /**
+    * Multiple faces were detected during a liveness check with the Single Face mode enabled.
+    */
+    FACER_SINGLE_FACE_ERROR = 263,
+    /**
+    * An internal processing error occurred.
+    */
+    FACER_IN_PROCESS_STATUS_SESSION_ERROR = 264
 }
 
 

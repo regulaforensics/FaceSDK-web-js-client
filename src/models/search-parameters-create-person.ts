@@ -22,6 +22,6 @@ export interface SearchParametersCreatePerson {
     /**
      * The lifespan of the Person\'s records, seconds. Optional.
      */
-    'ttl'?: number;
+    'ttl'?: number | null;
 }
 

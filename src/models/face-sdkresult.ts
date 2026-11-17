@@ -12,6 +12,10 @@ import type { FaceSDKResultCode } from './face-sdkresult-code';
 
 export interface FaceSDKResult {
     'code': FaceSDKResultCode;
+    /**
+     * Transaction identifier
+     */
+    'transactionId': string;
 }
 
 

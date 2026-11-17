@@ -11,20 +11,20 @@
 import type { EnrollResult } from './enroll-result';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { FaceSDKResultCode } from './face-sdkresult-code';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { LivenessType } from './liveness-type';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { VerifyResult } from './verify-result';
 
 export interface TransactionInfo {
-    /**
-     * Result code, see the [FaceSDKResultCode enum](https://docs.regulaforensics.com/develop/face-sdk/web-service/development/enums/face-sdk-result-code/).
-     */
-    'code'?: number;
+    'code'?: FaceSDKResultCode;
     /**
      * Whether the liveness detection is confirmed `0` or not `1`.
      */
-    'status'?: number;
+    'status'?: number | null;
     /**
      * Session identificator, should be unique for each session.
      */

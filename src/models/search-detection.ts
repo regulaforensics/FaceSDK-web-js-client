@@ -48,7 +48,7 @@ export interface SearchDetection {
      */
     'msg'?: string;
     /**
-     * The rectangular area of a detected face that is represented by a set of four elements: the X and Y coordinates of the top-left point, and the width and height dimensions of the rectangle.
+     * The rectangular area of a detected face that is represented by a set of four elements [x, y, width, height]: the X and Y coordinates of the top-left point, and the width and height dimensions of the rectangle.
      */
     'roi'?: Array<number>;
     'versionSDK'?: string;

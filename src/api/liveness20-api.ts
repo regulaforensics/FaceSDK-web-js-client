@@ -24,16 +24,12 @@ export const Liveness20ApiAxiosParamCreator = function (configuration?: Configur
         /**
          * This endpoint deletes a liveness transaction based on either the specified `tag` or `transactionId`. At least one of the parameters must be provided for the operation to be valid.
          * @summary delete liveness transaction
-         * @param {string} transactionId ID of the current liveness transaction.
-         * @param {string} tag A unique tag associated with a liveness transaction session. Used to identify and delete the corresponding transaction.
+         * @param {string} [transactionId] ID of the current liveness transaction.
+         * @param {string} [tag] A unique tag associated with a liveness transaction session. Used to identify and delete the corresponding transaction.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteLivenessTransaction: async (transactionId: string, tag: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'transactionId' is not null or undefined
-            assertParamExists('deleteLivenessTransaction', 'transactionId', transactionId)
-            // verify required parameter 'tag' is not null or undefined
-            assertParamExists('deleteLivenessTransaction', 'tag', tag)
+        deleteLivenessTransaction: async (transactionId?: string, tag?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v2/liveness`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -114,12 +110,12 @@ export const Liveness20ApiFp = function(configuration?: Configuration) {
         /**
          * This endpoint deletes a liveness transaction based on either the specified `tag` or `transactionId`. At least one of the parameters must be provided for the operation to be valid.
          * @summary delete liveness transaction
-         * @param {string} transactionId ID of the current liveness transaction.
-         * @param {string} tag A unique tag associated with a liveness transaction session. Used to identify and delete the corresponding transaction.
+         * @param {string} [transactionId] ID of the current liveness transaction.
+         * @param {string} [tag] A unique tag associated with a liveness transaction session. Used to identify and delete the corresponding transaction.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteLivenessTransaction(transactionId: string, tag: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteLivenessTransaction(transactionId?: string, tag?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteLivenessTransaction(transactionId, tag, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['Liveness20Api.deleteLivenessTransaction']?.[localVarOperationServerIndex]?.url;
@@ -150,12 +146,12 @@ export const Liveness20ApiFactory = function (configuration?: Configuration, bas
         /**
          * This endpoint deletes a liveness transaction based on either the specified `tag` or `transactionId`. At least one of the parameters must be provided for the operation to be valid.
          * @summary delete liveness transaction
-         * @param {string} transactionId ID of the current liveness transaction.
-         * @param {string} tag A unique tag associated with a liveness transaction session. Used to identify and delete the corresponding transaction.
+         * @param {string} [transactionId] ID of the current liveness transaction.
+         * @param {string} [tag] A unique tag associated with a liveness transaction session. Used to identify and delete the corresponding transaction.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteLivenessTransaction(transactionId: string, tag: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        deleteLivenessTransaction(transactionId?: string, tag?: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.deleteLivenessTransaction(transactionId, tag, options).then((request) => request(axios, basePath));
         },
         /**
@@ -178,12 +174,12 @@ export class Liveness20Api extends BaseAPI {
     /**
      * This endpoint deletes a liveness transaction based on either the specified `tag` or `transactionId`. At least one of the parameters must be provided for the operation to be valid.
      * @summary delete liveness transaction
-     * @param {string} transactionId ID of the current liveness transaction.
-     * @param {string} tag A unique tag associated with a liveness transaction session. Used to identify and delete the corresponding transaction.
+     * @param {string} [transactionId] ID of the current liveness transaction.
+     * @param {string} [tag] A unique tag associated with a liveness transaction session. Used to identify and delete the corresponding transaction.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteLivenessTransaction(transactionId: string, tag: string, options?: RawAxiosRequestConfig) {
+    public deleteLivenessTransaction(transactionId?: string, tag?: string, options?: RawAxiosRequestConfig) {
         return Liveness20ApiFp(this.configuration).deleteLivenessTransaction(transactionId, tag, options).then((request) => request(this.axios, this.basePath));
     }
 

@@ -19,7 +19,7 @@ export interface MatchImage {
     /**
      * Base64-encoded image.
      */
-    'data': string;
+    'data'?: string;
     /**
      * Whether to detect all faces in the image. If set to `false`, only the most central face is detected.
      */
